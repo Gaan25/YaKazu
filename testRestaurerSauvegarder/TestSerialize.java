@@ -10,13 +10,14 @@ public class TestSerialize{
 	
 	public static void main(String[] args) {
 		Matrice m = new Matrice();
-		m.matrice[0][0] = 1;
-		m.matrice[0][1] = 2;
-		m.matrice[1][0] = 3;
-		m.matrice[1][1] = 4;
+		for (int i = 0;i<9;i++){
+			for (int j = 0;j<9;j++){
+				m.matrice[i][j] = 1;
+			}
+		}
 		try {
 			m.sauvegarderGrilleSerial();
-			m.restaurerGrilleSerial("matrice.txt");
+			m.restaurerGrilleSerial("matrice.ser");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
