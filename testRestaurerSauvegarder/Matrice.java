@@ -74,29 +74,37 @@ public class Matrice implements Serializable{
 		int i;
 		int j;
 		int nbCaseNoire;
-		int nbCaseVide;
+		int nbCaseVide; //nombre de case vide (nbCase - nbCaseRemplie)
+		int nbCaseChiffre; //nombre de case avec chiffre (nbCaseRemplie - nbCaseNoire)
 		Random random = new Random();
-		int chiffreAleatoire;
-		int nbCaseRemplie;
+		int chiffreAleatoire; // variable pour cree un nombre aleatoire et proportionnel entre les cases noires et les cases préremplie(noire et chiffre proportionnel)
+		int nbCaseRemplie; //Case noire + case chiffre
 		int nbCase = (taille * taille);
+
+		/*
+			La difficulté est déterminée par le nombre de case préremplie (noires ou chiffre)
+		 */
 		switch (difficulte) {
 			case 1 : //facile 50% des cases déja remplie
-				nbCaseRemplie  = (taille*taille)/ 2;
+				nbCaseRemplie  = nbCase/ 2;
 				chiffreAleatoire = random.nextInt(nbCaseRemplie - 1)+1; //de 1 à nbCaseRemplie
 				nbCaseNoire = chiffreAleatoire;
-				nbCaseVide = nbCaseRemplie - chiffreAleatoire;
+				nbCaseChiffre = nbCaseRemplie - nbCaseNoire;
+				nbCaseVide = nbCase - nbCaseRemplie;
 				break;
 			case 2 : //normale 40 % des cases remplie
 				nbCaseRemplie  = (int) (nbCase * 0.4);
 				chiffreAleatoire = random.nextInt(nbCaseRemplie - 1)+1; //de 1 à nbCaseRemplie
 				nbCaseNoire = chiffreAleatoire;
-				nbCaseVide = nbCaseRemplie - chiffreAleatoire;
+				nbCaseChiffre = nbCaseRemplie - nbCaseNoire;
+				nbCaseVide = nbCase - nbCaseRemplie;
 				break;
 			case 3 : //difficile 30 % des cases remplie
 				nbCaseRemplie  = (int) (nbCase * 0.3);
 				chiffreAleatoire = random.nextInt(nbCaseRemplie - 1)+1; //de 1 à nbCaseRemplie
 				nbCaseNoire = chiffreAleatoire;
-				nbCaseVide = nbCaseRemplie - chiffreAleatoire;
+				nbCaseChiffre = nbCaseRemplie - nbCaseNoire;
+				nbCaseVide = nbCase - nbCaseRemplie;
 				break;
 			default:
 				throw new Exception("Pas de difficulte valide, choisir entre 1,2 et 3");
@@ -107,7 +115,8 @@ public class Matrice implements Serializable{
 			this.matrice[i][j] = -1;
 		}
 		// on remplie la grille backtracking
-		remplirGrille();
+
+		//remplirGrille();
 
 
 		while (nbCaseVide!= 0){ //On vide de nbCaseVide
