@@ -1,6 +1,6 @@
-package main;
+package test;
 import jeu.*;
-public class Main {
+public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -13,14 +13,14 @@ public class Main {
 		Tableau t = new Tableau(tab,6);
 		
 	/*	if (t.absentLigne(5,4)==true){
-			System.out.println("5 n'est pas prï¿½sent sur la ligne 5");
+			System.out.println("5 n'est pas présent sur la ligne 5");
 		}
-		else System.out.println("5 est prï¿½sent sur la ligne 5");
+		else System.out.println("5 est présent sur la ligne 5");
 		
 		if (t.absentColonne(3,0)==true){
-			System.out.println("5 n'est pas prï¿½sent sur la colonne 5");
+			System.out.println("5 n'est pas présent sur la colonne 5");
 		}
-		else System.out.println("3 est prï¿½sent sur la colonne 0");
+		else System.out.println("3 est présent sur la colonne 0");
 	
 	
 		System.out.println("la position 6 est sur la ligne :" + t.getLigne(6));
