@@ -20,10 +20,6 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		t.estValide(0);
-		
-		t.afficherGrille();
 	}
 
 }
