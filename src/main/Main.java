@@ -17,6 +17,8 @@ public class Main {
 		try {
 			//Pas finis generer (marche une 1 fois sur 2)
 			t.genererGrillee(1,6);
+			t.estValide(0);
+			System.out.println("La grille générée résolus par estValide()");
 			t.afficherGrille();
 		} catch (Exception e) {
 			e.printStackTrace();

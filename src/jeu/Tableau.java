@@ -327,7 +327,7 @@ public class Tableau {
 			nbCaseNoire --;
 		}
 		// on remplie la grille backtracking
-		afficherGrille();
+
 		estValide(0);
 		while (nbCaseVide!= 0){ //On vide de nbCaseVide
 			i = random.nextInt(taille);
@@ -338,6 +338,8 @@ public class Tableau {
 			this.tabCase[i][j].setChiffre(0);
 			nbCaseVide --;
 		}
+		System.out.println("Grille générée par genererGrille() avant résolution");
+		afficherGrille();
 	}
 	
 	/*public boolean absentLigne (int k, int i)
