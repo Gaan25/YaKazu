@@ -119,7 +119,6 @@ public class Tableau {
 		    return false;
 		    /*on renonce a cette "id�e"*/
 	}
-	
 	public boolean taille_valide (int k , int i ,int j ,int position){
 		if (k > taille_ligne_courante(i,position) || (k > taille_colonne_courante(j,position)))
 			return false;

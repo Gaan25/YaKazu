@@ -15,6 +15,7 @@ public class Main {
 		//t.afficherGrille();
 
 		try {
+			//Pas finis generer (marche une 1 fois sur 2)
 			t.genererGrillee(1,6);
 			t.afficherGrille();
 		} catch (Exception e) {
