@@ -340,7 +340,7 @@ public class Tableau {
 				System.out.println("Non valide ");
 			}else {
                 tempsFin = System.currentTimeMillis();
-                System.out.println("Temps de génération via backtracking : " + (double)((tempsFin-tempsDebut)/100) +" secondes");
+                System.out.println("Temps de génération via backtracking : " + (tempsFin-tempsDebut) +" millisecondes");
 				break;
 			}
 		}
