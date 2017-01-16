@@ -1,6 +1,7 @@
 package jeu;
 
 import java.io.*;
+import java.sql.Time;
 import java.util.Random;
 
 public class Tableau {
@@ -284,52 +285,68 @@ public class Tableau {
 
 		int i;
 		int j;
-		int nbCaseNoire;
-		int nbCaseVide; //nombre de case vide (nbCase - nbCaseRemplie)
+		int nbCaseNoire = 0;
+		int nbCaseVide = 0; //nombre de case vide (nbCase - nbCaseRemplie)
 		int nbCaseChiffre; //nombre de case avec chiffre (nbCaseRemplie - nbCaseNoire)
 		Random random = new Random();
 		int chiffreAleatoire; // variable pour cree un nombre aleatoire et proportionnel entre les cases noires et les cases pr�remplie(noire et chiffre proportionnel)
 		int nbCaseRemplie; //Case noire + case chiffre
 		int nbCase = (taille * taille);
-
+        long tempsDebut;
+        long tempsFin;
 		/*
-			La difficult� est d�termin�e par le nombre de case pr�remplie (noires ou chiffre)
+			La difficulte est determinee par le nombre de case preremplie (noires ou chiffre)
 		 */
-		switch (difficulte) {
-			case 1 : //facile 50% des cases d�ja remplie
-				nbCaseRemplie  = nbCase/ 2;
-				chiffreAleatoire = random.nextInt(nbCaseRemplie - 1)+1; //de 1 � nbCaseRemplie
-				nbCaseNoire = chiffreAleatoire;
-				nbCaseChiffre = nbCaseRemplie - nbCaseNoire;
-				nbCaseVide = nbCase - nbCaseRemplie;
-				break;
-			case 2 : //normale 40 % des cases remplie
-				nbCaseRemplie  = (int) (nbCase * 0.4);
-				chiffreAleatoire = random.nextInt(nbCaseRemplie - 1)+1; //de 1 � nbCaseRemplie
-				nbCaseNoire = chiffreAleatoire;
-				nbCaseChiffre = nbCaseRemplie - nbCaseNoire;
-				nbCaseVide = nbCase - nbCaseRemplie;
-				break;
-			case 3 : //difficile 30 % des cases remplie
-				nbCaseRemplie  = (int) (nbCase * 0.3);
-				chiffreAleatoire = random.nextInt(nbCaseRemplie - 1)+1; //de 1 � nbCaseRemplie
-				nbCaseNoire = chiffreAleatoire;
-				nbCaseChiffre = nbCaseRemplie - nbCaseNoire;
-				nbCaseVide = nbCase - nbCaseRemplie;
-				break;
-			default:
-				throw new Exception("Pas de difficulte valide, choisir entre 1,2 et 3");
-		}
-		while (nbCaseNoire != 0){ //On place les nbCasesNoires
-			i = random.nextInt(taille);
-			j = random.nextInt(taille);
-			this.tabCase[i][j].setChiffre(-1);
-			nbCaseNoire --;
-		}
-		// on remplie la grille backtracking
+        tempsDebut = System.currentTimeMillis();
 
-		estValide(0);
-		while (nbCaseVide!= 0){ //On vide de nbCaseVide
+		while(true){
+            //On gere nbCaseNoire et nbCaseVide selon la difficulté
+			switch (difficulte) {
+				case 1 : //facile 50% des cases d�ja remplie
+					nbCaseRemplie  = nbCase/ 2;
+					chiffreAleatoire = random.nextInt(nbCaseRemplie - 1)+1; //de 1 � nbCaseRemplie
+					nbCaseNoire = chiffreAleatoire;
+					nbCaseChiffre = nbCaseRemplie - nbCaseNoire;
+					nbCaseVide = nbCase - nbCaseRemplie;
+					break;
+				case 2 : //normale 40 % des cases remplie
+					nbCaseRemplie  = (int) (nbCase * 0.4);
+					chiffreAleatoire = random.nextInt(nbCaseRemplie - 1)+1; //de 1 � nbCaseRemplie
+					nbCaseNoire = chiffreAleatoire;
+					nbCaseChiffre = nbCaseRemplie - nbCaseNoire;
+					nbCaseVide = nbCase - nbCaseRemplie;
+					break;
+				case 3 : //difficile 30 % des cases remplie
+					nbCaseRemplie  = (int) (nbCase * 0.3);
+					chiffreAleatoire = random.nextInt(nbCaseRemplie - 1)+1; //de 1 � nbCaseRemplie
+					nbCaseNoire = chiffreAleatoire;
+					nbCaseChiffre = nbCaseRemplie - nbCaseNoire;
+					nbCaseVide = nbCase - nbCaseRemplie;
+					break;
+				default:
+					throw new Exception("Pas de difficulte valide, choisir entre 1,2 et 3");
+			}
+
+            //On place les nbCasesNoires
+			while (nbCaseNoire != 0){
+				i = random.nextInt(taille);
+				j = random.nextInt(taille);
+				this.tabCase[i][j].setChiffre(-1);
+				nbCaseNoire --;
+			}
+
+            // on remplie la grille à l'aide du backtracking
+			if (!estValide(0)){
+				System.out.println("Non valide ");
+			}else {
+                tempsFin = System.currentTimeMillis();
+                System.out.println("Temps de génération via backtracking : " + (double)((tempsFin-tempsDebut)/100) +" secondes");
+				break;
+			}
+		}
+
+        //On vide de nbCaseVide
+		while (nbCaseVide!= 0){
 			i = random.nextInt(taille);
 			j = random.nextInt(taille);
 			if (tabCase[i][j].getChiffre() == -1){
@@ -338,6 +355,8 @@ public class Tableau {
 			this.tabCase[i][j].setChiffre(0);
 			nbCaseVide --;
 		}
+
+        //Affichage
 		System.out.println("Grille générée par genererGrille() avant résolution");
 		afficherGrille();
 	}
