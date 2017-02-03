@@ -1,6 +1,8 @@
 package jeu;
 
-public class Case {
+import java.io.Serializable;
+
+public class Case implements Serializable {
 	private int chiffre ;
 	
 	public int getChiffre() {
@@ -22,7 +24,7 @@ public class Case {
 	
 	
 	public Case (int chiffre){
-		if (chiffre<-1) System.out.println("Le chiffre d'une case ne peut pas être inférieur à -1");
+		if (chiffre<-1) System.out.println("Le chiffre d'une case ne peut pas ï¿½tre infï¿½rieur ï¿½ -1");
 		else this.chiffre=chiffre;
 	}
 	

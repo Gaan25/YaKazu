@@ -1,9 +1,0 @@
- V V V V N N V V V
- V N V V N N 2 N 1
- V V N V V V N V V
- N V N N V V V V V
- V V V 8 V V V V N
- N V 1 N V N V V V
- V N V N V V V V V
- 1 N N V V V N V V
- V V 5 V V N N N V

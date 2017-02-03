@@ -115,15 +115,16 @@ public class Modeles {
 
     public void sauvegarderModeles(){
         try {
-            t1.sauvegarderGrilleTexte();
-            t2.sauvegarderGrilleTexte();
+            t1.sauvegarderGrilleSerial();
+            t1.restaurerGrilleSerial("Modeles/modele1.ser");
+            t2.sauvegarderGrilleSerial();
             t3.sauvegarderGrilleSerial();
             t4.sauvegarderGrilleSerial();
             t5.sauvegarderGrilleSerial();
             t6.sauvegarderGrilleSerial();
 
         } catch (Exception e){
-            e.getMessage();
+            e.printStackTrace();
         }
     }
 

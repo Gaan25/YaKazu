@@ -238,7 +238,14 @@ public class Tableau {
 
 	//SAUVEGARDE
 	public void sauvegarderGrilleTexte() throws Exception{
-		FileWriter fileWriter = new FileWriter("./tabCase.txt");
+		int numFichier;
+		File di = new File("Modeles/");
+		File fl[] = di.listFiles();
+		numFichier = 1;
+		if (fl != null){
+			numFichier = fl.length+1;
+		}
+		FileWriter fileWriter = new FileWriter("Modeles/modele"+numFichier+".txt");
 		for(int i = 0;i<this.tabCase.length;i++){
 			for (int j = 0;j<this.tabCase[i].length;j++){
 				fileWriter.write(String.valueOf(this.tabCase[i][j]));
@@ -264,13 +271,21 @@ public class Tableau {
 		in.close();
 	}
 	public void sauvegarderGrilleSerial() throws Exception {
-		FileOutputStream fileOut = new FileOutputStream("./tabCase.ser");
+		int numFichier;
+		File di = new File("Modeles/");
+		File fl[] = di.listFiles();
+		numFichier = 1;
+		if (fl != null){
+			numFichier = fl.length+1;
+		}
+		FileOutputStream fileOut = new FileOutputStream("Modeles/modele"+numFichier+".ser");
 		ObjectOutputStream out = new ObjectOutputStream(fileOut);
 		out.writeObject(this.tabCase);
+
 		out.close();
 	}
 	public void restaurerGrilleSerial(String nomFichier) throws Exception{
-		FileInputStream fileIn = new FileInputStream("./tabCase.ser");
+		FileInputStream fileIn = new FileInputStream(nomFichier);
 		ObjectInputStream in = new ObjectInputStream(fileIn);
 		this.tabCase = (Case[][]) in.readObject();
 		in.close();
