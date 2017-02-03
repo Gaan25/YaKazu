@@ -86,17 +86,7 @@ public class Modeles {
         t4 = new Tableau(modele4, 9);
         t5 = new Tableau(modele5, 9);
         t6 = new Tableau(modele6, 9);
-        try {
-            t1.sauvegarderGrilleTexte();
-            t2.sauvegarderGrilleTexte();
-            t3.sauvegarderGrilleSerial();
-            t4.sauvegarderGrilleSerial();
-            t5.sauvegarderGrilleSerial();
-            t6.sauvegarderGrilleSerial();
 
-        } catch (Exception e){
-            e.getMessage();
-        }
     }
 
     public int[][] getModele1() {
@@ -121,6 +111,20 @@ public class Modeles {
 
     public int[][] getModele6() {
         return modele6;
+    }
+
+    public void sauvegarderModeles(){
+        try {
+            t1.sauvegarderGrilleTexte();
+            t2.sauvegarderGrilleTexte();
+            t3.sauvegarderGrilleSerial();
+            t4.sauvegarderGrilleSerial();
+            t5.sauvegarderGrilleSerial();
+            t6.sauvegarderGrilleSerial();
+
+        } catch (Exception e){
+            e.getMessage();
+        }
     }
 
 

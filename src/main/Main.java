@@ -6,6 +6,7 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		Modeles modeles = new Modeles();
+		modeles.sauvegarderModeles();
 		int grille1 [][]= modeles.getModele1();
 		int grille2 [][]= modeles.getModele2();
 		int grille3 [][]= modeles.getModele3();
