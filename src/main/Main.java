@@ -19,7 +19,7 @@ public class Main {
 		try {
 			//Pas finis generer (marche une 1 fois sur 2)
 			t.genererGrillee(1,9);
-			t.estValide(0);
+			t.estValide(0,0);
 			System.out.println("La grille générée résolue par estValide()");
 			t.afficherGrille();
 		} catch (Exception e) {

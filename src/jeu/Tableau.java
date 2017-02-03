@@ -90,9 +90,11 @@ public class Tableau {
 	
 	//position et pas i car ligne i pas assez pr�cis (cases noires)
 
-	public boolean estValide (int position)
-	{
-	    // Si on est � la n*n eme case (on sort du tableau)
+	public boolean estValide (int position,long timeOut) {
+		if (System.currentTimeMillis() - timeOut > 10000){
+			return false;
+		}
+		// Si on est � la n*n eme case (on sort du tableau)
 	    if (position == (getSize()*getSize()))
 	        return true;
 
@@ -101,7 +103,7 @@ public class Tableau {
 	    
 	    // Si la case n'est pas vide, on passe � la suivante (appel r�cursif)
 	    if (tabCase[i][j].getChiffre() != 0)
-	        return estValide(position+1);
+	        return estValide(position+1,timeOut);
 
 	    // A impl�menter : backtracking
 	   
@@ -111,8 +113,7 @@ public class Tableau {
 		        if ((absentLigneCourante(k,i,position)) && (absentColonneCourante(k,j,position))  && (taille_valide(k,i,j,position)) ) /*&& valideLigne(k,position,i) && valideColonne(k,position,j)*//* && valideColonne(k,position,j)*/
 		        {
 		        	modifier_case(i,j,k);
-		        	
-		            if ( estValide (position+1) )
+		            if ( estValide (position+1,timeOut) )
 		                return true;
 		        }
 		    }
@@ -313,7 +314,6 @@ public class Tableau {
 			La difficulte est determinee par le nombre de case preremplie (noires ou chiffre)
 		 */
         tempsDebut = System.currentTimeMillis();
-
 		while(true){
             //On gere nbCaseNoire et nbCaseVide selon la difficulté
 			switch (difficulte) {
@@ -349,9 +349,8 @@ public class Tableau {
 				this.tabCase[i][j].setChiffre(-1);
 				nbCaseNoire --;
 			}
-
             // on remplie la grille à l'aide du backtracking
-			if (!estValide(0)){
+			if (!estValide(0,System.currentTimeMillis())){
 				System.out.println("Non valide ");
 			}else {
                 tempsFin = System.currentTimeMillis();
