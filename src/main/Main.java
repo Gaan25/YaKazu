@@ -14,6 +14,8 @@ public class Main {
 		int grille5 [][]= modeles.getModele5();
 		int grille6 [][]= modeles.getModele6();
 		*/
+
+		/*
 		Tableau t = new Tableau(9);
 
 		try {
@@ -25,6 +27,11 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		*/
+
+		Jeu jeu = new Jeu();
+		jeu.commencer();
+
 	}
 
 }
