@@ -1,0 +1,14 @@
+Pour notre IHM :
+    Un JFrame contenant plusieurs JPanel:
+        Un JPanel principal utilisant le Layout CardLayout qui permet de switcher entre plusieurs Panel
+        Les JPanel de chaque fenêtre que l'on à dessinée
+    Au moment où l'utilisateur clique sur "Nouvelle Partie", la JFrame switch le JPanel et affiche la fenetre de nouvelle partie
+
+J'ai testé l'outil de design d'Intelij mais le probleme est qui l'est trop contraignant au niveau du code.
+En plus de générer un code illisible, il est dur à modifier quand on souhaite faire quelque manipulation.
+Finalement MME Torres n'avait pas tort : D
+
+Info sur CardLayout :
+
+https://docs.oracle.com/javase/tutorial/uiswing/layout/card.html
+http://stackoverflow.com/questions/218155/how-do-i-change-jpanel-inside-a-jframe-on-the-fly
