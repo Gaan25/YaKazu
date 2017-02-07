@@ -14,17 +14,24 @@ public class Main {
 		int grille5 [][]= modeles.getModele5();
 		int grille6 [][]= modeles.getModele6();
 		*/
-		Tableau t = new Tableau(9);
+
+
+		Tableau t = new Tableau(6);
 
 		try {
 			//Pas finis generer (marche une 1 fois sur 2)
-			t.genererGrillee(1,9);
-			t.estValide(0);
+			t.genererGrillee(1, 6);
+			t.estValide(0,System.currentTimeMillis());
 			System.out.println("La grille générée résolue par estValide()");
 			t.afficherGrille();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+
+		//Jeu jeu = new Jeu();
+		//jeu.commencer();
+
 	}
 
 }

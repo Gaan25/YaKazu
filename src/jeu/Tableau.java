@@ -8,7 +8,7 @@ public class Tableau {
 
 	private Case tabCase[][];
 	int size;
-	
+
 	public int getSize() {
 		return size;
 	}
@@ -26,7 +26,7 @@ public class Tableau {
 	}
 	public int getCase(int position){
 		if (position<0) return -1;
-		
+
 		int i = position/(getSize());
 		int j = position%(getSize());
 		return tabCase[i][j].getChiffre();
@@ -35,9 +35,9 @@ public class Tableau {
 	public void modifier_case (int i,int j, int chiffre){
 
 		if (getSize()<chiffre) System.out.println("Impossible la taille tu tableau est de"+ getSize()+"*" + getSize());
-		else 
-			
-		tabCase[i][j].setChiffre(chiffre);
+		else
+
+			tabCase[i][j].setChiffre(chiffre);
 	}
 	public void init_tableau(){
 		for (int i = 0; i < getSize(); i++) {
@@ -54,7 +54,7 @@ public class Tableau {
 			init_tableau();
 		}
 		else System.out.println("Erreur : la grille a un format compris entre 3x3 et 9x9");
-		
+
 	}
 	//Walid = j'ai rajouter ce constructeur pour all�ger l'initialisation de la grille dans le main
 	public Tableau (int tab[][], int size){
@@ -71,92 +71,93 @@ public class Tableau {
 	public String toString(){
 		StringBuffer s1 = new StringBuffer(255);
 		for (int i = 0; i < getSize(); i++) {
-			
+
 			for (int j = 0; j < getSize(); j++) {
 				s1.append(tabCase[i][j].toString());
-					if (j==getSize()-1){
-						s1.append("\n");
-					}
+				if (j==getSize()-1){
+					s1.append("\n");
+				}
 				/*System.out.println(tabCase[i][j].toString());*/
 			}
 		}
 		String s2 = s1.toString();
 		return s2;
 	}
-	
+
 	//backtracking
-	
-	
-	
+
+
+
 	//position et pas i car ligne i pas assez pr�cis (cases noires)
 
-	public boolean estValide (int position)
-	{
-	    // Si on est � la n*n eme case (on sort du tableau)
-	    if (position == (getSize()*getSize()))
-	        return true;
+	public boolean estValide (int position,long timeOut) {
+		if (System.currentTimeMillis() - timeOut > 10000){
+			return false;
+		}
+		// Si on est � la n*n eme case (on sort du tableau)
+		if (position == (getSize()*getSize()))
+			return true;
 
-	    // On r�cup�re les coordonn�es de la case
-	    int i = position/getSize(), j = position%getSize();
-	    
-	    // Si la case n'est pas vide, on passe � la suivante (appel r�cursif)
-	    if (tabCase[i][j].getChiffre() != 0)
-	        return estValide(position+1);
+		// On r�cup�re les coordonn�es de la case
+		int i = position/getSize(), j = position%getSize();
 
-	    // A impl�menter : backtracking
-	   
-	    //absentLigne(k,i) n'est pas assez pr�cis, ici il nous faut la position en raison des cases noires pr�sentes sur les lignes
-		    for (int k=1; k <= getSize(); k++) /*tout le tableau? risque pas de ne pas s'arreter en cas de case noire?*/
-		    {
-		        if ((absentLigneCourante(k,i,position)) && (absentColonneCourante(k,j,position))  && (taille_valide(k,i,j,position)) ) /*&& valideLigne(k,position,i) && valideColonne(k,position,j)*//* && valideColonne(k,position,j)*/
-		        {
-		        	modifier_case(i,j,k);
-		        	
-		            if ( estValide (position+1) )
-		                return true;
-		        }
-		    }
-		    modifier_case(i,j,0);
-		    return false;
+		// Si la case n'est pas vide, on passe � la suivante (appel r�cursif)
+		if (tabCase[i][j].getChiffre() != 0)
+			return estValide(position+1,timeOut);
+
+		// A impl�menter : backtracking
+
+		//absentLigne(k,i) n'est pas assez pr�cis, ici il nous faut la position en raison des cases noires pr�sentes sur les lignes
+		for (int k=1; k <= getSize(); k++) /*tout le tableau? risque pas de ne pas s'arreter en cas de case noire?*/
+		{
+			if ((absentLigneCourante(k,i,position)) && (absentColonneCourante(k,j,position))  && (taille_valide(k,i,j,position)) ) /*&& valideLigne(k,position,i) && valideColonne(k,position,j)*//* && valideColonne(k,position,j)*/
+			{
+				modifier_case(i,j,k);
+				if ( estValide (position+1,timeOut) )
+					return true;
+			}
+		}
+		modifier_case(i,j,0);
+		return false;
 		    /*on renonce a cette "id�e"*/
 	}
 	public boolean taille_valide (int k , int i ,int j ,int position){
 		if (k > taille_ligne_courante(i,position) || (k > taille_colonne_courante(j,position)))
 			return false;
-			else return true;
-		
+		else return true;
+
 	}
 	public int taille_ligne_courante(int i , int position){
-		
-	int pos_dernier_ligne= ((i+1)*getSize())-1;
-	int pos_premier_ligne= ((i)*getSize());
-	int size_ligne = 1;
-	int j = 1 ;
-	
-	while ((position-j>=pos_premier_ligne) && ( getCase(position-j) !=- 1 )){
-		size_ligne++;
-		j++;
-	}
-	j=1;
-	while ((position+j<=pos_dernier_ligne) && (getCase(position+j) != -1)){
-		size_ligne++;
-		j++;
-	}
-	if (size_ligne==1) size_ligne=getSize();
-	return size_ligne;
+
+		int pos_dernier_ligne= ((i+1)*getSize())-1;
+		int pos_premier_ligne= ((i)*getSize());
+		int size_ligne = 1;
+		int j = 1 ;
+
+		while ((position-j>=pos_premier_ligne) && ( getCase(position-j) !=- 1 )){
+			size_ligne++;
+			j++;
+		}
+		j=1;
+		while ((position+j<=pos_dernier_ligne) && (getCase(position+j) != -1)){
+			size_ligne++;
+			j++;
+		}
+		if (size_ligne==1) size_ligne=getSize();
+		return size_ligne;
 	}
 	public int pos_case_precedente(int j,int position){
 		return position-(getSize()*1);
 	}
 	public int taille_colonne_courante(int j , int position){
-		
+
 		int pos_dernier_colonne= ((getSize()*getSize())-1) - (getSize()-(j+1));
 		int pos_premier_colonne= j;
 		int size_colonne= 1;
 		int i = 1 ;
 		int pos_case_precedente= position-(getSize()*i);
 		int pos_case_suivante= position+(getSize()*i);
-		
+
 		while ((pos_case_precedente >= pos_premier_colonne) && ( getCase(pos_case_precedente) != -1 )){
 			size_colonne++;
 			i++;
@@ -176,7 +177,7 @@ public class Tableau {
 		int j =1;
 		while ((position-j>=pos_premier_ligne) && ( getCase(position-j) !=- 1 )){
 			j++;
-			
+
 		}
 		return position-(j-1);
 	}
@@ -190,21 +191,21 @@ public class Tableau {
 	}
 	public boolean absentLigneCourante (int k, int i, int position)
 	{
-	//	if (k>taille) return false;
+		//	if (k>taille) return false;
 		int debut = trouver_premiere_case_ligne_courante(i,position);
 		int fin = trouver_derniere_case_ligne_courante(i,position);
 		for (int j=debut; j < fin; j++)
-	    {
-	    	if (getCase(j) == k)
-	            return false;
-	    }     
-	    return true;
+		{
+			if (getCase(j) == k)
+				return false;
+		}
+		return true;
 	}
 	public int trouver_premiere_case_colonne_courante(int j , int position){
 		int pos_premier_colonne= j;
 		int i =1;
 		int pos_case_precedente= position-(getSize()*i);
-		
+
 		while ((pos_case_precedente>=pos_premier_colonne) && ( getCase(pos_case_precedente) !=- 1 )){
 			i++;
 			pos_case_precedente= position-(getSize()*i);
@@ -212,11 +213,11 @@ public class Tableau {
 		return pos_case_precedente+(getSize());
 	}
 	public int trouver_derniere_case_colonne_courante(int j , int position){
-		
+
 		int pos_dernier_colonne= ((getSize()*getSize())-1) - (getSize()-(j+1));
 		int i =1;
 		int pos_case_suivante= position+(getSize()*i);
-		
+
 		while ((pos_case_suivante<=pos_dernier_colonne) && ( getCase(pos_case_suivante) !=- 1 )){
 			i++;
 			pos_case_suivante= position+(getSize()*i);
@@ -225,15 +226,15 @@ public class Tableau {
 	}
 	public boolean absentColonneCourante (int k, int j, int position)
 	{
-	//	if (k>taille) return false;
+		//	if (k>taille) return false;
 		int debut = trouver_premiere_case_colonne_courante(j,position);
 		int fin = trouver_derniere_case_colonne_courante(j,position);
 		for (int i=debut; i < fin; i=i+getSize())
-	    {
-	    	if (getCase(i) == k)
-	            return false;
-	    }     
-	    return true;
+		{
+			if (getCase(i) == k)
+				return false;
+		}
+		return true;
 	}
 
 	//SAUVEGARDE
@@ -296,8 +297,6 @@ public class Tableau {
 		System.out.println(this.toString());
 	}
 	public void genererGrillee(int difficulte,int taille) throws Exception {
-		init_tableau();
-
 		int i;
 		int j;
 		int nbCaseNoire = 0;
@@ -307,15 +306,15 @@ public class Tableau {
 		int chiffreAleatoire; // variable pour cree un nombre aleatoire et proportionnel entre les cases noires et les cases pr�remplie(noire et chiffre proportionnel)
 		int nbCaseRemplie; //Case noire + case chiffre
 		int nbCase = (taille * taille);
-        long tempsDebut;
-        long tempsFin;
+		long tempsDebut;
+		long tempsFin;
 		/*
 			La difficulte est determinee par le nombre de case preremplie (noires ou chiffre)
 		 */
-        tempsDebut = System.currentTimeMillis();
-
+		tempsDebut = System.currentTimeMillis();
 		while(true){
-            //On gere nbCaseNoire et nbCaseVide selon la difficulté
+			init_tableau();
+			//On gere nbCaseNoire et nbCaseVide selon la difficulté
 			switch (difficulte) {
 				case 1 : //facile 50% des cases d�ja remplie
 					nbCaseRemplie  = nbCase/ 2;
@@ -341,26 +340,28 @@ public class Tableau {
 				default:
 					throw new Exception("Pas de difficulte valide, choisir entre 1,2 et 3");
 			}
-
-            //On place les nbCasesNoires
+			//On place les nbCasesNoires
 			while (nbCaseNoire != 0){
 				i = random.nextInt(taille);
 				j = random.nextInt(taille);
-				this.tabCase[i][j].setChiffre(-1);
-				nbCaseNoire --;
+				//CORRECTION
+				if (this.tabCase[i][j].getChiffre() != -1){
+					this.tabCase[i][j].setChiffre(-1);
+					nbCaseNoire --;
+				}
+				//FIN CORRECTION
 			}
-
-            // on remplie la grille à l'aide du backtracking
-			if (!estValide(0)){
+			// on remplie la grille à l'aide du backtracking
+			if (!estValide(0,System.currentTimeMillis())){
 				System.out.println("Non valide ");
 			}else {
-                tempsFin = System.currentTimeMillis();
-                System.out.println("Temps de génération via backtracking : " + (tempsFin-tempsDebut) +" millisecondes");
+				tempsFin = System.currentTimeMillis();
+				System.out.println("Temps de génération via backtracking : " + (tempsFin-tempsDebut) +" millisecondes");
 				break;
 			}
 		}
 
-        //On vide de nbCaseVide
+		//On vide de nbCaseVide
 		while (nbCaseVide!= 0){
 			i = random.nextInt(taille);
 			j = random.nextInt(taille);
@@ -371,7 +372,7 @@ public class Tableau {
 			nbCaseVide --;
 		}
 
-        //Affichage
+		//Affichage
 		System.out.println("Grille générée par genererGrille() avant résolution");
 		afficherGrille();
 	}
@@ -405,5 +406,5 @@ public class Tableau {
 	   
 	}
 	*/
-	
+
 }
