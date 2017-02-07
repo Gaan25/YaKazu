@@ -194,7 +194,7 @@ public class Tableau {
 		//	if (k>taille) return false;
 		int debut = trouver_premiere_case_ligne_courante(i,position);
 		int fin = trouver_derniere_case_ligne_courante(i,position);
-		for (int j=debut; j < fin; j++)
+		for (int j=debut; j <= fin; j++)
 		{
 			if (getCase(j) == k)
 				return false;
@@ -229,7 +229,7 @@ public class Tableau {
 		//	if (k>taille) return false;
 		int debut = trouver_premiere_case_colonne_courante(j,position);
 		int fin = trouver_derniere_case_colonne_courante(j,position);
-		for (int i=debut; i < fin; i=i+getSize())
+		for (int i=debut; i <= fin; i=i+getSize())
 		{
 			if (getCase(i) == k)
 				return false;
