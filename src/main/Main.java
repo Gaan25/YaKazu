@@ -20,10 +20,10 @@ public class Main {
 
 		try {
 			//Pas finis generer (marche une 1 fois sur 2)
-			t.genererGrillee(1, 6);
-			t.estValide(0,System.currentTimeMillis());
+			//t.genererGrillee(1, 6);
+			//t.estValide(0,System.currentTimeMillis());
 			System.out.println("La grille générée résolue par estValide()");
-			t.afficherGrille();
+			//t.afficherGrille();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

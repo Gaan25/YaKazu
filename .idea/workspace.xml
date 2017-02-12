@@ -24,8 +24,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+            <state relative-caret-position="408">
+              <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -34,7 +34,7 @@
       <file leaf-file-name="Tableau.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="595">
               <caret line="309" column="22" selection-start-line="309" selection-start-column="22" selection-end-line="309" selection-end-column="22" />
               <folding>
                 <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
@@ -65,8 +65,8 @@
       <file leaf-file-name="Jeu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-374">
-              <caret line="126" column="9" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
+            <state relative-caret-position="397">
+              <caret line="204" column="9" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -196,6 +196,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="jeu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YaKazu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YaKazu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modeles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -680,12 +694,12 @@
       <workItem from="1486050317965" duration="183000" />
       <workItem from="1486126448032" duration="4299000" />
       <workItem from="1486134320572" duration="653000" />
-      <workItem from="1486914848862" duration="4646000" />
+      <workItem from="1486914848862" duration="6599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13176000" />
+    <option name="totallyTimeSpent" value="15129000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1177,15 +1191,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+        <state relative-caret-position="408">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="595">
           <caret line="309" column="22" selection-start-line="309" selection-start-column="22" selection-end-line="309" selection-end-column="22" />
           <folding>
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
@@ -1214,8 +1228,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-374">
-          <caret line="126" column="9" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
+        <state relative-caret-position="397">
+          <caret line="204" column="9" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
           <folding />
         </state>
       </provider>

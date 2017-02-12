@@ -29,12 +29,16 @@ public class Jeu extends JFrame{
     private JPanel panelBoutons;
     private final int TAILLE = 9;
     private JTextField [][] grille;
+    private Tableau tableau;
+    private Modeles modele;
 
     public Jeu() {
         initialisation();
+
         initialisationBouton();
         initialisationPanelMenu();
         initialisationPanelJeu();
+        initialisationTableau();
         CardLayout cardLayout = (CardLayout)(panel.getLayout());
         cardLayout.show(panel,"pageJeu");
     }
@@ -81,6 +85,7 @@ public class Jeu extends JFrame{
         panelBoutons = new JPanel();
         panelBoutons.setLayout(new BoxLayout(panelBoutons, BoxLayout.Y_AXIS));
         panelJeu.add(panelBoutons);
+
     }
 
     /**
@@ -116,10 +121,8 @@ public class Jeu extends JFrame{
             for (int j = 0;j<TAILLE;j++){
                 c.gridx = i;
                 c.gridy = j;
-                c.ipadx = 20;
-                c.ipady = 20;
-                c.weightx = 0.25;
-                c.weighty = 0.25;
+                c.ipadx = 30;
+                c.ipady = 15;
                 grille[i][j] = new JTextField();
                 //grille[i][j].setBorder(new LineBorder(Color.DARK_GRAY,1));
                 panelGrille.add(grille[i][j],c);
@@ -182,5 +185,25 @@ public class Jeu extends JFrame{
         //pack();
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+    //TEST DE GRILLE
+    public void initialisationTableau(){
+        //TABLEAU
+        tableau = new Tableau(TAILLE);
+        try {
+            tableau.restaurerGrilleSerial("Modeles/modele1.ser");
+        }catch (Exception e){
+            e.getMessage();
+        }
+        tableau.afficherGrille();
+
+        for (int i = 0;i<TAILLE;i++) {
+            for (int j = 0; j < TAILLE; j++) {
+
+                grille[i][j].setText(""+tableau.getCase(i,j));
+            }
+        }
+
+
     }
 }
