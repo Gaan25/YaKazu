@@ -6,6 +6,7 @@ package jeu;
 
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
@@ -18,14 +19,24 @@ public class Jeu extends JFrame{
     private JPanel panelMenu;
     private JButton boutonNouvellePartie;
     private JButton boutonChargerPartie;
+    private JButton boutonIndice;
+    private JButton boutonAbandonner;
+    private JButton boutonSauvegarder;
     private JPanel panelCharger;
     private JPanel panelNouvellePartie;
+    private JPanel panelJeu;
     private JPanel panelGrille;
+    private JPanel panelBoutons;
+    private final int TAILLE = 9;
+    private JTextField [][] grille;
 
     public Jeu() {
         initialisation();
         initialisationBouton();
         initialisationPanelMenu();
+        initialisationPanelJeu();
+        CardLayout cardLayout = (CardLayout)(panel.getLayout());
+        cardLayout.show(panel,"pageJeu");
     }
 
     /**
@@ -43,7 +54,7 @@ public class Jeu extends JFrame{
         //PANEL MENU #VIN DIESEL
         panelMenu = new JPanel();
         panelMenu.setLayout(new GridBagLayout());
-        panel.add(panelMenu, "pagePrincipal");
+        panel.add(panelMenu, "pagePrincipale");
 
         //PANEL CHARGER
         panelCharger = new JPanel();
@@ -55,11 +66,21 @@ public class Jeu extends JFrame{
         panelNouvellePartie.setLayout(new GridBagLayout());
         panel.add(panelNouvellePartie, "pageNouvellePartie");
 
+        //PANEL JEU
+        panelJeu = new JPanel();
+        panelJeu.setLayout(new GridBagLayout());
+        panel.add(panelJeu, "pageJeu");
+        grille = new JTextField[TAILLE][TAILLE];
+
         //PANEL GRILLE
         panelGrille = new JPanel();
         panelGrille.setLayout(new GridBagLayout());
-        panel.add(panelGrille, "pageJeu");
+        panelJeu.add(panelGrille);
 
+        //PANEL BOUTONS
+        panelBoutons = new JPanel();
+        panelBoutons.setLayout(new BoxLayout(panelBoutons, BoxLayout.Y_AXIS));
+        panelJeu.add(panelBoutons);
     }
 
     /**
@@ -85,18 +106,53 @@ public class Jeu extends JFrame{
         panelMenu.add(boutonNouvellePartie, gbc);
         panelMenu.add(boutonChargerPartie, gbc2);
     }
+
+    /**
+     * Méthode qui gère la vue de la grille principale
+     */
+    private void initialisationPanelJeu(){
+        GridBagConstraints c = new GridBagConstraints();
+        for (int i = 0;i<TAILLE;i++){
+            for (int j = 0;j<TAILLE;j++){
+                c.gridx = i;
+                c.gridy = j;
+                c.ipadx = 20;
+                c.ipady = 20;
+                c.weightx = 0.25;
+                c.weighty = 0.25;
+                grille[i][j] = new JTextField();
+                //grille[i][j].setBorder(new LineBorder(Color.DARK_GRAY,1));
+                panelGrille.add(grille[i][j],c);
+            }
+        }
+        panelBoutons.add(boutonIndice);
+        panelBoutons.add(boutonSauvegarder);
+        panelBoutons.add(boutonAbandonner);
+        panelJeu.add(panelGrille);
+        panelJeu.add(panelBoutons);
+    }
     /**
      Méthode qui initialise les boutons du jeu
      */
     private void initialisationBouton(){
         boutonNouvellePartie = new JButton();
         boutonChargerPartie = new JButton();
+        boutonAbandonner = new JButton();
+        boutonIndice = new JButton();
+        boutonSauvegarder = new JButton();
+
 
         boutonNouvellePartie.setText("Nouvelle Partie");
         boutonChargerPartie.setText("Charger Partie");
+        boutonIndice.setText("Indice");
+        boutonSauvegarder.setText("Sauvegarder");
+        boutonAbandonner.setText("Abandonner");
 
         boutonNouvellePartie.setActionCommand("Nouvelle Partie");
         boutonChargerPartie.setActionCommand("Charger Partie");
+        boutonAbandonner.setActionCommand("Abandonner");
+        boutonSauvegarder.setActionCommand("Sauvegarder");
+        boutonIndice.setActionCommand("Indice");
 
         ActionListener actionListener = new ActionListener() {
             @Override
@@ -110,8 +166,12 @@ public class Jeu extends JFrame{
                 }
             }
         };
+
         boutonNouvellePartie.addActionListener(actionListener);
         boutonChargerPartie.addActionListener(actionListener);
+        boutonAbandonner.addActionListener(actionListener);
+        boutonIndice.addActionListener(actionListener);
+        boutonSauvegarder.addActionListener(actionListener);
     }
     /**
      Méthode d'initialisation relative à la fenetre Frame

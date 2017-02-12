@@ -29,8 +29,8 @@ public class Main {
 		}
 
 
-		//Jeu jeu = new Jeu();
-		//jeu.commencer();
+		Jeu jeu = new Jeu();
+		jeu.commencer();
 
 	}
 
