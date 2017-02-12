@@ -34,9 +34,11 @@
       <file leaf-file-name="Tableau.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="309" column="22" selection-start-line="309" selection-start-column="22" selection-end-line="309" selection-end-column="22" />
+            <state relative-caret-position="221">
+              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
               <folding>
+                <element signature="e#413#414#0" expanded="true" />
+                <element signature="e#453#454#0" expanded="true" />
                 <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
                 <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
                 <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
@@ -44,6 +46,7 @@
                 <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
                 <element signature="e#1502#1537#0" expanded="false" />
                 <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+                <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
                 <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
                 <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
                 <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
@@ -57,7 +60,19 @@
                 <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
                 <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
                 <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+                <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+                <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Case.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,8 +80,18 @@
       <file leaf-file-name="Jeu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="204" column="9" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
+            <state relative-caret-position="278">
+              <caret line="200" column="38" selection-start-line="200" selection-start-column="38" selection-end-line="200" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Modeles.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jeu/Modeles.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -98,9 +123,9 @@
         <option value="$PROJECT_DIR$/src/jeu/Jeu.form" />
         <option value="$PROJECT_DIR$/src/jeu/Jeu2.java" />
         <option value="$PROJECT_DIR$/src/jeu/A_lire_Note_sur_Jeu.txt" />
-        <option value="$PROJECT_DIR$/src/jeu/Tableau.java" />
         <option value="$PROJECT_DIR$/src/jeu/GrilleView.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/jeu/Tableau.java" />
         <option value="$PROJECT_DIR$/src/jeu/Jeu.java" />
       </list>
     </option>
@@ -694,12 +719,12 @@
       <workItem from="1486050317965" duration="183000" />
       <workItem from="1486126448032" duration="4299000" />
       <workItem from="1486134320572" duration="653000" />
-      <workItem from="1486914848862" duration="6599000" />
+      <workItem from="1486914848862" duration="8690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15129000" />
+    <option name="totallyTimeSpent" value="17220000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -760,6 +785,8 @@
         <state relative-caret-position="0">
           <caret line="298" column="76" selection-start-line="298" selection-start-column="76" selection-end-line="298" selection-end-column="76" />
           <folding>
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
@@ -767,6 +794,7 @@
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
             <element signature="e#1502#1537#0" expanded="false" />
             <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
@@ -780,6 +808,8 @@
             <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
             <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
             <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -797,6 +827,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
@@ -804,6 +836,7 @@
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
             <element signature="e#1502#1537#0" expanded="false" />
             <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
@@ -817,6 +850,8 @@
             <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
             <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
             <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -834,6 +869,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
@@ -841,6 +878,7 @@
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
             <element signature="e#1502#1537#0" expanded="false" />
             <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
@@ -854,6 +892,8 @@
             <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
             <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
             <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -871,6 +911,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
@@ -878,6 +920,7 @@
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
             <element signature="e#1502#1537#0" expanded="false" />
             <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
@@ -891,6 +934,8 @@
             <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
             <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
             <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1159,21 +1204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Modeles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/A_lire_Note_sur_Jeu.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1189,19 +1219,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/jeu/Modeles.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        <state relative-caret-position="170">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="309" column="22" selection-start-line="309" selection-start-column="22" selection-end-line="309" selection-end-column="22" />
+        <state relative-caret-position="221">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
           <folding>
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
@@ -1209,6 +1249,7 @@
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
             <element signature="e#1502#1537#0" expanded="false" />
             <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
@@ -1222,14 +1263,24 @@
             <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
             <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
             <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="204" column="9" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
+        <state relative-caret-position="278">
+          <caret line="200" column="38" selection-start-line="200" selection-start-column="38" selection-end-line="200" selection-end-column="38" />
           <folding />
         </state>
       </provider>

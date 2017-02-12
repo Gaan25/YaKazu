@@ -123,7 +123,7 @@ public class Jeu extends JFrame{
                 c.gridy = j;
                 c.ipadx = 30;
                 c.ipady = 15;
-                grille[i][j] = new JTextField();
+                grille[i][j] = new JTextField(" "+i+" "+j);
                 //grille[i][j].setBorder(new LineBorder(Color.DARK_GRAY,1));
                 panelGrille.add(grille[i][j],c);
             }
@@ -190,20 +190,28 @@ public class Jeu extends JFrame{
     public void initialisationTableau(){
         //TABLEAU
         tableau = new Tableau(TAILLE);
+
         try {
             tableau.restaurerGrilleSerial("Modeles/modele1.ser");
         }catch (Exception e){
             e.getMessage();
         }
-        tableau.afficherGrille();
 
+        tableau.afficherGrille();
         for (int i = 0;i<TAILLE;i++) {
             for (int j = 0; j < TAILLE; j++) {
-
-                grille[i][j].setText(""+tableau.getCase(i,j));
-            }
+                //System.out.println(tableau.getCase(i,j));
+                if(tableau.getCase(i,j) == -1){
+                    grille[i][j].setBackground(Color.BLACK);
+                    grille[i][j].setEnabled(false);
+                }else if(tableau.getCase(i,j) == 0){
+                    grille[i][j].setText("");
+                }else {
+                    grille[i][j].setText("" + tableau.getCase(i, j));
+                    //grille[i][j].setEnabled(false);
+                }
+                System.out.println(grille[i][j].getText());            }
         }
-
 
     }
 }
