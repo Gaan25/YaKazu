@@ -119,11 +119,11 @@ public class Jeu extends JFrame{
         GridBagConstraints c = new GridBagConstraints();
         for (int i = 0;i<TAILLE;i++){
             for (int j = 0;j<TAILLE;j++){
-                c.gridx = i;
-                c.gridy = j;
+                c.gridx = j;
+                c.gridy = i;
                 c.ipadx = 30;
                 c.ipady = 15;
-                grille[i][j] = new JTextField(" "+i+" "+j);
+                grille[i][j] = new JTextField();
                 //grille[i][j].setBorder(new LineBorder(Color.DARK_GRAY,1));
                 panelGrille.add(grille[i][j],c);
             }
@@ -208,9 +208,9 @@ public class Jeu extends JFrame{
                     grille[i][j].setText("");
                 }else {
                     grille[i][j].setText("" + tableau.getCase(i, j));
-                    //grille[i][j].setEnabled(false);
+                    grille[i][j].setEnabled(false);
                 }
-                System.out.println(grille[i][j].getText());            }
+            }
         }
 
     }
