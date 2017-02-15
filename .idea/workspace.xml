@@ -34,17 +34,18 @@
       <file leaf-file-name="Tableau.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+            <state relative-caret-position="289">
+              <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
               <folding>
                 <element signature="e#413#414#0" expanded="true" />
                 <element signature="e#453#454#0" expanded="true" />
+                <element signature="e#500#501#0" expanded="true" />
+                <element signature="e#538#539#0" expanded="true" />
                 <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
                 <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
                 <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
-                <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
                 <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-                <element signature="e#1502#1537#0" expanded="false" />
+                <element signature="e#1587#1622#0" expanded="false" />
                 <element signature="method#toString#0;class#Tableau#0" expanded="false" />
                 <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
                 <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
@@ -80,8 +81,8 @@
       <file leaf-file-name="Jeu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="200" column="38" selection-start-line="200" selection-start-column="38" selection-end-line="200" selection-end-column="38" />
+            <state relative-caret-position="340">
+              <caret line="183" column="27" selection-start-line="183" selection-start-column="27" selection-end-line="183" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -174,6 +175,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -240,8 +243,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -256,7 +257,6 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
-    <property name="FullScreen" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="265" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
@@ -509,6 +509,7 @@
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
+      <setting name="depsClasspath" value="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
@@ -674,6 +675,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -719,12 +726,13 @@
       <workItem from="1486050317965" duration="183000" />
       <workItem from="1486126448032" duration="4299000" />
       <workItem from="1486134320572" duration="653000" />
-      <workItem from="1486914848862" duration="8690000" />
+      <workItem from="1486914848862" duration="8729000" />
+      <workItem from="1487147577725" duration="2418000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17220000" />
+    <option name="totallyTimeSpent" value="19677000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -737,18 +745,17 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.009750812" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29492602" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29492602" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12552084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23943663" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23890063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -756,6 +763,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -787,12 +795,13 @@
           <folding>
             <element signature="e#413#414#0" expanded="true" />
             <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
-            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#1502#1537#0" expanded="false" />
+            <element signature="e#1587#1622#0" expanded="false" />
             <element signature="method#toString#0;class#Tableau#0" expanded="false" />
             <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
@@ -829,12 +838,13 @@
           <folding>
             <element signature="e#413#414#0" expanded="true" />
             <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
-            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#1502#1537#0" expanded="false" />
+            <element signature="e#1587#1622#0" expanded="false" />
             <element signature="method#toString#0;class#Tableau#0" expanded="false" />
             <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
@@ -871,12 +881,13 @@
           <folding>
             <element signature="e#413#414#0" expanded="true" />
             <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
-            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#1502#1537#0" expanded="false" />
+            <element signature="e#1587#1622#0" expanded="false" />
             <element signature="method#toString#0;class#Tableau#0" expanded="false" />
             <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
@@ -913,12 +924,13 @@
           <folding>
             <element signature="e#413#414#0" expanded="true" />
             <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
-            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#1502#1537#0" expanded="false" />
+            <element signature="e#1587#1622#0" expanded="false" />
             <element signature="method#toString#0;class#Tableau#0" expanded="false" />
             <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
@@ -1211,18 +1223,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/GrilleView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jeu/GrilleView.java" />
     <entry file="file://$PROJECT_DIR$/src/jeu/Modeles.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1237,17 +1250,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        <state relative-caret-position="289">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
           <folding>
             <element signature="e#413#414#0" expanded="true" />
             <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
-            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#1502#1537#0" expanded="false" />
+            <element signature="e#1587#1622#0" expanded="false" />
             <element signature="method#toString#0;class#Tableau#0" expanded="false" />
             <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
@@ -1269,18 +1283,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="200" column="38" selection-start-line="200" selection-start-column="38" selection-end-line="200" selection-end-column="38" />
+        <state relative-caret-position="340">
+          <caret line="183" column="27" selection-start-line="183" selection-start-column="27" selection-end-line="183" selection-end-column="27" />
           <folding />
         </state>
       </provider>

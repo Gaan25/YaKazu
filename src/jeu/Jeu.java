@@ -9,6 +9,7 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 
 /**
  * Created by valid13 on 06/02/2017.
@@ -119,11 +120,12 @@ public class Jeu extends JFrame{
         GridBagConstraints c = new GridBagConstraints();
         for (int i = 0;i<TAILLE;i++){
             for (int j = 0;j<TAILLE;j++){
-                c.gridx = i;
-                c.gridy = j;
+                c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
+                c.gridy = i;
                 c.ipadx = 30;
                 c.ipady = 15;
-                grille[i][j] = new JTextField(" "+i+" "+j);
+                grille[i][j] = new JTextField();
+                grille[i][j].setPreferredSize(new Dimension(35,35));
                 //grille[i][j].setBorder(new LineBorder(Color.DARK_GRAY,1));
                 panelGrille.add(grille[i][j],c);
             }
@@ -160,13 +162,28 @@ public class Jeu extends JFrame{
         ActionListener actionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CardLayout cardLayout = (CardLayout)(panel.getLayout());
+
+                CardLayout cardLayout = (CardLayout) (panel.getLayout());
                 String command = e.getActionCommand();
                 if (command.equals("Nouvelle Partie")) {
-                    cardLayout.show(panel,"pageNouvellePartie");
+                    cardLayout.show(panel, "pageNouvellePartie");
                 } else if (command.equals("Charger Partie")) {
-                    cardLayout.show(panel,"pageChargerPartie");
+                    cardLayout.show(panel, "pageChargerPartie");
                 }
+                /*
+                for (int i = 0;i<TAILLE;i++) {
+                    for (int j = 0; j < TAILLE; j++) {
+                        tableau.setCase(i,j,Integer.parseInt(grille[i][j].getText()));
+                        System.out.println(tableau.getCase(i,j));
+                    }
+                }
+
+                        if (e.getSource() == boutonIndice) {
+                            tableau.estValide(0,System.currentTimeMillis());
+                            tableau.afficherGrille();
+                        }*/
+
+
             }
         };
 
@@ -200,7 +217,7 @@ public class Jeu extends JFrame{
         tableau.afficherGrille();
         for (int i = 0;i<TAILLE;i++) {
             for (int j = 0; j < TAILLE; j++) {
-                //System.out.println(tableau.getCase(i,j));
+
                 if(tableau.getCase(i,j) == -1){
                     grille[i][j].setBackground(Color.BLACK);
                     grille[i][j].setEnabled(false);
@@ -210,7 +227,7 @@ public class Jeu extends JFrame{
                     grille[i][j].setText("" + tableau.getCase(i, j));
                     //grille[i][j].setEnabled(false);
                 }
-                System.out.println(grille[i][j].getText());            }
+            }
         }
 
     }

@@ -24,6 +24,9 @@ public class Tableau {
 	public int getCase(int i , int j){
 		return tabCase[i][j].getChiffre();
 	}
+	public void setCase(int i, int j, int value){
+		tabCase[i][j].setChiffre(value);
+	}
 	public int getCase(int position){
 		if (position<0) return -1;
 
