@@ -70,6 +70,38 @@ public class Modeles {
             {0,2,0,5,1,-1,0,0,1},
             {0,0,0,0,0,2,0,0,0},
             {0,-1,0,-1,0,0,0,0,0}};
+    
+    private int modele7[][] = //grille 6x6 de Tests>5.png
+    		{{1,0,-1,1,-1,0},
+    		{-1,-1,3,0,0,0},
+    		{1,-1,1,-1,-1,-1},
+    		{0,-1,0,1,0,3},
+    		{-1,-1,-1,2,-1,0},
+    		{-1,-1,-1,-1,0,0}};
+    
+    private int modele8[][] = //grille 6x6 de Tests>5.png
+		{{1,2,-1,1,-1,2},
+		{-1,-1,3,2,4,1},
+		{1,-1,1,-1,-1,-1},
+		{0,-1,2,1,4,3},
+		{-1,-1,-1,2,-1,1},
+		{-1,-1,-1,-1,1,2}};
+    
+    private int modele9[][] = //grille 6x6 de Tests>5.png
+		{{2,1,-1,2,-1,1},
+		{-1,-1,3,1,4,2},
+		{2,-1,1,-1,-1,-1},
+		{1,-1,2,1,4,3},
+		{-1,-1,-1,2,-1,1},
+		{-1,-1,-1,-1,1,2}};
+    
+    private int modele10[][] = //grille 6x6 de Tests>5.png
+		{{1,3,-1,1,-1,2},
+		{-1,-1,3,2,4,1},
+		{1,-1,1,-1,-1,-1},
+		{2,-1,2,1,4,3},
+		{-1,-1,-1,2,-1,1},
+		{-1,-1,-1,-1,1,2}};
 
     private Tableau t1;
     private Tableau t2;
@@ -77,6 +109,11 @@ public class Modeles {
     private Tableau t4;
     private Tableau t5;
     private Tableau t6;
+    private Tableau t7;
+    private Tableau t8;
+    private Tableau t9;
+    private Tableau t10;
+    
 
     public Modeles() {
 
@@ -86,7 +123,10 @@ public class Modeles {
         t4 = new Tableau(modele4, 9);
         t5 = new Tableau(modele5, 9);
         t6 = new Tableau(modele6, 9);
-
+        t7 = new Tableau(modele7, 6);
+        t8 = new Tableau(modele8, 6);
+        t9 = new Tableau(modele9, 6);
+        t10 = new Tableau(modele10, 6);
     }
 
     public int[][] getModele1() {
@@ -112,7 +152,23 @@ public class Modeles {
     public int[][] getModele6() {
         return modele6;
     }
-
+    
+    public int[][] getModele7(){
+    	return modele7;
+    }
+    
+    public int[][] getModele8(){
+    	return modele8;
+    }
+    
+    public int[][] getModele9(){
+    	return modele9;
+    }
+    
+    public int[][] getModele10(){
+    	return modele10;
+    }
+    
     public void sauvegarderModeles(){
         try {
             t1.sauvegarderGrilleSerial();
@@ -122,6 +178,10 @@ public class Modeles {
             t4.sauvegarderGrilleSerial();
             t5.sauvegarderGrilleSerial();
             t6.sauvegarderGrilleSerial();
+            t7.sauvegarderGrilleSerial();
+            t8.sauvegarderGrilleSerial();
+            t9.sauvegarderGrilleSerial();
+            t10.sauvegarderGrilleSerial();
 
         } catch (Exception e){
             e.printStackTrace();

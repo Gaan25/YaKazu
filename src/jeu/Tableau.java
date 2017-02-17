@@ -91,7 +91,65 @@ public class Tableau {
 		String s2 = s1.toString();
 		return s2;
 	}
-
+///////////////////////////VERIFICATION GRILLE VALIDE///////////////////////
+	
+	public void init_verification(boolean tableau[], int size){
+		for (int i = 0 ; i<size ; i++){
+			tableau[i]=false;
+		}
+	}
+	
+	public boolean grilleValide(){
+		boolean tableau [] = new boolean[getSize()+1];
+		init_verification(tableau, getSize()+1);
+		for (int position = 0 ; position<getSize()*getSize(); position++){
+			int i = position/getSize(), j = position%getSize();
+			if (getCase(position)!=-1)
+			{
+				if ((doublonLigneCourante(tableau,i,position)==true) || (doublonColonneCourante(tableau,j,position)==true)  || (taille_valide(getCase(position),i,j,position)==false))
+				{
+					return false;
+				}
+			}
+		}
+		return true;	
+	}
+	public boolean doublonLigneCourante (boolean tableau[], int i, int position)
+	{
+		//	if (k>taille) return false;
+		int debut = trouver_premiere_case_ligne_courante(i,position);
+		int fin = trouver_derniere_case_ligne_courante(i,position);
+		for (int j=debut; j <= fin; j++)
+		{
+			if(tableau[getCase(j)]==false)
+			tableau[getCase(j)]=true;
+			else {
+				System.out.println("FALSE : " + getCase(j) + " deja sur ligne : " +i);
+				return true;
+			}
+		}
+		init_verification(tableau,getSize()+1);
+		return false;
+	}
+	
+	public boolean doublonColonneCourante (boolean tableau[], int j, int position)
+	{
+		//	if (k>taille) return false;
+		int debut = trouver_premiere_case_colonne_courante(j,position);
+		int fin = trouver_derniere_case_colonne_courante(j,position);
+		for (int i=debut; i <= fin; i=i+getSize())
+		{
+			if(tableau[getCase(i)]==false)
+				tableau[getCase(i)]=true;
+				else {
+					System.out.println("FALSE : " + getCase(i) + " deja sur colonne : " +j);
+					return true;
+				}
+		}
+		init_verification(tableau,getSize()+1);
+		return false;
+	}
+	
 /////////////////////ALGORITHME DU BACKTRACKING///////////////////////////
 	
 	public boolean estValide (int position,long timeOut) {
