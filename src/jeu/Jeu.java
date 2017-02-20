@@ -4,12 +4,9 @@ package jeu;
  * Created by valid13 on 06/02/2017.
  */
 
-import java.awt.event.ActionListener;
-import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
  * Created by valid13 on 06/02/2017.
@@ -22,16 +19,20 @@ public class Jeu extends JFrame{
     private JButton boutonChargerPartie;
     private JButton boutonIndice;
     private JButton boutonAbandonner;
+    private JComboBox listeDeroulante;
     private JButton boutonSauvegarder;
+    private JButton boutonModeleFini;
     private JPanel panelCharger;
     private JPanel panelNouvellePartie;
+    private JPanel panelCreeModele;
+    private JPanel panelGrille2;
+    private JPanel panelBoutons2;
     private JPanel panelJeu;
     private JPanel panelGrille;
     private JPanel panelBoutons;
     private final int TAILLE = 9;
     private JTextField [][] grille;
     private Tableau tableau;
-    private Modeles modele;
 
     public Jeu() {
         initialisation();
@@ -39,9 +40,14 @@ public class Jeu extends JFrame{
         initialisationBouton();
         initialisationPanelMenu();
         initialisationPanelJeu();
+        initialisationPanelCreeModele();
         initialisationTableau();
         CardLayout cardLayout = (CardLayout)(panel.getLayout());
-        cardLayout.show(panel,"pageJeu");
+
+        /* TEST */
+        //cardLayout.show(panel,"pageJeu");
+        cardLayout.show(panel,"pageCreeModele");
+
     }
 
     /**
@@ -77,15 +83,28 @@ public class Jeu extends JFrame{
         panel.add(panelJeu, "pageJeu");
         grille = new JTextField[TAILLE][TAILLE];
 
-        //PANEL GRILLE
+        //PANEL GRILLE DANS PANEL JEU
         panelGrille = new JPanel();
         panelGrille.setLayout(new GridBagLayout());
         panelJeu.add(panelGrille);
 
-        //PANEL BOUTONS
+        //PANEL BOUTONS DANS PANEL JEU
         panelBoutons = new JPanel();
         panelBoutons.setLayout(new BoxLayout(panelBoutons, BoxLayout.Y_AXIS));
         panelJeu.add(panelBoutons);
+
+        //PANEL CREEMODELE
+        panelCreeModele = new JPanel();
+        panelCreeModele.setLayout(new GridBagLayout());
+        panel.add(panelCreeModele,"pageCreeModele");
+
+        //PANEL GRILLE2 DANS PANEL CREEMODELE
+        panelGrille2 = new JPanel();
+        panelGrille2.setLayout(new GridBagLayout());
+
+        //PANEL BOUTONS2 DANS PANEL CREEGRILLE
+        panelBoutons2 = new JPanel();
+        panelBoutons2.setLayout(new GridBagLayout());
 
     }
 
@@ -136,15 +155,108 @@ public class Jeu extends JFrame{
         panelJeu.add(panelGrille);
         panelJeu.add(panelBoutons);
     }
+    private void initialisationPanelCreeModele(){
+        panelBoutons2.add(listeDeroulante);
+        panelBoutons2.add(new Label("Creation d'un modele"));
+        panelBoutons2.add(boutonModeleFini);
+        panelCreeModele.add(panelGrille2);
+        panelCreeModele.add(panelBoutons2);
+    }
     /**
      Méthode qui initialise les boutons du jeu
      */
     private void initialisationBouton(){
+        ActionListener actionListener;
         boutonNouvellePartie = new JButton();
         boutonChargerPartie = new JButton();
         boutonAbandonner = new JButton();
         boutonIndice = new JButton();
         boutonSauvegarder = new JButton();
+        boutonModeleFini = new JButton();
+
+        listeDeroulante = new JComboBox();
+        listeDeroulante.addItem("3x3");
+        listeDeroulante.addItem("6x6");
+        listeDeroulante.addItem("9x9");
+
+        actionListener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MouseListener mouseListener = new MouseListener() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        if (SwingUtilities.isRightMouseButton(e)){
+                            JTextField textField = (JTextField)e.getSource();
+                            textField.setBackground(Color.BLACK);
+                        }
+                    }
+                    @Override
+                    public void mousePressed(MouseEvent e) {
+
+                    }
+
+                    @Override
+                    public void mouseReleased(MouseEvent e) {
+
+                    }
+
+                    @Override
+                    public void mouseEntered(MouseEvent e) {
+
+                    }
+
+                    @Override
+                    public void mouseExited(MouseEvent e) {
+
+                    }
+                };
+                String taille = (String)listeDeroulante.getSelectedItem();
+                GridBagConstraints c = new GridBagConstraints();
+                c.ipadx = 30;
+                c.ipady = 15;
+                panelGrille2.removeAll();
+                switch (taille){
+                    case "3x3" :
+                        for (int i = 0;i<3;i++){
+                            for (int j = 0;j<3;j++){
+                                c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
+                                c.gridy = i;
+                                grille[i][j] = new JTextField();
+                                grille[i][j].setPreferredSize(new Dimension(35,35));
+                                grille[i][j].addMouseListener(mouseListener);
+                                panelGrille2.add(grille[i][j],c);
+                            }
+                        }
+                        break;
+                    case "6x6" :
+                        for (int i = 0;i<6;i++){
+                            for (int j = 0;j<6;j++){
+                                c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
+                                c.gridy = i;
+                                grille[i][j] = new JTextField();
+                                grille[i][j].setPreferredSize(new Dimension(35,35));
+                                grille[i][j].addMouseListener(mouseListener);
+                                panelGrille2.add(grille[i][j],c);
+                            }
+                        }
+                        break;
+                    case "9x9":
+                        for (int i = 0;i<9;i++){
+                            for (int j = 0;j<9;j++){
+                                c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
+                                c.gridy = i;
+                                grille[i][j] = new JTextField();
+                                grille[i][j].setPreferredSize(new Dimension(35,35));
+                                grille[i][j].addMouseListener(mouseListener);
+                                panelGrille2.add(grille[i][j],c);
+                            }
+                        }
+                        break;
+                }
+                panelGrille2.updateUI();
+            }
+        };
+        listeDeroulante.addActionListener(actionListener);
 
 
         boutonNouvellePartie.setText("Nouvelle Partie");
@@ -152,14 +264,16 @@ public class Jeu extends JFrame{
         boutonIndice.setText("Indice");
         boutonSauvegarder.setText("Sauvegarder");
         boutonAbandonner.setText("Abandonner");
+        boutonModeleFini.setText("Création Terminé");
 
         boutonNouvellePartie.setActionCommand("Nouvelle Partie");
         boutonChargerPartie.setActionCommand("Charger Partie");
         boutonAbandonner.setActionCommand("Abandonner");
         boutonSauvegarder.setActionCommand("Sauvegarder");
         boutonIndice.setActionCommand("Indice");
+        boutonModeleFini.setActionCommand("Modele Fini");
 
-        ActionListener actionListener = new ActionListener() {
+        actionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -192,6 +306,8 @@ public class Jeu extends JFrame{
         boutonAbandonner.addActionListener(actionListener);
         boutonIndice.addActionListener(actionListener);
         boutonSauvegarder.addActionListener(actionListener);
+
+
     }
     /**
      Méthode d'initialisation relative à la fenetre Frame
