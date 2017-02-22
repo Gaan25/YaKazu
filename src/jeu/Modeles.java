@@ -171,17 +171,17 @@ public class Modeles {
     
     public void sauvegarderModeles(){
         try {
-            t1.sauvegarderGrilleSerial();
-            t1.restaurerGrilleSerial("Modeles/modele1.ser");
-            t2.sauvegarderGrilleSerial();
-            t3.sauvegarderGrilleSerial();
-            t4.sauvegarderGrilleSerial();
-            t5.sauvegarderGrilleSerial();
-            t6.sauvegarderGrilleSerial();
-            t7.sauvegarderGrilleSerial();
-            t8.sauvegarderGrilleSerial();
-            t9.sauvegarderGrilleSerial();
-            t10.sauvegarderGrilleSerial();
+            t1.sauvegarderGrilleSerial("Modeles/");
+            t1.restaurerGrilleSerial("Modeles/grille_1.ser");
+            t2.sauvegarderGrilleSerial("Modeles/");
+            t3.sauvegarderGrilleSerial("Modeles/");
+            t4.sauvegarderGrilleSerial("Modeles/");
+            t5.sauvegarderGrilleSerial("Modeles/");
+            t6.sauvegarderGrilleSerial("Modeles/");
+            t7.sauvegarderGrilleSerial("Modeles/");
+            t8.sauvegarderGrilleSerial("Modeles/");
+            t9.sauvegarderGrilleSerial("Modeles/");
+            t10.sauvegarderGrilleSerial("Modeles/");
 
         } catch (Exception e){
             e.printStackTrace();

@@ -131,6 +131,7 @@ public class Tableau {
 		init_verification(tableau,getSize()+1);
 		return false;
 	}
+
 	
 	public boolean doublonColonneCourante (boolean tableau[], int j, int position)
 	{
@@ -154,11 +155,11 @@ public class Tableau {
 	
 	public boolean estValide (int position,long timeOut) {
 		
-		//On y a ajouté un timeOut pour optimiser le temps d'execution celon les cas ou la grille est trop longue à raisoudre
+		//On y a ajoutï¿½ un timeOut pour optimiser le temps d'execution celon les cas ou la grille est trop longue ï¿½ raisoudre
 		if (System.currentTimeMillis() - timeOut > 10000){
 			return false;
 		}
-		// Si on est a la n*n eme case (on sort du tableau), on s'arrete ici car le parcours aura été fait en entier
+		// Si on est a la n*n eme case (on sort du tableau), on s'arrete ici car le parcours aura ï¿½tï¿½ fait en entier
 		if (position == (getSize()*getSize()))
 			return true;
 
@@ -172,7 +173,7 @@ public class Tableau {
 		//PRINCIPE DU BACKTRACKING : TESTER UNE POSSIBILITEE VALIDE ET EFFECTUER UN PARCOURS RECURSIF AVEC CETTE POSSIBILITEE//
 		for (int k=1; k <= getSize(); k++) 
 		{
-			if ((absentLigneCourante(k,i,position)) && (absentColonneCourante(k,j,position))  && (taille_valide(k,i,j,position)) ) //On a besoin de la position précise a cause des cases noires//
+			if ((absentLigneCourante(k,i,position)) && (absentColonneCourante(k,j,position))  && (taille_valide(k,i,j,position)) ) //On a besoin de la position prï¿½cise a cause des cases noires//
 			{
 				modifier_case(i,j,k);
 				if (estValide (position+1,timeOut))
@@ -184,7 +185,7 @@ public class Tableau {
 	}
 	
 	public boolean taille_valide (int k , int i ,int j ,int position){
-		if (k > taille_ligne_courante(i,position) || (k > taille_colonne_courante(j,position))) // Car un chiffre ne peut pas être plus grand que la taille max de la colonne/ligne dans laquelle il se situe.
+		if (k > taille_ligne_courante(i,position) || (k > taille_colonne_courante(j,position))) // Car un chiffre ne peut pas ï¿½tre plus grand que la taille max de la colonne/ligne dans laquelle il se situe.
 			return false;
 		else return true;
 
@@ -340,15 +341,15 @@ public class Tableau {
 		}
 		in.close();
 	}
-	public void sauvegarderGrilleSerial() throws Exception {
+	public void sauvegarderGrilleSerial(String path) throws Exception {
 		int numFichier;
-		File di = new File("Modeles/");
+		File di = new File(path);
 		File fl[] = di.listFiles();
 		numFichier = 1;
 		if (fl != null){
 			numFichier = fl.length+1;
 		}
-		FileOutputStream fileOut = new FileOutputStream("Modeles/modele"+numFichier+".ser");
+		FileOutputStream fileOut = new FileOutputStream(path+"grille_"+numFichier+".ser");
 		ObjectOutputStream out = new ObjectOutputStream(fileOut);
 		out.writeObject(this.tabCase);
 

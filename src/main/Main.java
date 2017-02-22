@@ -18,7 +18,7 @@ public class Main {
 		int grille9 [][]=modeles.getModele9(); // la meme remplie differemment
 		int grille10[][]=modeles.getModele10(); // la meme mal remplie
 		*/
-
+		/*
 
 		Tableau t = new Tableau(6);
 		
@@ -40,7 +40,7 @@ public class Main {
 			tempsDebut = System.currentTimeMillis();
 			t.estValide(0,System.currentTimeMillis());
 			tempsFin = System.currentTimeMillis();
-			System.out.println("La grille généré résolue par estValide()");
+			System.out.println("La grille gï¿½nï¿½rï¿½ rï¿½solue par estValide()");
 			long temps = tempsFin-tempsDebut;
 			System.out.println("Temps de resolution : "+ temps+" millisecondes");
 			t.afficherGrille();
@@ -51,7 +51,7 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		*/
 		Jeu jeu = new Jeu();
 		jeu.commencer();
 
