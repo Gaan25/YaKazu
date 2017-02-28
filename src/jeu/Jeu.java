@@ -6,6 +6,8 @@ package jeu;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.util.LinkedList;
 import javax.swing.*;
 import javax.swing.text.StringContent;
 
@@ -16,7 +18,7 @@ import javax.swing.text.StringContent;
 public class Jeu extends JFrame {
     JTextArea texte; // charger partie
     JTextArea texte2; // nouvelle partie
-    String[] nom_parties;
+    LinkedList<String> nom_parties;
     String[] taille_parties;
     String[] difficultees;
     String[] mode;
@@ -290,14 +292,20 @@ public class Jeu extends JFrame {
     private void initialisationBouton() {
         ActionListener actionListener;
 
-        nom_parties = new String[]{"Selectionnez...", "Partie1", "Partie2", "Partie3"};
+        nom_parties = new LinkedList<String>();
+        File di = new File("Sauvegarde/");
+        nom_parties.add("Selectionnez...");
+        String[] listeFichier= di.list();
+        for (String s : listeFichier){
+            nom_parties.add(s);
+        }
         texte = new JTextArea("Rien de s�lectionn�"); //charge partie
         texte2 = new JTextArea("Selectionnez un format ..."); // nouvelle partie
         taille_parties = new String[]{"6x6", "7x7", "8x8", "9x9"};
         difficultees = new String[]{"Facile", "Moyen", "Difficile"};
         mode = new String[]{"Generer grille", "Dessiner grille"};
 
-        liste_parties = new JComboBox(nom_parties);
+        liste_parties = new JComboBox(nom_parties.toArray());
         taille = new JComboBox(taille_parties);
         difficulte = new JComboBox(difficultees);
         modes = new JComboBox(mode);
@@ -426,6 +434,13 @@ public class Jeu extends JFrame {
                     cardLayout.show(panel, "pagePrincipale");
                 } else if (command.equals("Jouer1")) {
                     texte.setText("Jouer sur la " + liste_parties.getSelectedItem()); // reference a l'objet selectionnee
+                    try{
+                        tableau.restaurerGrilleSerial("Sauvegarde/"+liste_parties.getSelectedItem());
+                    } catch (Exception exception){
+                        exception.printStackTrace();
+                    }
+                    initialisationPanelJeu();
+                    cardLayout.show(panel, "pageJeu");
                 } else if (command.equals("Partie_selectionnee")) {
                     if (liste_parties.getSelectedIndex() != 0)
                         texte.setText("" + liste_parties.getSelectedItem()); // pr�visualiser la grille ???
