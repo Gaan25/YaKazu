@@ -13,23 +13,23 @@ import javax.swing.text.StringContent;
  * Created by valid13 on 06/02/2017.
  */
 
-public class Jeu extends JFrame{
-	JTextArea texte; // charger partie
-	JTextArea texte2; // nouvelle partie
-	String[] nom_parties;
-	String[] taille_parties;
-	String[] difficultees;
-	String[] mode;
-	private JComboBox liste_parties;
-	private JComboBox taille; // Nouvelle Partie
+public class Jeu extends JFrame {
+    JTextArea texte; // charger partie
+    JTextArea texte2; // nouvelle partie
+    String[] nom_parties;
+    String[] taille_parties;
+    String[] difficultees;
+    String[] mode;
+    private JComboBox liste_parties;
+    private JComboBox taille; // Nouvelle Partie
     private JComboBox modes;
-    
+
     private JComboBox difficulte; //
     private JButton boutonJouer;// charger
     private JButton boutonRetour; //
     private JButton boutonJouer1;// nouvelle partie
     private JButton boutonRetour1; //
-    
+
     private JPanel panel;
     private JPanel panelMenu;
     private JButton boutonNouvellePartie;
@@ -48,7 +48,7 @@ public class Jeu extends JFrame{
     private JPanel panelGrille;
     private JPanel panelBoutons;
     private int TAILLE;
-    private JTextField [][] grille;
+    private JTextField[][] grille;
     private Tableau tableau;
 
     public Jeu() {
@@ -59,16 +59,17 @@ public class Jeu extends JFrame{
         initialisationPanelNouvellePartie();
         initialisationPanelCreeModele();
         //initialisationTableau();
-        CardLayout cardLayout = (CardLayout)(panel.getLayout());
+        CardLayout cardLayout = (CardLayout) (panel.getLayout());
 
         /* TEST */
-        cardLayout.show(panel,"pagePrincipale");
+        cardLayout.show(panel, "pagePrincipale");
         //cardLayout.show(panel,"pageCreeModele");
-       
+
     }
+
     /**
-     Méthode qui permet de creer les panels de chaque fenêtre de l'utilisateur
-     et d'ajouter tout les panels dans un panel principal
+     * Méthode qui permet de creer les panels de chaque fenêtre de l'utilisateur
+     * et d'ajouter tout les panels dans un panel principal
      */
     private void initialisation() {
         //PANEL PRINCIPAL #LE BIG BOSS
@@ -112,7 +113,7 @@ public class Jeu extends JFrame{
         //PANEL CREEMODELE
         panelCreeModele = new JPanel();
         panelCreeModele.setLayout(new GridBagLayout());
-        panel.add(panelCreeModele,"pageCreeModele");
+        panel.add(panelCreeModele, "pageCreeModele");
 
         //PANEL GRILLE2 DANS PANEL CREEMODELE
         panelGrille2 = new JPanel();
@@ -125,9 +126,9 @@ public class Jeu extends JFrame{
     }
 
     /**
-     Méthode qui ajoute tout les éléments destiner au panel Menu
+     * Méthode qui ajoute tout les éléments destiner au panel Menu
      */
-    private void initialisationPanelMenu(){
+    private void initialisationPanelMenu() {
         GridBagConstraints gbc;
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
@@ -142,7 +143,7 @@ public class Jeu extends JFrame{
         gbc2.fill = GridBagConstraints.HORIZONTAL;
         gbc2.ipadx = 200;
         gbc2.ipady = 30;
-        gbc2.insets.set(0,20,0,20);
+        gbc2.insets.set(0, 20, 0, 20);
 
         panelMenu.add(boutonNouvellePartie, gbc);
         panelMenu.add(boutonChargerPartie, gbc2);
@@ -151,24 +152,24 @@ public class Jeu extends JFrame{
     /**
      * Méthode qui gère la vue de la grille principale
      */
-    private void initialisationPanelJeu(){
+    private void initialisationPanelJeu() {
         GridBagConstraints c = new GridBagConstraints();
-        for (int i = 0;i<TAILLE;i++){
-            for (int j = 0;j<TAILLE;j++){
+        for (int i = 0; i < TAILLE; i++) {
+            for (int j = 0; j < TAILLE; j++) {
                 c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
                 c.gridy = i;
                 c.ipadx = 30;
                 c.ipady = 15;
 
                 grille[i][j] = new JTextField();
-                if (tableau.getCase(i,j) == -1){
+                if (tableau.getCase(i, j) == -1) {
                     grille[i][j].setBackground(Color.BLACK);
-                }else if (tableau.getCase(i,j) > 0){
-                    grille[i][j].setText(String.valueOf(tableau.getCase(i,j)));
+                } else if (tableau.getCase(i, j) > 0) {
+                    grille[i][j].setText(String.valueOf(tableau.getCase(i, j)));
                 }
                 grille[i][j].setPreferredSize(new Dimension(35, 35));
                 //grille[i][j].setBorder(new LineBorder(Color.DARK_GRAY,1));
-                panelGrille.add(grille[i][j],c);
+                panelGrille.add(grille[i][j], c);
             }
         }
         panelBoutons.add(boutonIndice);
@@ -177,143 +178,142 @@ public class Jeu extends JFrame{
         panelJeu.add(panelGrille);
         panelJeu.add(panelBoutons);
     }
+
     /**
      * Méthode qui gère la vue de la creation d'une grille
      */
-    private void initialisationPanelCreeModele(){
-        panelBoutons2.add(listeDeroulante);
+    private void initialisationPanelCreeModele() {
+        //panelBoutons2.add(listeDeroulante);
         panelBoutons2.add(new Label("Creation d'un modele"));
         panelBoutons2.add(boutonModeleFini);
         panelCreeModele.add(panelGrille2);
         panelCreeModele.add(panelBoutons2);
     }
-    private void initialisationPanelCharger(){
+
+    private void initialisationPanelCharger() {
         //	 panelCharger.setLayout(new GridBagLayout());
-        	
-        	GridBagConstraints gbc = new GridBagConstraints();
-            gbc = new GridBagConstraints();
-            gbc.gridx = 1;
-            gbc.gridy = 0;
-            gbc.fill = GridBagConstraints.HORIZONTAL;
-            gbc.ipadx = 200;
-            gbc.ipady = 20;
 
-            GridBagConstraints gbc2 = new GridBagConstraints();
-            gbc2.gridx = 3;
-            gbc2.gridy = 0;
-            gbc2.fill = GridBagConstraints.HORIZONTAL;
-            gbc2.ipadx = 200;
-            gbc2.ipady = 20;
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.ipadx = 200;
+        gbc.ipady = 20;
 
-            GridBagConstraints gbc3 = new GridBagConstraints();
-            gbc3.gridx = 2;
-            gbc3.gridy = 1;
-            gbc3.fill = GridBagConstraints.HORIZONTAL;
-            gbc3.ipadx = 150;
-            gbc3.ipady = 20;
-            gbc3.insets.set(0,20,0,20);
-            
-            GridBagConstraints gbc4 = new GridBagConstraints();
-            gbc4.gridx = 3;
-            gbc4.gridy = 1;
-            gbc4.fill = GridBagConstraints.HORIZONTAL;
-            gbc4.ipadx = 150;
-            gbc4.ipady = 20;
-            
-            panelCharger.add(boutonRetour1, gbc);
-            panelCharger.add(boutonJouer1, gbc2);
-            panelCharger.add(liste_parties,gbc3);
-            panelCharger.add(texte,gbc4);
-        }
+        GridBagConstraints gbc2 = new GridBagConstraints();
+        gbc2.gridx = 3;
+        gbc2.gridy = 0;
+        gbc2.fill = GridBagConstraints.HORIZONTAL;
+        gbc2.ipadx = 200;
+        gbc2.ipady = 20;
 
-        private void initialisationPanelNouvellePartie(){
-            //	 panelCharger.setLayout(new GridBagLayout());
-        	GridBagConstraints gbc = new GridBagConstraints();
-            gbc = new GridBagConstraints();
-            gbc.gridx = 1;
-            gbc.gridy = 0;
-            gbc.fill = GridBagConstraints.HORIZONTAL;
-            gbc.ipadx = 50;
-            gbc.ipady = 20;
+        GridBagConstraints gbc3 = new GridBagConstraints();
+        gbc3.gridx = 2;
+        gbc3.gridy = 1;
+        gbc3.fill = GridBagConstraints.HORIZONTAL;
+        gbc3.ipadx = 150;
+        gbc3.ipady = 20;
+        gbc3.insets.set(0, 20, 0, 20);
 
-            GridBagConstraints gbc2 = new GridBagConstraints();
-            gbc2.gridx = 2;
-            gbc2.gridy = 1;
-            gbc2.fill = GridBagConstraints.HORIZONTAL;
-            gbc2.ipadx = 50;
-            gbc2.ipady = 20;
+        GridBagConstraints gbc4 = new GridBagConstraints();
+        gbc4.gridx = 3;
+        gbc4.gridy = 1;
+        gbc4.fill = GridBagConstraints.HORIZONTAL;
+        gbc4.ipadx = 150;
+        gbc4.ipady = 20;
 
-            GridBagConstraints gbc3 = new GridBagConstraints();
-            gbc3.gridx = 2;
-            gbc3.gridy = 0;
-            gbc3.fill = GridBagConstraints.HORIZONTAL;
-            gbc3.ipadx = 50;
-            gbc3.ipady = 20;
-            gbc3.insets.set(0,10,0,10);
-            
-            GridBagConstraints gbc4 = new GridBagConstraints();
-            gbc4.gridx = 3;
-            gbc4.gridy = 0;
-            gbc4.fill = GridBagConstraints.HORIZONTAL;
-            gbc4.ipadx = 50;
-            gbc4.ipady = 20;
-                
-            GridBagConstraints gbc5 = new GridBagConstraints();
-            gbc5.gridx = 3;
-            gbc5.gridy = 1;
-            gbc5.fill = GridBagConstraints.HORIZONTAL;
-            gbc5.ipadx = 50;
-            gbc5.ipady = 20;
-                
-            GridBagConstraints gbc6 = new GridBagConstraints();
-            gbc6.gridx = 5;
-            gbc6.gridy = 0;
-            gbc6.fill = GridBagConstraints.HORIZONTAL;
-            gbc6.ipadx = 50;
-            gbc6.ipady = 20;
-            gbc6.insets.set(0,20,0,20);
-            
-            panelNouvellePartie.add(boutonRetour, gbc);
-            panelNouvellePartie.add(boutonJouer, gbc2);
-            panelNouvellePartie.add(difficulte,gbc3);
-            panelNouvellePartie.add(taille,gbc4);
-            panelNouvellePartie.add(texte2,gbc5);
-            panelNouvellePartie.add(modes,gbc6);
-            }
+        panelCharger.add(boutonRetour1, gbc);
+        panelCharger.add(boutonJouer1, gbc2);
+        panelCharger.add(liste_parties, gbc3);
+        panelCharger.add(texte, gbc4);
+    }
+
+    private void initialisationPanelNouvellePartie() {
+        //	 panelCharger.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.ipadx = 50;
+        gbc.ipady = 20;
+
+        GridBagConstraints gbc2 = new GridBagConstraints();
+        gbc2.gridx = 2;
+        gbc2.gridy = 1;
+        gbc2.fill = GridBagConstraints.HORIZONTAL;
+        gbc2.ipadx = 50;
+        gbc2.ipady = 20;
+
+        GridBagConstraints gbc3 = new GridBagConstraints();
+        gbc3.gridx = 2;
+        gbc3.gridy = 0;
+        gbc3.fill = GridBagConstraints.HORIZONTAL;
+        gbc3.ipadx = 50;
+        gbc3.ipady = 20;
+        gbc3.insets.set(0, 10, 0, 10);
+
+        GridBagConstraints gbc4 = new GridBagConstraints();
+        gbc4.gridx = 3;
+        gbc4.gridy = 0;
+        gbc4.fill = GridBagConstraints.HORIZONTAL;
+        gbc4.ipadx = 50;
+        gbc4.ipady = 20;
+
+        GridBagConstraints gbc5 = new GridBagConstraints();
+        gbc5.gridx = 3;
+        gbc5.gridy = 1;
+        gbc5.fill = GridBagConstraints.HORIZONTAL;
+        gbc5.ipadx = 50;
+        gbc5.ipady = 20;
+
+        GridBagConstraints gbc6 = new GridBagConstraints();
+        gbc6.gridx = 5;
+        gbc6.gridy = 0;
+        gbc6.fill = GridBagConstraints.HORIZONTAL;
+        gbc6.ipadx = 50;
+        gbc6.ipady = 20;
+        gbc6.insets.set(0, 20, 0, 20);
+
+        panelNouvellePartie.add(boutonRetour, gbc);
+        panelNouvellePartie.add(boutonJouer, gbc2);
+        panelNouvellePartie.add(difficulte, gbc3);
+        panelNouvellePartie.add(taille, gbc4);
+        panelNouvellePartie.add(texte2, gbc5);
+        panelNouvellePartie.add(modes, gbc6);
+    }
+
     /**
-     Méthode qui initialise les boutons du jeu
+     * Méthode qui initialise les boutons du jeu
      */
-    private void initialisationBouton(){
+    private void initialisationBouton() {
         ActionListener actionListener;
-        
-        nom_parties = new String[]{"Selectionnez...", "Partie1","Partie2","Partie3"};
-        texte = new  JTextArea("Rien de s�lectionn�"); //charge partie
-        texte2 = new JTextArea ("Selectionnez un format ..."); // nouvelle partie
-        taille_parties = new String[]{"6x6","7x7","8x8","9x9"};
-        difficultees = new String[]{"Facile","Moyen","Difficile"};
-        mode = new String[]{"Generer grille","Dessiner grille"};
-        
-        liste_parties = new JComboBox(nom_parties);	
+
+        nom_parties = new String[]{"Selectionnez...", "Partie1", "Partie2", "Partie3"};
+        texte = new JTextArea("Rien de s�lectionn�"); //charge partie
+        texte2 = new JTextArea("Selectionnez un format ..."); // nouvelle partie
+        taille_parties = new String[]{"6x6", "7x7", "8x8", "9x9"};
+        difficultees = new String[]{"Facile", "Moyen", "Difficile"};
+        mode = new String[]{"Generer grille", "Dessiner grille"};
+
+        liste_parties = new JComboBox(nom_parties);
         taille = new JComboBox(taille_parties);
         difficulte = new JComboBox(difficultees);
         modes = new JComboBox(mode);
-        
+
         boutonNouvellePartie = new JButton();
         boutonChargerPartie = new JButton();
         boutonRetour = new JButton(); //nouvelle partie
-        boutonJouer = new JButton (); //
+        boutonJouer = new JButton(); //
         boutonRetour1 = new JButton(); //charger partie
-        boutonJouer1 = new JButton (); //
-        
+        boutonJouer1 = new JButton(); //
+
         boutonAbandonner = new JButton();
         boutonIndice = new JButton();
         boutonSauvegarder = new JButton();
 
         boutonModeleFini = new JButton();
-        listeDeroulante = new JComboBox();
-        listeDeroulante.addItem("3x3");
-        listeDeroulante.addItem("6x6");
-        listeDeroulante.addItem("9x9");
 
         boutonNouvellePartie.setText("Nouvelle Partie");
         boutonChargerPartie.setText("Charger Partie");
@@ -332,7 +332,7 @@ public class Jeu extends JFrame{
         boutonSauvegarder.setActionCommand("Sauvegarder");
         boutonIndice.setActionCommand("Indice");
         boutonModeleFini.setActionCommand("Modele Fini");
-        
+
         boutonRetour.setActionCommand("Retour");
         boutonJouer.setActionCommand("Jouer");
         boutonRetour1.setActionCommand("Retour1"); //charger partie
@@ -378,14 +378,14 @@ public class Jeu extends JFrame{
                 String command = e.getActionCommand();
                 if (command.equals("Modele Fini")) {
                     tableau = new Tableau(TAILLE);
-                    for (int i = 0;i<grille.length;i++){
-                        for (int j = 0;j<grille.length;j++){
+                    for (int i = 0; i < grille.length; i++) {
+                        for (int j = 0; j < grille.length; j++) {
                             System.out.println(grille[i][j]);
-                            if (grille[i][j].getBackground().equals(Color.black)){
-                                tableau.setCase(i,j,-1);
-                            }else if (grille[i][j].getText().equals("")){
-                                tableau.setCase(i, j,0);
-                            }else{
+                            if (grille[i][j].getBackground().equals(Color.black)) {
+                                tableau.setCase(i, j, -1);
+                            } else if (grille[i][j].getText().equals("")) {
+                                tableau.setCase(i, j, 0);
+                            } else {
                                 tableau.setCase(i, j, Integer.parseInt(grille[i][j].getText()));
                             }
                         }
@@ -393,12 +393,12 @@ public class Jeu extends JFrame{
                     tableau.afficherGrille();
                     try {
                         tableau.sauvegarderGrilleSerial("Modeles/");
-                    }catch (Exception ex){
+                    } catch (Exception ex) {
                         ex.printStackTrace();
                     }
                     initialisationPanelJeu();
-                    CardLayout cardLayout = (CardLayout)(panel.getLayout());
-                    cardLayout.show(panel,"pageJeu");
+                    CardLayout cardLayout = (CardLayout) (panel.getLayout());
+                    cardLayout.show(panel, "pageJeu");
 
                     /*
                     if (tableau.grilleValide()){
@@ -415,226 +415,246 @@ public class Jeu extends JFrame{
             }
         };
         boutonModeleFini.addActionListener(actionListener);
-        actionListener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                MouseListener mouseListener = new MouseListener() {
-                    @Override
-                    public void mouseClicked(MouseEvent e) {
-                        if (SwingUtilities.isRightMouseButton(e)){
-                            JTextField textField = (JTextField)e.getSource();
-                            textField.setBackground(Color.BLACK);
-                        }
-                    }
-                    @Override
-                    public void mousePressed(MouseEvent e) {
 
-                    }
-
-                    @Override
-                    public void mouseReleased(MouseEvent e) {
-
-                    }
-
-                    @Override
-                    public void mouseEntered(MouseEvent e) {
-
-                    }
-
-                    @Override
-                    public void mouseExited(MouseEvent e) {
-
-                    }
-                };
-                String taille = (String)listeDeroulante.getSelectedItem();
-                GridBagConstraints c = new GridBagConstraints();
-                c.ipadx = 30;
-                c.ipady = 15;
-                panelGrille2.removeAll();
-                switch (taille){
-                    case "3x3" :
-                        grille = new JTextField[3][3];
-                        for (int i = 0;i<3;i++){
-                            for (int j = 0;j<3;j++){
-                                TAILLE = 3;
-                                c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
-                                c.gridy = i;
-                                grille[i][j] = new JTextField();
-                                grille[i][j].setPreferredSize(new Dimension(35,35));
-                                grille[i][j].addMouseListener(mouseListener);
-                                panelGrille2.add(grille[i][j],c);
-                            }
-                        }
-                        break;
-                    case "6x6" :
-                        grille = new JTextField[6][6];
-                        for (int i = 0;i<6;i++){
-                            for (int j = 0;j<6;j++){
-                                TAILLE = 6;
-                                c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
-                                c.gridy = i;
-                                grille[i][j] = new JTextField();
-                                grille[i][j].setPreferredSize(new Dimension(35,35));
-                                grille[i][j].addMouseListener(mouseListener);
-                                panelGrille2.add(grille[i][j],c);
-                            }
-                        }
-                        break;
-                    case "9x9":
-                        grille = new JTextField[9][9];
-                        for (int i = 0;i<9;i++){
-                            for (int j = 0;j<9;j++){
-                                TAILLE = 9;
-                                c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
-                                c.gridy = i;
-                                grille[i][j] = new JTextField();
-                                grille[i][j].setPreferredSize(new Dimension(35,35));
-                                grille[i][j].addMouseListener(mouseListener);
-                                panelGrille2.add(grille[i][j],c);
-                            }
-                        }
-                        break;
-                }
-                panelGrille2.updateUI();
-            }
-        };
-        listeDeroulante.addActionListener(actionListener);
-        
         //Action Listener Charge PARTIE
         actionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CardLayout cardLayout = (CardLayout)(panel.getLayout());
+                CardLayout cardLayout = (CardLayout) (panel.getLayout());
                 String command = e.getActionCommand();
-                if (command.equals("Retour1"))	{
-                	cardLayout.show(panel,"pagePrincipale");
-                }
-                else if (command.equals("Jouer1"))	{
-                	texte.setText("Jouer sur la "+ liste_parties.getSelectedItem()); // reference a l'objet selectionnee
-                }
-                else if (command.equals("Partie_selectionnee"))	{
-                	if(liste_parties.getSelectedIndex()!=0)
-                	texte.setText(""+liste_parties.getSelectedItem()); // pr�visualiser la grille ???
+                if (command.equals("Retour1")) {
+                    cardLayout.show(panel, "pagePrincipale");
+                } else if (command.equals("Jouer1")) {
+                    texte.setText("Jouer sur la " + liste_parties.getSelectedItem()); // reference a l'objet selectionnee
+                } else if (command.equals("Partie_selectionnee")) {
+                    if (liste_parties.getSelectedIndex() != 0)
+                        texte.setText("" + liste_parties.getSelectedItem()); // pr�visualiser la grille ???
                 }
             }
         };
-        
+
         boutonRetour1.addActionListener(actionListener);
         boutonJouer1.addActionListener(actionListener);
         liste_parties.addActionListener(actionListener);
-        
+
+
         //Action Listener Nouvelle PARTIE
-       actionListener = new ActionListener() {
+        actionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CardLayout cardLayout = (CardLayout)(panel.getLayout());
+                CardLayout cardLayout = (CardLayout) (panel.getLayout());
                 String command = e.getActionCommand();
-                if (command.equals("Retour"))	{
-                	cardLayout.show(panel,"pagePrincipale");
-                }
-                else if (command.equals("Jouer")){
-                	if (texte2.getText().equals("Selectionnez un format ...") || texte2.getText().equals("Veuillez d'abord \nselectionner un format !")){
-                		texte2.setText("Veuillez d'abord \nselectionner un format !");
-                	}
-                	else{
-	                	if (modes.getSelectedItem().equals("Dessiner grille"))
-	                		cardLayout.show(panel,"pageCreeModele");
-	                	else if (modes.getSelectedItem().equals("Generer grille")){
-	                		String taille_tab = (String)taille.getSelectedItem();
-	                		switch (taille_tab) {
-	                		case "3x3" : TAILLE=3; grille = new JTextField[3][3]; break ;
-	                		case "4x4" : TAILLE=4; grille = new JTextField[4][4]; break ;
-	                		case "5x5" : TAILLE=5; grille = new JTextField[5][5]; break ;
-	                		case "6x6" : TAILLE=6; grille = new JTextField[6][6]; break ;
-	                		case "7x7" : TAILLE=7; grille = new JTextField[7][7]; break ;
-	                		case "8x8" : TAILLE=8; grille = new JTextField[8][8]; break ;
-	                		case "9x9" : TAILLE=9; grille = new JTextField[9][9]; break ;
-	                		}
-	                		String difficulte1 = (String) difficulte.getSelectedItem();
-	                		int d = 1;
-	                		switch (difficulte1) {
-	                		case "Facile" : d=1; break ;
-	                		case "Moyen" : d=2; break ;
-	                		case "Difficile" : d=3; break ;
-	                		}
-	                		tableau  = new Tableau(TAILLE);
-	                            try {
-	                    			tableau.genererGrillee(d, TAILLE);
-	                    			initialisationPanelJeu();
-	                    			cardLayout.show(panel,"pageJeu");
-	                    			tableau.afficherGrille();
-	                    			tableau.estValide(0,System.currentTimeMillis());
-	                    			System.out.print("La grille est : ");
-	                    			if (tableau.grilleValide()==true)
-	                    				System.out.println("VALIDE");
-	                    			else 
-	                    				System.out.println("Non VALIDE");
-	                    		} catch (Exception e1) {
-	                    			e1.printStackTrace();
-	                    		}
-	                            tableau.afficherGrille();
-	                            try {
-	                                tableau.sauvegarderGrilleSerial("Modeles/");
-	                            }catch (Exception ex){
-	                                ex.printStackTrace();
-	                            }
-	                            
-	                	}
-                	}
-                }
-                else if (command.equals("difficulte_selectionnee")) {
-                	texte2.setText(""+difficulte.getSelectedItem()+" "+taille.getSelectedItem());
-                }
-                else if (command.equals("taille_selectionnee")) {
-                	texte2.setText(""+difficulte.getSelectedItem()+" "+taille.getSelectedItem());
-                }
-                else if (command.equals("mode_selectionne")){
-                	if(modes.getSelectedItem().equals("Dessiner grille"))
-                	texte2.setText("Vous allez dessiner \nvotre propre modele");
-                	else if(modes.getSelectedItem().equals("Generer grille"))
-                	texte2.setText(""+difficulte.getSelectedItem()+" "+taille.getSelectedItem());
+                if (command.equals("Retour")) {
+                    cardLayout.show(panel, "pagePrincipale");
+                } else if (command.equals("Jouer")) {
+
+                    if (texte2.getText().equals("Selectionnez un format ...") || texte2.getText().equals("Veuillez d'abord \nselectionner un format !")) {
+                        texte2.setText("Veuillez d'abord \nselectionner un format !");
+                    } else {
+                        if (modes.getSelectedItem().equals("Dessiner grille")){
+                            MouseListener mouseListener = new MouseListener() {
+                                @Override
+                                public void mouseClicked(MouseEvent e) {
+                                    if (SwingUtilities.isRightMouseButton(e)) {
+                                        JTextField textField = (JTextField) e.getSource();
+                                        textField.setBackground(Color.BLACK);
+                                    }
+                                }
+
+                                @Override
+                                public void mousePressed(MouseEvent e) {
+
+                                }
+
+                                @Override
+                                public void mouseReleased(MouseEvent e) {
+
+                                }
+
+                                @Override
+                                public void mouseEntered(MouseEvent e) {
+
+                                }
+
+                                @Override
+                                public void mouseExited(MouseEvent e) {
+
+                                }
+                            };
+                            String strTaille = (String) taille.getSelectedItem();
+                            System.out.println((String)taille.getSelectedItem());
+                            GridBagConstraints c = new GridBagConstraints();
+                            c.ipadx = 30;
+                            c.ipady = 15;
+                            panelGrille2.removeAll();
+                            switch (strTaille) {
+                                case "3x3":
+                                    grille = new JTextField[3][3];
+                                    for (int i = 0; i < 3; i++) {
+                                        for (int j = 0; j < 3; j++) {
+                                            TAILLE = 3;
+                                            c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
+                                            c.gridy = i;
+                                            grille[i][j] = new JTextField();
+                                            grille[i][j].setPreferredSize(new Dimension(35, 35));
+                                            grille[i][j].addMouseListener(mouseListener);
+                                            panelGrille2.add(grille[i][j], c);
+                                        }
+                                    }
+                                    break;
+                                case "6x6":
+                                    grille = new JTextField[6][6];
+                                    for (int i = 0; i < 6; i++) {
+                                        for (int j = 0; j < 6; j++) {
+                                            TAILLE = 6;
+                                            c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
+                                            c.gridy = i;
+                                            grille[i][j] = new JTextField();
+                                            grille[i][j].setPreferredSize(new Dimension(35, 35));
+                                            grille[i][j].addMouseListener(mouseListener);
+                                            panelGrille2.add(grille[i][j], c);
+                                        }
+                                    }
+                                    break;
+                                case "9x9":
+                                    grille = new JTextField[9][9];
+                                    for (int i = 0; i < 9; i++) {
+                                        for (int j = 0; j < 9; j++) {
+                                            TAILLE = 9;
+                                            c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
+                                            c.gridy = i;
+                                            grille[i][j] = new JTextField();
+                                            grille[i][j].setPreferredSize(new Dimension(35, 35));
+                                            grille[i][j].addMouseListener(mouseListener);
+                                            panelGrille2.add(grille[i][j], c);
+                                        }
+                                    }
+                                    break;
+                            }
+                            cardLayout.show(panel, "pageCreeModele");
+                        }
+                        else if (modes.getSelectedItem().equals("Generer grille")) {
+                            String taille_tab = (String) taille.getSelectedItem();
+                            switch (taille_tab) {
+                                case "3x3":
+                                    TAILLE = 3;
+                                    grille = new JTextField[3][3];
+                                    break;
+                                case "4x4":
+                                    TAILLE = 4;
+                                    grille = new JTextField[4][4];
+                                    break;
+                                case "5x5":
+                                    TAILLE = 5;
+                                    grille = new JTextField[5][5];
+                                    break;
+                                case "6x6":
+                                    TAILLE = 6;
+                                    grille = new JTextField[6][6];
+                                    break;
+                                case "7x7":
+                                    TAILLE = 7;
+                                    grille = new JTextField[7][7];
+                                    break;
+                                case "8x8":
+                                    TAILLE = 8;
+                                    grille = new JTextField[8][8];
+                                    break;
+                                case "9x9":
+                                    TAILLE = 9;
+                                    grille = new JTextField[9][9];
+                                    break;
+                            }
+                            String difficulte1 = (String) difficulte.getSelectedItem();
+                            int d = 1;
+                            switch (difficulte1) {
+                                case "Facile":
+                                    d = 1;
+                                    break;
+                                case "Moyen":
+                                    d = 2;
+                                    break;
+                                case "Difficile":
+                                    d = 3;
+                                    break;
+                            }
+                            tableau = new Tableau(TAILLE);
+                            try {
+                                tableau.genererGrillee(d, TAILLE);
+                                initialisationPanelJeu();
+                                cardLayout.show(panel, "pageJeu");
+                                tableau.afficherGrille();
+                                tableau.estValide(0, System.currentTimeMillis());
+                                System.out.print("La grille est : ");
+                                if (tableau.grilleValide() == true)
+                                    System.out.println("VALIDE");
+                                else
+                                    System.out.println("Non VALIDE");
+                            } catch (Exception e1) {
+                                e1.printStackTrace();
+                            }
+                            tableau.afficherGrille();
+                            try {
+                                tableau.sauvegarderGrilleSerial("Modeles/");
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                            }
+
+                        }
+                    }
+                } else if (command.equals("difficulte_selectionnee")) {
+                    texte2.setText("" + difficulte.getSelectedItem() + " " + taille.getSelectedItem());
+                } else if (command.equals("taille_selectionnee")) {
+                    texte2.setText("" + difficulte.getSelectedItem() + " " + taille.getSelectedItem());
+                } else if (command.equals("mode_selectionne")) {
+                    if (modes.getSelectedItem().equals("Dessiner grille"))
+                        texte2.setText("Vous allez dessiner \nvotre propre modele");
+                    else if (modes.getSelectedItem().equals("Generer grille"))
+                        texte2.setText("" + difficulte.getSelectedItem() + " " + taille.getSelectedItem());
                 }
             }
         };
-        
-       boutonRetour.addActionListener(actionListener);
-       boutonJouer.addActionListener(actionListener);
-       difficulte.addActionListener(actionListener);
-       taille.addActionListener(actionListener);
-       modes.addActionListener(actionListener);
+
+        boutonRetour.addActionListener(actionListener);
+        boutonJouer.addActionListener(actionListener);
+        difficulte.addActionListener(actionListener);
+        taille.addActionListener(actionListener);
+        modes.addActionListener(actionListener);
 
     }
+
     /**
-     Méthode d'initialisation relative à la fenetre Frame
+     * Méthode d'initialisation relative à la fenetre Frame
      */
-    public void commencer(){
+    public void commencer() {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setSize(new Dimension(700,600));
+        setSize(new Dimension(700, 600));
         //pack();
         setLocationRelativeTo(null);
         setVisible(true);
     }
+
     //TEST DE GRILLE
-    public void initialisationTableau(){
+    public void initialisationTableau() {
         //TABLEAU
         tableau = new Tableau(TAILLE);
 
         try {
             tableau.restaurerGrilleSerial("Modeles/modele1.ser");
-        }catch (Exception e){
+        } catch (Exception e) {
             e.getMessage();
         }
 
         tableau.afficherGrille();
-        for (int i = 0;i<TAILLE;i++) {
+        for (int i = 0; i < TAILLE; i++) {
             for (int j = 0; j < TAILLE; j++) {
 
-                if(tableau.getCase(i,j) == -1){
+                if (tableau.getCase(i, j) == -1) {
                     grille[i][j].setBackground(Color.BLACK);
                     grille[i][j].setEnabled(false);
-                }else if(tableau.getCase(i,j) == 0){
+                } else if (tableau.getCase(i, j) == 0) {
                     grille[i][j].setText("");
-                }else {
+                } else {
                     grille[i][j].setText("" + tableau.getCase(i, j));
                     //grille[i][j].setEnabled(false);
                 }
@@ -642,3 +662,4 @@ public class Jeu extends JFrame{
         }
 
     }
+}
