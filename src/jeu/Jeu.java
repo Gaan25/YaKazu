@@ -6,7 +6,8 @@ package jeu;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.text.NumberFormat;
+import java.io.File;
+import java.util.LinkedList;
 import javax.swing.*;
 import javax.swing.text.NumberFormatter;
 import javax.swing.text.StringContent;
@@ -18,7 +19,7 @@ import javax.swing.text.StringContent;
 public class Jeu extends JFrame {
     JTextArea texte; // charger partie
     JTextArea texte2; // nouvelle partie
-    String[] nom_parties;
+    LinkedList<String> nom_parties;
     String[] taille_parties;
     String[] difficultees;
     String[] mode;
@@ -50,9 +51,8 @@ public class Jeu extends JFrame {
     private JPanel panelGrille;
     private JPanel panelBoutons;
     private int TAILLE;
-    private NumberFormat format;
     private NumberFormatter formatter;
-    private JTextField[][] grille;
+    private JFormattedTextField[][] grille;
     private Tableau tableau;
     private int grilleFinale [][];
     private Tableau tabFinal;
@@ -166,7 +166,7 @@ public class Jeu extends JFrame {
                 c.ipadx = 30;
                 c.ipady = 15;
 
-                grille[i][j] = new JTextField();
+                grille[i][j] = new JFormattedTextField();
                 grille[i][j].addKeyListener(new KeyAdapter() {
                     public void keyTyped(KeyEvent e) {
                         char c = e.getKeyChar();
@@ -179,6 +179,7 @@ public class Jeu extends JFrame {
                     }
                 });
                 grille[i][j].setEditable(true);
+
                 if (tableau.getCase(i, j) == -1) {
                     grille[i][j].setBackground(Color.BLACK);
                 } else if (tableau.getCase(i, j) > 0) {
@@ -202,7 +203,9 @@ public class Jeu extends JFrame {
      * Méthode qui gère la vue de la creation d'une grille
      */
     private void initialisationPanelCreeModele() {
-        panelBoutons2.add(listeDeroulante);
+
+        //panelBoutons2.add(listeDeroulante);
+
         panelBoutons2.add(new Label("Creation d'un modele"));
         panelBoutons2.add(boutonModeleFini);
         panelCreeModele.add(panelGrille2);
@@ -308,14 +311,22 @@ public class Jeu extends JFrame {
     private void initialisationBouton() {
         ActionListener actionListener;
 
-        nom_parties = new String[]{"Selectionnez...", "Partie1", "Partie2", "Partie3"};
+
+        nom_parties = new LinkedList<String>();
+        File di = new File("Sauvegarde/");
+        nom_parties.add("Selectionnez...");
+        String[] listeFichier= di.list();
+        for (String s : listeFichier){
+            nom_parties.add(s);
+        }
         texte = new JTextArea("Rien de s�lectionn�"); //charge partie
         texte2 = new JTextArea("Selectionnez un format ..."); // nouvelle partie
         taille_parties = new String[]{"6x6", "7x7", "8x8", "9x9"};
         difficultees = new String[]{"Facile", "Moyen", "Difficile"};
         mode = new String[]{"Generer grille", "Dessiner grille"};
 
-        liste_parties = new JComboBox(nom_parties);
+
+        liste_parties = new JComboBox(nom_parties.toArray());
         taille = new JComboBox(taille_parties);
         difficulte = new JComboBox(difficultees);
         modes = new JComboBox(mode);
@@ -332,10 +343,6 @@ public class Jeu extends JFrame {
         boutonSauvegarder = new JButton();
 
         boutonModeleFini = new JButton();
-        listeDeroulante = new JComboBox();
-        listeDeroulante.addItem("3x3");
-        listeDeroulante.addItem("6x6");
-        listeDeroulante.addItem("9x9");
 
         boutonNouvellePartie.setText("Nouvelle Partie");
         boutonChargerPartie.setText("Charger Partie");
@@ -474,91 +481,6 @@ public class Jeu extends JFrame {
             }
         };
         boutonModeleFini.addActionListener(actionListener);
-        actionListener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                MouseListener mouseListener = new MouseListener() {
-                    @Override
-                    public void mouseClicked(MouseEvent e) {
-                        if (SwingUtilities.isRightMouseButton(e)) {
-                            JTextField textField = (JTextField) e.getSource();
-                            textField.setBackground(Color.BLACK);
-                        }
-                    }
-
-                    @Override
-                    public void mousePressed(MouseEvent e) {
-
-                    }
-
-                    @Override
-                    public void mouseReleased(MouseEvent e) {
-
-                    }
-
-                    @Override
-                    public void mouseEntered(MouseEvent e) {
-
-                    }
-
-                    @Override
-                    public void mouseExited(MouseEvent e) {
-
-                    }
-                };
-                String taille = (String) listeDeroulante.getSelectedItem();
-                GridBagConstraints c = new GridBagConstraints();
-                c.ipadx = 30;
-                c.ipady = 15;
-                panelGrille2.removeAll();
-                switch (taille) {
-                    case "3x3":
-                        grille = new JTextField[3][3];
-                        for (int i = 0; i < 3; i++) {
-                            for (int j = 0; j < 3; j++) {
-                                TAILLE = 3;
-                                c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
-                                c.gridy = i;
-                                grille[i][j] = new JTextField();
-                                grille[i][j].setPreferredSize(new Dimension(35, 35));
-                                grille[i][j].addMouseListener(mouseListener);
-                                panelGrille2.add(grille[i][j], c);
-                            }
-                        }
-                        break;
-                    case "6x6":
-                        grille = new JTextField[6][6];
-                        for (int i = 0; i < 6; i++) {
-                            for (int j = 0; j < 6; j++) {
-                                TAILLE = 6;
-                                c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
-                                c.gridy = i;
-                                grille[i][j] = new JTextField();
-                                grille[i][j].setPreferredSize(new Dimension(35, 35));
-                                grille[i][j].addMouseListener(mouseListener);
-                                panelGrille2.add(grille[i][j], c);
-                            }
-                        }
-                        break;
-                    case "9x9":
-                        grille = new JTextField[9][9];
-                        for (int i = 0; i < 9; i++) {
-                            for (int j = 0; j < 9; j++) {
-                                TAILLE = 9;
-                                c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
-                                c.gridy = i;
-                                grille[i][j] = new JTextField();
-                                grille[i][j].setPreferredSize(new Dimension(35, 35));
-                                grille[i][j].addMouseListener(mouseListener);
-                                panelGrille2.add(grille[i][j], c);
-                            }
-                        }
-                        break;
-                }
-                panelGrille2.updateUI();
-            }
-        };
-        listeDeroulante.addActionListener(actionListener);
 
         //Action Listener Charge PARTIE
         actionListener = new ActionListener() {
@@ -570,6 +492,14 @@ public class Jeu extends JFrame {
                     cardLayout.show(panel, "pagePrincipale");
                 } else if (command.equals("Jouer1")) {
                     texte.setText("Jouer sur la " + liste_parties.getSelectedItem()); // reference a l'objet selectionnee
+                    try{
+                        tableau.restaurerGrilleSerial("Sauvegarde/"+liste_parties.getSelectedItem());
+                    } catch (Exception exception){
+                        exception.printStackTrace();
+                    }
+                    initialisationPanelJeu();
+                    cardLayout.show(panel, "pageJeu");
+
                 } else if (command.equals("Partie_selectionnee")) {
                     if (liste_parties.getSelectedIndex() != 0)
                         texte.setText("" + liste_parties.getSelectedItem()); // pr�visualiser la grille ???
@@ -593,38 +523,118 @@ public class Jeu extends JFrame {
                     if (texte2.getText().equals("Selectionnez un format ...") || texte2.getText().equals("Veuillez d'abord \nselectionner un format !")) {
                         texte2.setText("Veuillez d'abord \nselectionner un format !");
                     } else {
-                        if (modes.getSelectedItem().equals("Dessiner grille"))
+                        if (modes.getSelectedItem().equals("Dessiner grille")){
+                            MouseListener mouseListener = new MouseListener() {
+                                @Override
+                                public void mouseClicked(MouseEvent e) {
+                                    if (SwingUtilities.isRightMouseButton(e)) {
+                                        JFormattedTextField textField = (JFormattedTextField) e.getSource();
+                                        textField.setBackground(Color.BLACK);
+                                    }
+                                }
+
+                                @Override
+                                public void mousePressed(MouseEvent e) {
+
+                                }
+
+                                @Override
+                                public void mouseReleased(MouseEvent e) {
+
+                                }
+
+                                @Override
+                                public void mouseEntered(MouseEvent e) {
+
+                                }
+
+                                @Override
+                                public void mouseExited(MouseEvent e) {
+
+                                }
+                            };
+                            String strTaille = (String) taille.getSelectedItem();
+                            System.out.println((String)taille.getSelectedItem());
+                            GridBagConstraints c = new GridBagConstraints();
+                            c.ipadx = 30;
+                            c.ipady = 15;
+                            panelGrille2.removeAll();
+                            switch (strTaille) {
+                                case "3x3":
+                                    grille = new JFormattedTextField[3][3];
+                                    for (int i = 0; i < 3; i++) {
+                                        for (int j = 0; j < 3; j++) {
+                                            TAILLE = 3;
+                                            c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
+                                            c.gridy = i;
+                                            grille[i][j] = new JFormattedTextField();
+                                            grille[i][j].setPreferredSize(new Dimension(35, 35));
+                                            grille[i][j].addMouseListener(mouseListener);
+                                            panelGrille2.add(grille[i][j], c);
+                                        }
+                                    }
+                                    break;
+                                case "6x6":
+                                    grille = new JFormattedTextField[6][6];
+                                    for (int i = 0; i < 6; i++) {
+                                        for (int j = 0; j < 6; j++) {
+                                            TAILLE = 6;
+                                            c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
+                                            c.gridy = i;
+                                            grille[i][j] = new JFormattedTextField();
+                                            grille[i][j].setPreferredSize(new Dimension(35, 35));
+                                            grille[i][j].addMouseListener(mouseListener);
+                                            panelGrille2.add(grille[i][j], c);
+                                        }
+                                    }
+                                    break;
+                                case "9x9":
+                                    grille = new JFormattedTextField[9][9];
+                                    for (int i = 0; i < 9; i++) {
+                                        for (int j = 0; j < 9; j++) {
+                                            TAILLE = 9;
+                                            c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
+                                            c.gridy = i;
+                                            grille[i][j] = new JFormattedTextField();
+                                            grille[i][j].setPreferredSize(new Dimension(35, 35));
+                                            grille[i][j].addMouseListener(mouseListener);
+                                            panelGrille2.add(grille[i][j], c);
+                                        }
+                                    }
+                                    break;
+                            }
                             cardLayout.show(panel, "pageCreeModele");
+                        }
                         else if (modes.getSelectedItem().equals("Generer grille")) {
                             String taille_tab = (String) taille.getSelectedItem();
                             switch (taille_tab) {
                                 case "3x3":
                                     TAILLE = 3;
-                                    grille = new JTextField[3][3];
+                                    grille = new JFormattedTextField[3][3];
                                     break;
                                 case "4x4":
                                     TAILLE = 4;
-                                    grille = new JTextField[4][4];
+                                    grille = new JFormattedTextField[4][4];
                                     break;
                                 case "5x5":
                                     TAILLE = 5;
-                                    grille = new JTextField[5][5];
+                                    grille = new JFormattedTextField[5][5];
                                     break;
                                 case "6x6":
                                     TAILLE = 6;
-                                    grille = new JTextField[6][6];
+                                    grille = new JFormattedTextField[6][6];
                                     break;
                                 case "7x7":
                                     TAILLE = 7;
-                                    grille = new JTextField[7][7];
+                                    grille = new JFormattedTextField[7][7];
                                     break;
                                 case "8x8":
                                     TAILLE = 8;
-                                    grille = new JTextField[8][8];
+                                    grille = new JFormattedTextField[8][8];
                                     break;
                                 case "9x9":
                                     TAILLE = 9;
-                                    grille = new JTextField[9][9];
+                                    grille = new JFormattedTextField[9][9];
                                     break;
                             }
                             String difficulte1 = (String) difficulte.getSelectedItem();
