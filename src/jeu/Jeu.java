@@ -316,12 +316,12 @@ public class Jeu extends JFrame {
         File di = new File("Sauvegarde/");
         nom_parties.add("Selectionnez...");
         String[] listeFichier= di.list();
-        for (String s : listeFichier){
+      /* for (String s : listeFichier){
             nom_parties.add(s);
-        }
-        texte = new JTextArea("Rien de s�lectionn�"); //charge partie
+        }*/
+        texte = new JTextArea("Rien de selectionnez"); //charge partie
         texte2 = new JTextArea("Selectionnez un format ..."); // nouvelle partie
-        taille_parties = new String[]{"6x6", "7x7", "8x8", "9x9"};
+        taille_parties = new String[]{"3x3","4x4","5x5","6x6", "7x7", "8x8", "9x9"};
         difficultees = new String[]{"Facile", "Moyen", "Difficile"};
         mode = new String[]{"Generer grille", "Dessiner grille"};
 
@@ -657,6 +657,8 @@ public class Jeu extends JFrame {
                                 initialisationPanelJeu();
                                 cardLayout.show(panel, "pageJeu");
                                 tableau.afficherGrille();
+                                tableau.init_tailles_max(); // OPTI 1
+                                tableau.init_possibilitees(); // OPTI 2
                                 tableau.estValide(0, System.currentTimeMillis());
                                 System.out.print("La grille est : ");
                                 if (tableau.grilleValide() == true)

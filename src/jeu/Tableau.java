@@ -5,7 +5,110 @@ import java.sql.Time;
 import java.util.Random;
 
 public class Tableau {
+	
+	/////OPTIMISATIONS///////
 
+	public void swap(Possibilitee [] t, int a, int b)
+	{
+	    Possibilitee c;
+	    c=new Possibilitee(t[a].get_nb_possibilitees(),t[a].get_position());
+	    t[a]=t[b];
+	    t[b]=c;
+	}
+	
+	public void show_tab()
+	{
+	    int i;
+	    for(i=0;i<taille_possibilitees-1;i++)
+	    {
+	        System.out.println("Indice numéro :" + i + " Position : " + valeurs_possibles[i].get_position() +" Nb Possibilitees : " +valeurs_possibles[i].get_nb_possibilitees());
+	    }
+	}
+	
+	public void trirap(Possibilitee[]t,int g, int d)
+	{
+	    int v;
+	    int a = g;
+	    int b = d;
+	    if(g<d)
+	    {
+	        v=t[(a+b)/2].get_nb_possibilitees();
+	        while(a<=b)
+	        {
+	            while(t[a].get_nb_possibilitees()<v) a++;
+	            while(t[b].get_nb_possibilitees()>v) b--;
+	            if(a<=b)
+	            {
+	                swap(t,a,b);
+	                a++;
+	                b--;
+	            }
+	        }
+	        trirap(t,g,b);
+	        trirap(t,a,d);
+	    }
+	}
+	
+	private Possibilitee valeurs_possibles [] ;
+	private int taille_possibilitees;
+		
+	public void init_possibilitees (){
+		taille_possibilitees=0;
+		valeurs_possibles= new Possibilitee [getSize()*getSize()];  // en imaginant qu'on ai un tableau vide au pire cas
+		int position;
+		for (position=0 ; position<getSize()*getSize() ; position++)
+		{
+			if (getCase(position) == 0 )
+			{
+			valeurs_possibles[taille_possibilitees] = (new Possibilitee(tailles_max[position], position));
+			taille_possibilitees ++; // une fois arrivé a la fin, le tableau aura une case en trop
+			}
+		}
+		tri_possibilitees();
+			
+	}
+	
+	public void tri_possibilitees(){
+		trirap(valeurs_possibles,0,taille_possibilitees-1);
+	}
+		
+	private int tailles_max[];
+	
+	public void init_tailles_max ()
+	{
+		tailles_max = new int [getSize()*getSize()];
+		int position;
+		int i , j ;
+		int taille_ligne, taille_colonne;
+		for (position=0 ; position<getSize()*getSize() ; position++){
+			i = getLigne(position);
+			j = getColonne(position);
+			taille_ligne = taille_ligne_courante(i,position);
+			taille_colonne = taille_colonne_courante (j,position);			
+			if (taille_ligne>taille_colonne)
+					tailles_max[position] = taille_colonne;
+			else 
+					tailles_max[position] = taille_ligne;
+			if (taille_ligne==getSize()+1 && taille_ligne==getSize()+1)
+					tailles_max[position] = taille_colonne;
+		}
+	}
+		
+	public void montrer_max_pos()
+	{
+			for (int i = 0 ; i<(getSize()*getSize()) ; i++)
+			{
+				if (i!=0)
+				{
+				if (i%(getSize())==0)
+					System.out.println("");
+				}
+			System.out.print(tailles_max[i]+ " ");	
+			}
+	}
+	
+	////FIN OPTIMISATIONS////
+	
 	private Case tabCase[][];
 	int size;
 
@@ -153,18 +256,24 @@ public class Tableau {
 	
 /////////////////////ALGORITHME DU BACKTRACKING///////////////////////////
 	
+
 	public boolean estValide (int position,long timeOut) {
 		
-		//On y a ajoutï¿½ un timeOut pour optimiser le temps d'execution celon les cas ou la grille est trop longue ï¿½ raisoudre
+		//On y a ajoute un timeOut pour optimiser le temps d'execution celon les cas ou la grille est trop longue a resoudre
 		if (System.currentTimeMillis() - timeOut > 10000){
 			return false;
 		}
-		// Si on est a la n*n eme case (on sort du tableau), on s'arrete ici car le parcours aura ï¿½tï¿½ fait en entier
-		if (position == (getSize()*getSize()))
+		// Si on est a la n*n eme case (on sort du tableau), on s'arrete ici car le parcours aura ete fait en entier
+	//	if (position == (getSize()*getSize())) ->Plus un parcours lineaire
+		if (position == taille_possibilitees)
 			return true;
 
 		// On recupere les coordonnees de la case
-		int i = position/getSize(), j = position%getSize();
+		// int i = position/getSize(), j = position%getSize();
+		
+		int i = (valeurs_possibles[position].get_position())/getSize();
+		int j = (valeurs_possibles[position].get_position())%getSize();
+
 
 		// Si la case n'est pas vide, on passe a la suivante (appel recursif)
 		if (tabCase[i][j].getChiffre() != 0)
@@ -173,7 +282,7 @@ public class Tableau {
 		//PRINCIPE DU BACKTRACKING : TESTER UNE POSSIBILITEE VALIDE ET EFFECTUER UN PARCOURS RECURSIF AVEC CETTE POSSIBILITEE//
 		for (int k=1; k <= getSize(); k++) 
 		{
-			if ((absentLigneCourante(k,i,position)) && (absentColonneCourante(k,j,position))  && (taille_valide(k,i,j,position)) ) //On a besoin de la position prï¿½cise a cause des cases noires//
+			if ((absentLigneCourante(k,i,(valeurs_possibles[position].get_position()))) && (absentColonneCourante(k,j,(valeurs_possibles[position].get_position())))  && (taille_valide(k,i,j,(valeurs_possibles[position].get_position()))) ) /*&& valideLigne(k,position,i) && valideColonne(k,position,j)*//* && valideColonne(k,position,j)*/
 			{
 				modifier_case(i,j,k);
 				if (estValide (position+1,timeOut))
@@ -185,13 +294,14 @@ public class Tableau {
 	}
 	
 	public boolean taille_valide (int k , int i ,int j ,int position){
-		if (k > taille_ligne_courante(i,position) || (k > taille_colonne_courante(j,position))) // Car un chiffre ne peut pas ï¿½tre plus grand que la taille max de la colonne/ligne dans laquelle il se situe.
+		if (k > tailles_max[position])
 			return false;
 		else return true;
 
 	}
 	
 	public int taille_ligne_courante(int i , int position){
+		if (getCase(position)==-1) return 0;
 
 		int pos_dernier_ligne= ((i+1)*getSize())-1; //Tester sur un dessin de grille pour comprendre
 		int pos_premier_ligne= ((i)*getSize());
@@ -207,7 +317,7 @@ public class Tableau {
 			size_ligne++;
 			j++;
 		}
-		if (size_ligne==1) size_ligne=getSize(); // Regle du Jeu : si on a une ligne de 1 case, on ne peut pas imposer comme chiffre seulement 1 !
+		if (size_ligne==1) size_ligne=getSize()+1; // Regle du Jeu : si on a une ligne de 1 case, on ne peut pas imposer comme chiffre seulement 1 ! Ici on renvoie getSize()+1 pour dire : pas de restriction.
 		return size_ligne;
 	}
 	
@@ -216,6 +326,7 @@ public class Tableau {
 	}
 	
 	public int taille_colonne_courante(int j , int position){
+		if (getCase(position)==-1) return 0;
 
 		int pos_dernier_colonne= ((getSize()*getSize())-1) - (getSize()-(j+1));
 		int pos_premier_colonne= j;
@@ -235,7 +346,7 @@ public class Tableau {
 			i++;
 			pos_case_suivante= position+(getSize()*i);
 		}
-		if(size_colonne==1) size_colonne=getSize(); // Regle du Jeu : si on a une colonne de 1 case, on ne peut pas imposer comme chiffre seulement 1 !
+		if(size_colonne==1) size_colonne=getSize()+1; // Regle du Jeu : si on a une colonne de 1 case, on ne peut pas imposer comme chiffre seulement 1 !
 		return size_colonne;
 	}
 	
@@ -422,6 +533,8 @@ public class Tableau {
 				//FIN CORRECTION
 			}
 			// on remplie la grille Ã  l'aide du backtracking
+			init_tailles_max(); // OPTI 1
+            init_possibilitees(); // OPTI 2
 			if (!estValide(0,System.currentTimeMillis())){
 				System.out.println("Non valide ");
 			}else {
