@@ -58,6 +58,13 @@ public class Jeu extends JFrame {
     private Tableau tabFinal;
 
     public Jeu() {
+        if (! new File("Sauvegarde/").exists()){
+            new File("Sauvegarde/").mkdir();
+        }
+        if (!new File("Modeles/").exists()){
+            new File("Modeles/").mkdir();
+        }
+
         initialisation();
         initialisationBouton();
         initialisationPanelMenu();
@@ -313,12 +320,13 @@ public class Jeu extends JFrame {
 
 
         nom_parties = new LinkedList<String>();
+
         File di = new File("Sauvegarde/");
         nom_parties.add("Selectionnez...");
         String[] listeFichier= di.list();
-      /* for (String s : listeFichier){
+        for (String s : listeFichier){
             nom_parties.add(s);
-        }*/
+        }
         texte = new JTextArea("Rien de selectionnez"); //charge partie
         texte2 = new JTextArea("Selectionnez un format ..."); // nouvelle partie
         taille_parties = new String[]{"3x3","4x4","5x5","6x6", "7x7", "8x8", "9x9"};
@@ -415,7 +423,7 @@ public class Jeu extends JFrame {
                     }
                     tabFinal = new Tableau(grilleFinale,TAILLE);
                     try {
-                        tabFinal.sauvegarderGrilleSerial("Sauvegarde/");
+                        Tableau.sauvegarderGrilleSerial(tableau,"Sauvegarde/");
                         JOptionPane.showMessageDialog(null,"Grille sauvegardée !");
                     }catch(Exception exc){
                         JOptionPane.showMessageDialog(null,"Problème lors de la sauvegarde");
@@ -481,7 +489,7 @@ public class Jeu extends JFrame {
                     }
                     tableau.afficherGrille();
                     try {
-                        tableau.sauvegarderGrilleSerial("Modeles/");
+                        Tableau.sauvegarderGrilleSerial(tableau,"Modeles/");
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
@@ -516,11 +524,15 @@ public class Jeu extends JFrame {
                 } else if (command.equals("Jouer1")) {
                     texte.setText("Jouer sur la " + liste_parties.getSelectedItem()); // reference a l'objet selectionnee
                     try{
-                        tableau.restaurerGrilleSerial("Sauvegarde/"+liste_parties.getSelectedItem());
+                        tableau = Tableau.restaurerGrilleSerial("Sauvegarde/" + liste_parties.getSelectedItem());
                     } catch (Exception exception){
                         exception.printStackTrace();
                     }
+                    tableau.afficherGrille();
+                    TAILLE = tableau.getSize();
+                    grille = new JFormattedTextField[tableau.getSize()][tableau.getSize()];
                     initialisationPanelJeu();
+
                     cardLayout.show(panel, "pageJeu");
 
                 } else if (command.equals("Partie_selectionnee")) {
@@ -693,7 +705,7 @@ public class Jeu extends JFrame {
                             }
                             tableau.afficherGrille();
                             try {
-                                tableau.sauvegarderGrilleSerial("Modeles/");
+                                Tableau.sauvegarderGrilleSerial(tableau,"Modeles/");
                             } catch (Exception ex) {
                                 ex.printStackTrace();
                             }

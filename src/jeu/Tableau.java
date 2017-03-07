@@ -4,9 +4,10 @@ import java.io.*;
 import java.sql.Time;
 import java.util.Random;
 
-public class Tableau {
+public class Tableau implements Serializable{
 	
 	/////OPTIMISATIONS///////
+	private static final long serialVersionUID = 1L;
 
 	public void swap(Possibilitee [] t, int a, int b)
 	{
@@ -21,7 +22,7 @@ public class Tableau {
 	    int i;
 	    for(i=0;i<taille_possibilitees-1;i++)
 	    {
-	        System.out.println("Indice numéro :" + i + " Position : " + valeurs_possibles[i].get_position() +" Nb Possibilitees : " +valeurs_possibles[i].get_nb_possibilitees());
+	        System.out.println("Indice numï¿½ro :" + i + " Position : " + valeurs_possibles[i].get_position() +" Nb Possibilitees : " +valeurs_possibles[i].get_nb_possibilitees());
 	    }
 	}
 	
@@ -61,7 +62,7 @@ public class Tableau {
 			if (getCase(position) == 0 )
 			{
 			valeurs_possibles[taille_possibilitees] = (new Possibilitee(tailles_max[position], position));
-			taille_possibilitees ++; // une fois arrivé a la fin, le tableau aura une case en trop
+			taille_possibilitees ++; // une fois arrivï¿½ a la fin, le tableau aura une case en trop
 			}
 		}
 		tri_possibilitees();
@@ -260,7 +261,7 @@ public class Tableau {
 	public boolean estValide (int position,long timeOut) {
 		
 		//On y a ajoute un timeOut pour optimiser le temps d'execution celon les cas ou la grille est trop longue a resoudre
-		if (System.currentTimeMillis() - timeOut > 10000){
+		if (System.currentTimeMillis() - timeOut > 1.000){
 			return false;
 		}
 		// Si on est a la n*n eme case (on sort du tableau), on s'arrete ici car le parcours aura ete fait en entier
@@ -452,7 +453,7 @@ public class Tableau {
 		}
 		in.close();
 	}
-	public void sauvegarderGrilleSerial(String path) throws Exception {
+	public static void sauvegarderGrilleSerial(Tableau tableau,String path) throws Exception {
 		int numFichier;
 		File di = new File(path);
 		File fl[] = di.listFiles();
@@ -462,15 +463,17 @@ public class Tableau {
 		}
 		FileOutputStream fileOut = new FileOutputStream(path+"grille_"+numFichier+".ser");
 		ObjectOutputStream out = new ObjectOutputStream(fileOut);
-		out.writeObject(this.tabCase);
-
+		out.writeObject(tableau);
+		fileOut.close();
 		out.close();
 	}
-	public void restaurerGrilleSerial(String nomFichier) throws Exception{
+	public static Tableau restaurerGrilleSerial(String nomFichier) throws Exception{
 		FileInputStream fileIn = new FileInputStream(nomFichier);
 		ObjectInputStream in = new ObjectInputStream(fileIn);
-		this.tabCase = (Case[][]) in.readObject();
+		Tableau tableau = (Tableau) in.readObject();
+		fileIn.close();
 		in.close();
+		return tableau;
 	}
 	public void afficherGrille(){
 		System.out.println("Grille : ");
@@ -489,6 +492,7 @@ public class Tableau {
 		int nbCase = (taille * taille);
 		long tempsDebut;
 		long tempsFin;
+		long timeOut=1;
 		/*
 			La difficulte est determinee par le nombre de case preremplie (noires ou chiffre)
 		 */
