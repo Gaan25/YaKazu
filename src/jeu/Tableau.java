@@ -261,7 +261,7 @@ public class Tableau implements Serializable{
 	public boolean estValide (int position,long timeOut) {
 		
 		//On y a ajoute un timeOut pour optimiser le temps d'execution celon les cas ou la grille est trop longue a resoudre
-		if (System.currentTimeMillis() - timeOut > 1.000){
+		if (System.currentTimeMillis() - timeOut > 500){
 			return false;
 		}
 		// Si on est a la n*n eme case (on sort du tableau), on s'arrete ici car le parcours aura ete fait en entier
