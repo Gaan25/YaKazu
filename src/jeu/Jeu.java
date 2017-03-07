@@ -400,6 +400,29 @@ public class Jeu extends JFrame {
                     JOptionPane.showMessageDialog(null,"Vous avez abandonné");
                     cardLayout.show(panel, "pagePrincipale");
                 }
+
+                if(command.equals("Sauvegarder")){
+                    for (int i = 0; i < TAILLE; i++) {
+                        for (int j = 0; j < TAILLE; j++) {
+                            if(grille[i][j].getBackground() == Color.BLACK){
+                                grilleFinale[i][j] = -1;
+                            }else if(grille[i][j].getText().equals("")){
+                                grilleFinale[i][j] = 0;
+                            }else {
+                                grilleFinale[i][j] = Integer.parseInt(grille[i][j].getText());
+                            }
+                        }
+                    }
+                    tabFinal = new Tableau(grilleFinale,TAILLE);
+                    try {
+                        tabFinal.sauvegarderGrilleSerial("Sauvegarde/");
+                        JOptionPane.showMessageDialog(null,"Grille sauvegardée !");
+                    }catch(Exception exc){
+                        JOptionPane.showMessageDialog(null,"Problème lors de la sauvegarde");
+                    }
+                }
+
+
                 if(command.equals("Valider")){
                         for (int i = 0; i < TAILLE; i++) {
                             for (int j = 0; j < TAILLE; j++) {
@@ -709,32 +732,4 @@ public class Jeu extends JFrame {
         setVisible(true);
     }
 
-    //TEST DE GRILLE
-    public void initialisationTableau() {
-        //TABLEAU
-        tableau = new Tableau(TAILLE);
-
-        try {
-            tableau.restaurerGrilleSerial("Modeles/modele1.ser");
-        } catch (Exception e) {
-            e.getMessage();
-        }
-
-        tableau.afficherGrille();
-        for (int i = 0; i < TAILLE; i++) {
-            for (int j = 0; j < TAILLE; j++) {
-
-                if (tableau.getCase(i, j) == -1) {
-                    grille[i][j].setBackground(Color.BLACK);
-                    grille[i][j].setEnabled(false);
-                } else if (tableau.getCase(i, j) == 0) {
-                    grille[i][j].setText("");
-                } else {
-                    grille[i][j].setText("" + tableau.getCase(i, j));
-                    //grille[i][j].setEnabled(false);
-                }
-            }
-        }
-
-    }
 }
