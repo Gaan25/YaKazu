@@ -20,10 +20,13 @@ public class Jeu extends JFrame {
     JTextArea texte; // charger partie
     JTextArea texte2; // nouvelle partie
     LinkedList<String> nom_parties;
+    LinkedList<String> nom_modeles;
+
     String[] taille_parties;
     String[] difficultees;
     String[] mode;
     private JComboBox liste_parties;
+    private JComboBox listeModele;
     private JComboBox taille; // Nouvelle Partie
     private JComboBox modes;
 
@@ -310,6 +313,7 @@ public class Jeu extends JFrame {
         panelNouvellePartie.add(taille, gbc4);
         panelNouvellePartie.add(texte2, gbc5);
         panelNouvellePartie.add(modes, gbc6);
+        panelNouvellePartie.add(listeModele);
     }
 
     /**
@@ -318,22 +322,30 @@ public class Jeu extends JFrame {
     private void initialisationBouton() {
         ActionListener actionListener;
 
-
+        //SAUVEGARDE
         nom_parties = new LinkedList<String>();
-
         File di = new File("Sauvegarde/");
         nom_parties.add("Selectionnez...");
-        String[] listeFichier= di.list();
-        for (String s : listeFichier){
+        String[] listeFichierSav= di.list();
+        for (String s : listeFichierSav){
             nom_parties.add(s);
         }
+        //MODELES
+        nom_modeles = new LinkedList<String>();
+        File diSav = new File("Modeles/");
+        nom_modeles.add("Selectionnez...");
+        String[] listeFichierModeles= di.list();
+        for (String s : listeFichierModeles){
+            nom_modeles.add(s);
+        }
+
         texte = new JTextArea("Rien de selectionnez"); //charge partie
         texte2 = new JTextArea("Selectionnez un format ..."); // nouvelle partie
         taille_parties = new String[]{"3x3","4x4","5x5","6x6", "7x7", "8x8", "9x9"};
         difficultees = new String[]{"Facile", "Moyen", "Difficile"};
-        mode = new String[]{"Generer grille", "Dessiner grille"};
+        mode = new String[]{"Generer grille", "Dessiner un Modele","Jouer avec un Modele"};
 
-
+        listeModele = new JComboBox(nom_modeles.toArray());
         liste_parties = new JComboBox(nom_parties.toArray());
         taille = new JComboBox(taille_parties);
         difficulte = new JComboBox(difficultees);
@@ -710,6 +722,18 @@ public class Jeu extends JFrame {
                                 ex.printStackTrace();
                             }
 
+                        }
+                        else if (modes.getSelectedItem().equals("Jouer avec un Modele")) {
+                            try {
+                                tableau = Tableau.restaurerGrilleSerial("Sauvegarde/"+(String) listeModele.getSelectedItem());
+                            } catch (Exception e1) {
+                                e1.printStackTrace();
+                            }
+                            grille = new JFormattedTextField[tableau.getSize()][tableau.getSize()];
+                            TAILLE = tableau.getSize();
+                            panelJeu.removeAll();
+                            initialisationPanelJeu();
+                            cardLayout.show(panel, "pageJeu");
                         }
                     }
                 } else if (command.equals("difficulte_selectionnee")) {
