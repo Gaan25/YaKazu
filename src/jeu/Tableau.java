@@ -4,9 +4,10 @@ import java.io.*;
 import java.sql.Time;
 import java.util.Random;
 
-public class Tableau {
+public class Tableau implements Serializable{
 	
 	/////OPTIMISATIONS///////
+	private static final long serialVersionUID = 1L;
 
 	public void swap(Possibilitee [] t, int a, int b)
 	{
@@ -21,7 +22,7 @@ public class Tableau {
 	    int i;
 	    for(i=0;i<taille_possibilitees-1;i++)
 	    {
-	        System.out.println("Indice num�ro :" + i + " Position : " + valeurs_possibles[i].get_position() +" Nb Possibilitees : " +valeurs_possibles[i].get_nb_possibilitees());
+	        System.out.println("Indice num�ro :" + i + " Position : " + valeurs_possibles[i].get_position() +" Nb Possibilitees : " +valeurs_possibles[i].get_nb_possibilitees());
 	    }
 	}
 	
@@ -61,7 +62,7 @@ public class Tableau {
 			if (getCase(position) == 0 )
 			{
 			valeurs_possibles[taille_possibilitees] = (new Possibilitee(tailles_max[position], position));
-			taille_possibilitees ++; // une fois arriv� a la fin, le tableau aura une case en trop
+			taille_possibilitees ++; // une fois arriv� a la fin, le tableau aura une case en trop
 			}
 		}
 		tri_possibilitees();
@@ -153,7 +154,7 @@ public class Tableau {
 	public void init_tableau(){
 		for (int i = 0; i < getSize(); i++) {
 			for (int j = 0; j < getSize(); j++) {
-				tabCase[i][j]=0;
+				tabCase[i][j]= 0;
 			}
 		}
 	}
@@ -265,7 +266,7 @@ public class Tableau {
 	public boolean estValide (int position,long timeOut) {
 		
 		//On y a ajoute un timeOut pour optimiser le temps d'execution celon les cas ou la grille est trop longue a resoudre
-		if (System.currentTimeMillis() - timeOut > 10000){
+		if (System.currentTimeMillis() - timeOut > 500){
 			return false;
 		}
 		// Si on est a la n*n eme case (on sort du tableau), on s'arrete ici car le parcours aura ete fait en entier
@@ -441,7 +442,6 @@ public class Tableau {
 		}
 		fileWriter.close();
 	}
-	//doute
 	public void restaurerGrilleTexte(String nomFichier) throws Exception{
 		LineNumberReader in = new LineNumberReader(new FileReader(nomFichier));
 		String str ="";
@@ -449,7 +449,7 @@ public class Tableau {
 		this.tabCase = null;
 		while((str = in.readLine()) != null){
 			if (this.tabCase == null){
-				this.tabCase = new int [str.length()][str.length()];
+				this.tabCase = new int[str.length()][str.length()];
 			}
 			for(int i = 0;i<str.length();i++) {
 				this.tabCase[i][j]=Integer.parseInt(Character.toString(str.charAt(i)));
@@ -458,7 +458,7 @@ public class Tableau {
 		}
 		in.close();
 	}
-	public void sauvegarderGrilleSerial(String path) throws Exception {
+	public static void sauvegarderGrilleSerial(Tableau tableau,String path) throws Exception {
 		int numFichier;
 		File di = new File(path);
 		File fl[] = di.listFiles();
@@ -468,15 +468,17 @@ public class Tableau {
 		}
 		FileOutputStream fileOut = new FileOutputStream(path+"grille_"+numFichier+".ser");
 		ObjectOutputStream out = new ObjectOutputStream(fileOut);
-		out.writeObject(this.tabCase);
-
+		out.writeObject(tableau); //NOT SERIALIZABLE EXCEPTION
+		fileOut.close();
 		out.close();
 	}
-	public void restaurerGrilleSerial(String nomFichier) throws Exception{
+	public static Tableau restaurerGrilleSerial(String nomFichier) throws Exception{
 		FileInputStream fileIn = new FileInputStream(nomFichier);
 		ObjectInputStream in = new ObjectInputStream(fileIn);
-		this.tabCase = (int[][]) in.readObject();
+		Tableau tableau = (Tableau) in.readObject();
+		fileIn.close();
 		in.close();
+		return tableau;
 	}
 	public void afficherGrille(){
 		System.out.println("Grille : ");
@@ -495,6 +497,7 @@ public class Tableau {
 		int nbCase = (taille * taille);
 		long tempsDebut;
 		long tempsFin;
+		long timeOut=1;
 		/*
 			La difficulte est determinee par le nombre de case preremplie (noires ou chiffre)
 		 */
@@ -532,7 +535,7 @@ public class Tableau {
 				i = random.nextInt(taille);
 				j = random.nextInt(taille);
 				//CORRECTION
-				if (this.tabCase[i][j] != -1){
+				if (this.tabCase[i][j]!= -1){
 					this.tabCase[i][j] = -1;
 					nbCaseNoire --;
 				}
@@ -545,7 +548,7 @@ public class Tableau {
 				System.out.println("Non valide ");
 			}else {
 				tempsFin = System.currentTimeMillis();
-				System.out.println("Temps de generation via backtracking : " + (tempsFin-tempsDebut) +" millisecondes");
+				System.out.println("Temps de génération via backtracking : " + (tempsFin-tempsDebut) +" millisecondes");
 				break;
 			}
 		}
@@ -557,12 +560,12 @@ public class Tableau {
 			if (tabCase[i][j] == -1){
 				continue;
 			}
-			this.tabCase[i][j]=0;
+			this.tabCase[i][j] = 0;
 			nbCaseVide --;
 		}
 
 		//Affichage
-		System.out.println("Grille generee par genererGrille() avant resolution");
+		System.out.println("Grille générée par genererGrille() avant résolution");
 		afficherGrille();
 	}
 	

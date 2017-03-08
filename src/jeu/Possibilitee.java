@@ -1,6 +1,8 @@
 package jeu;
 
-public class Possibilitee {
+import java.io.Serializable;
+
+public class Possibilitee implements Serializable{
 
 	private int nb_valeurs;
 	private int position;

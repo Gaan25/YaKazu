@@ -20,10 +20,13 @@ public class Jeu extends JFrame {
     JTextArea texte; // charger partie
     JTextArea texte2; // nouvelle partie
     LinkedList<String> nom_parties;
+    LinkedList<String> nom_modeles;
+
     String[] taille_parties;
     String[] difficultees;
     String[] mode;
     private JComboBox liste_parties;
+    private JComboBox listeModele;
     private JComboBox taille; // Nouvelle Partie
     private JComboBox modes;
 
@@ -58,6 +61,13 @@ public class Jeu extends JFrame {
     private Tableau tabFinal;
 
     public Jeu() {
+        if (! new File("Sauvegarde/").exists()){
+            new File("Sauvegarde/").mkdir();
+        }
+        if (!new File("Modeles/").exists()){
+            new File("Modeles/").mkdir();
+        }
+
         initialisation();
         initialisationBouton();
         initialisationPanelMenu();
@@ -303,6 +313,7 @@ public class Jeu extends JFrame {
         panelNouvellePartie.add(taille, gbc4);
         panelNouvellePartie.add(texte2, gbc5);
         panelNouvellePartie.add(modes, gbc6);
+        panelNouvellePartie.add(listeModele);
     }
 
     /**
@@ -311,21 +322,30 @@ public class Jeu extends JFrame {
     private void initialisationBouton() {
         ActionListener actionListener;
 
-
+        //SAUVEGARDE
         nom_parties = new LinkedList<String>();
         File di = new File("Sauvegarde/");
         nom_parties.add("Selectionnez...");
-        String[] listeFichier= di.list();
-      /* for (String s : listeFichier){
+        String[] listeFichierSav= di.list();
+        for (String s : listeFichierSav){
             nom_parties.add(s);
-        }*/
+        }
+        //MODELES
+        nom_modeles = new LinkedList<String>();
+        File diSav = new File("Modeles/");
+        nom_modeles.add("Selectionnez...");
+        String[] listeFichierModeles= di.list();
+        for (String s : listeFichierModeles){
+            nom_modeles.add(s);
+        }
+
         texte = new JTextArea("Rien de selectionnez"); //charge partie
         texte2 = new JTextArea("Selectionnez un format ..."); // nouvelle partie
         taille_parties = new String[]{"3x3","4x4","5x5","6x6", "7x7", "8x8", "9x9"};
         difficultees = new String[]{"Facile", "Moyen", "Difficile"};
-        mode = new String[]{"Generer grille", "Dessiner grille"};
+        mode = new String[]{"Generer grille", "Dessiner un Modele","Jouer avec un Modele"};
 
-
+        listeModele = new JComboBox(nom_modeles.toArray());
         liste_parties = new JComboBox(nom_parties.toArray());
         taille = new JComboBox(taille_parties);
         difficulte = new JComboBox(difficultees);
@@ -400,6 +420,29 @@ public class Jeu extends JFrame {
                     JOptionPane.showMessageDialog(null,"Vous avez abandonné");
                     cardLayout.show(panel, "pagePrincipale");
                 }
+
+                if(command.equals("Sauvegarder")){
+                    for (int i = 0; i < TAILLE; i++) {
+                        for (int j = 0; j < TAILLE; j++) {
+                            if(grille[i][j].getBackground() == Color.BLACK){
+                                grilleFinale[i][j] = -1;
+                            }else if(grille[i][j].getText().equals("")){
+                                grilleFinale[i][j] = 0;
+                            }else {
+                                grilleFinale[i][j] = Integer.parseInt(grille[i][j].getText());
+                            }
+                        }
+                    }
+                    tabFinal = new Tableau(grilleFinale,TAILLE);
+                    try {
+                        Tableau.sauvegarderGrilleSerial(tableau,"Sauvegarde/");
+                        JOptionPane.showMessageDialog(null,"Grille sauvegardée !");
+                    }catch(Exception exc){
+                        JOptionPane.showMessageDialog(null,"Problème lors de la sauvegarde");
+                    }
+                }
+
+
                 if(command.equals("Valider")){
                         for (int i = 0; i < TAILLE; i++) {
                             for (int j = 0; j < TAILLE; j++) {
@@ -458,7 +501,7 @@ public class Jeu extends JFrame {
                     }
                     tableau.afficherGrille();
                     try {
-                        tableau.sauvegarderGrilleSerial("Modeles/");
+                        Tableau.sauvegarderGrilleSerial(tableau,"Modeles/");
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
@@ -472,7 +515,6 @@ public class Jeu extends JFrame {
                         CardLayout cardLayout = (CardLayout)(panel.getLayout());
                         cardLayout.show(panel,"pageJeu");
                         panelJeu.updateUI();
-
                     }else {
                         new JOptionPane("Non valide");
                     }*/
@@ -493,11 +535,15 @@ public class Jeu extends JFrame {
                 } else if (command.equals("Jouer1")) {
                     texte.setText("Jouer sur la " + liste_parties.getSelectedItem()); // reference a l'objet selectionnee
                     try{
-                        tableau.restaurerGrilleSerial("Sauvegarde/"+liste_parties.getSelectedItem());
+                        tableau = Tableau.restaurerGrilleSerial("Sauvegarde/" + liste_parties.getSelectedItem());
                     } catch (Exception exception){
                         exception.printStackTrace();
                     }
+                    tableau.afficherGrille();
+                    TAILLE = tableau.getSize();
+                    grille = new JFormattedTextField[tableau.getSize()][tableau.getSize()];
                     initialisationPanelJeu();
+
                     cardLayout.show(panel, "pageJeu");
 
                 } else if (command.equals("Partie_selectionnee")) {
@@ -670,11 +716,23 @@ public class Jeu extends JFrame {
                             }
                             tableau.afficherGrille();
                             try {
-                                tableau.sauvegarderGrilleSerial("Modeles/");
+                                Tableau.sauvegarderGrilleSerial(tableau,"Modeles/");
                             } catch (Exception ex) {
                                 ex.printStackTrace();
                             }
 
+                        }
+                        else if (modes.getSelectedItem().equals("Jouer avec un Modele")) {
+                            try {
+                                tableau = Tableau.restaurerGrilleSerial("Sauvegarde/"+(String) listeModele.getSelectedItem());
+                            } catch (Exception e1) {
+                                e1.printStackTrace();
+                            }
+                            grille = new JFormattedTextField[tableau.getSize()][tableau.getSize()];
+                            TAILLE = tableau.getSize();
+                            panelJeu.removeAll();
+                            initialisationPanelJeu();
+                            cardLayout.show(panel, "pageJeu");
                         }
                     }
                 } else if (command.equals("difficulte_selectionnee")) {
@@ -709,32 +767,4 @@ public class Jeu extends JFrame {
         setVisible(true);
     }
 
-    //TEST DE GRILLE
-    public void initialisationTableau() {
-        //TABLEAU
-        tableau = new Tableau(TAILLE);
-
-        try {
-            tableau.restaurerGrilleSerial("Modeles/modele1.ser");
-        } catch (Exception e) {
-            e.getMessage();
-        }
-
-        tableau.afficherGrille();
-        for (int i = 0; i < TAILLE; i++) {
-            for (int j = 0; j < TAILLE; j++) {
-
-                if (tableau.getCase(i, j) == -1) {
-                    grille[i][j].setBackground(Color.BLACK);
-                    grille[i][j].setEnabled(false);
-                } else if (tableau.getCase(i, j) == 0) {
-                    grille[i][j].setText("");
-                } else {
-                    grille[i][j].setText("" + tableau.getCase(i, j));
-                    //grille[i][j].setEnabled(false);
-                }
-            }
-        }
-
-    }
 }

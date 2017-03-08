@@ -52,6 +52,7 @@ public class Main {
 			e.printStackTrace();
 		}
 		*/
+		//new Modeles().sauvegarderModeles();
 		Jeu jeu = new Jeu();
 		jeu.commencer();
 
