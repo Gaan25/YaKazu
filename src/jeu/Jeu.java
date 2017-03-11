@@ -570,7 +570,7 @@ public class Jeu extends JFrame {
                     if (texte2.getText().equals("Selectionnez un format ...") || texte2.getText().equals("Veuillez d'abord \nselectionner un format !")) {
                         texte2.setText("Veuillez d'abord \nselectionner un format !");
                     } else {
-                        if (modes.getSelectedItem().equals("Dessiner grille")){
+                        if (modes.getSelectedItem().equals("Dessiner un Modele")){
                             MouseListener mouseListener = new MouseListener() {
                                 @Override
                                 public void mouseClicked(MouseEvent e) {
