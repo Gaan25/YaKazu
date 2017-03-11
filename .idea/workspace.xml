@@ -22,10 +22,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.7253635">
               <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
               <folding />
             </state>
@@ -36,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="260" column="57" selection-start-line="260" selection-start-column="57" selection-end-line="260" selection-end-column="57" />
+              <caret line="475" column="0" selection-start-line="475" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
               <folding>
                 <element signature="method#swap#0;class#Tableau#0" expanded="false" />
                 <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
@@ -44,58 +44,16 @@
                 <element signature="method#init_possibilitees#0;class#Tableau#0" expanded="false" />
                 <element signature="method#init_tailles_max#0;class#Tableau#0" expanded="false" />
                 <element signature="method#montrer_max_pos#0;class#Tableau#0" expanded="false" />
-                <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
-                <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
-                <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
-                <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
-                <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-                <element signature="e#4282#4317#0" expanded="false" />
-                <element signature="method#toString#0;class#Tableau#0" expanded="false" />
-                <element signature="method#init_verification#0;class#Tableau#0" expanded="false" />
-                <element signature="method#grilleValide#0;class#Tableau#0" expanded="false" />
-                <element signature="method#doublonLigneCourante#0;class#Tableau#0" expanded="false" />
-                <element signature="method#doublonColonneCourante#0;class#Tableau#0" expanded="false" />
-                <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
-                <element signature="e#6804#6912#0" expanded="false" />
-                <element signature="e#7043#7084#0" expanded="false" />
-                <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
-                <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
-                <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
-                <element signature="method#trouver_premiere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
-                <element signature="method#trouver_derniere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
-                <element signature="method#absentLigneCourante#0;class#Tableau#0" expanded="false" />
-                <element signature="method#trouver_premiere_case_colonne_courante#0;class#Tableau#0" expanded="false" />
-                <element signature="method#trouver_derniere_case_colonne_courante#0;class#Tableau#0" expanded="false" />
-                <element signature="method#absentColonneCourante#0;class#Tableau#0" expanded="false" />
-                <element signature="method#sauvegarderGrilleTexte#0;class#Tableau#0" expanded="false" />
-                <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
-                <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
-                <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
-                <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
-                <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Case.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-              <folding>
-                <element signature="e#138#139#0" expanded="false" />
-                <element signature="e#159#160#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Jeu.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Jeu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42164782">
-              <caret line="572" column="78" selection-start-line="572" selection-start-column="78" selection-end-line="572" selection-end-column="78" />
+            <state vertical-scroll-proportion="-7.2352943">
+              <caret line="726" column="80" selection-start-line="726" selection-start-column="80" selection-end-line="726" selection-end-column="80" />
               <folding>
                 <element signature="docComment;class#Jeu#0" expanded="false" />
                 <element signature="method#Jeu#0;class#Jeu#0" expanded="false" />
@@ -111,22 +69,10 @@
                 <element signature="method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
                 <element signature="method#initialisationPanelCharger#0;class#Jeu#0" expanded="false" />
                 <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
-                <element signature="class#13320:13840" expanded="false" />
-                <element signature="method#actionPerformed#0;class#13320:13840" expanded="false" />
-                <element signature="class#14050:17224" expanded="false" />
-                <element signature="method#actionPerformed#0;class#14050:17224" expanded="false" />
-                <element signature="class#17491:19358" expanded="false" />
-                <element signature="method#actionPerformed#0;class#17491:19358" expanded="false" />
-                <element signature="class#19490:20839" expanded="false" />
-                <element signature="method#actionPerformed#0;class#19490:20839" expanded="false" />
-                <element signature="class#21891:22996" expanded="false" />
-                <element signature="method#mouseClicked#0;class#21891:22996" expanded="false" />
-                <element signature="method#mousePressed#0;class#21891:22996" expanded="false" />
-                <element signature="method#mouseReleased#0;class#21891:22996" expanded="false" />
-                <element signature="method#mouseEntered#0;class#21891:22996" expanded="false" />
-                <element signature="method#mouseExited#0;class#21891:22996" expanded="false" />
-                <element signature="docComment;method#commencer#0;class#Jeu#0" expanded="false" />
-                <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
+                <element signature="class#13323:13843" expanded="false" />
+                <element signature="method#actionPerformed#0;class#13323:13843" expanded="false" />
+                <element signature="class#14053:17227" expanded="false" />
+                <element signature="method#actionPerformed#0;class#14053:17227" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -137,14 +83,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-              <folding>
-                <element signature="e#295#296#0" expanded="false" />
-                <element signature="e#319#320#0" expanded="false" />
-                <element signature="e#362#363#0" expanded="false" />
-                <element signature="e#386#387#0" expanded="false" />
-                <element signature="e#417#418#0" expanded="false" />
-                <element signature="e#439#440#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -176,10 +115,10 @@
         <option value="$PROJECT_DIR$/src/jeu/A_lire_Note_sur_Jeu.txt" />
         <option value="$PROJECT_DIR$/src/jeu/GrilleView.java" />
         <option value="$PROJECT_DIR$/src/jeu/Modeles.java" />
-        <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/jeu/Possibilitee.java" />
         <option value="$PROJECT_DIR$/src/jeu/Tableau.java" />
         <option value="$PROJECT_DIR$/src/jeu/Jeu.java" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
       </list>
     </option>
   </component>
@@ -223,6 +162,7 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -291,23 +231,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YaKazu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YaKazu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modeles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -326,6 +251,9 @@
     <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valid13\Desktop\Travail\YaKazu\Sauvegarde" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\valid13\Desktop\Travail\YaKazu\Sauvegarde" />
     </key>
@@ -609,35 +537,6 @@
             <element signature="method#init_possibilitees#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tailles_max#0;class#Tableau#0" expanded="false" />
             <element signature="method#montrer_max_pos#0;class#Tableau#0" expanded="false" />
-            <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
-            <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
-            <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
-            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
-            <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#4282#4317#0" expanded="false" />
-            <element signature="method#toString#0;class#Tableau#0" expanded="false" />
-            <element signature="method#init_verification#0;class#Tableau#0" expanded="false" />
-            <element signature="method#grilleValide#0;class#Tableau#0" expanded="false" />
-            <element signature="method#doublonLigneCourante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#doublonColonneCourante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
-            <element signature="e#6804#6912#0" expanded="false" />
-            <element signature="e#7043#7084#0" expanded="false" />
-            <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
-            <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#trouver_premiere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#trouver_derniere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#absentLigneCourante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#trouver_premiere_case_colonne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#trouver_derniere_case_colonne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#absentColonneCourante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#sauvegarderGrilleTexte#0;class#Tableau#0" expanded="false" />
-            <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
-            <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
-            <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
-            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
-            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -661,35 +560,6 @@
             <element signature="method#init_possibilitees#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tailles_max#0;class#Tableau#0" expanded="false" />
             <element signature="method#montrer_max_pos#0;class#Tableau#0" expanded="false" />
-            <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
-            <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
-            <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
-            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
-            <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#4282#4317#0" expanded="false" />
-            <element signature="method#toString#0;class#Tableau#0" expanded="false" />
-            <element signature="method#init_verification#0;class#Tableau#0" expanded="false" />
-            <element signature="method#grilleValide#0;class#Tableau#0" expanded="false" />
-            <element signature="method#doublonLigneCourante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#doublonColonneCourante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
-            <element signature="e#6804#6912#0" expanded="false" />
-            <element signature="e#7043#7084#0" expanded="false" />
-            <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
-            <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#trouver_premiere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#trouver_derniere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#absentLigneCourante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#trouver_premiere_case_colonne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#trouver_derniere_case_colonne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#absentColonneCourante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#sauvegarderGrilleTexte#0;class#Tableau#0" expanded="false" />
-            <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
-            <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
-            <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
-            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
-            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -753,13 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -782,13 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -804,10 +660,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
+    <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -826,35 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -867,13 +702,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -892,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -914,13 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -933,13 +747,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1003,32 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-          <folding>
-            <element signature="e#295#296#0" expanded="false" />
-            <element signature="e#319#320#0" expanded="false" />
-            <element signature="e#362#363#0" expanded="false" />
-            <element signature="e#386#387#0" expanded="false" />
-            <element signature="e#417#418#0" expanded="false" />
-            <element signature="e#439#440#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Case.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding>
-            <element signature="e#138#139#0" expanded="false" />
-            <element signature="e#159#160#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1036,7 +817,7 @@
     <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="260" column="57" selection-start-line="260" selection-start-column="57" selection-end-line="260" selection-end-column="57" />
+          <caret line="475" column="0" selection-start-line="475" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
           <folding>
             <element signature="method#swap#0;class#Tableau#0" expanded="false" />
             <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
@@ -1044,43 +825,14 @@
             <element signature="method#init_possibilitees#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tailles_max#0;class#Tableau#0" expanded="false" />
             <element signature="method#montrer_max_pos#0;class#Tableau#0" expanded="false" />
-            <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
-            <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
-            <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
-            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
-            <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#4282#4317#0" expanded="false" />
-            <element signature="method#toString#0;class#Tableau#0" expanded="false" />
-            <element signature="method#init_verification#0;class#Tableau#0" expanded="false" />
-            <element signature="method#grilleValide#0;class#Tableau#0" expanded="false" />
-            <element signature="method#doublonLigneCourante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#doublonColonneCourante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
-            <element signature="e#6804#6912#0" expanded="false" />
-            <element signature="e#7043#7084#0" expanded="false" />
-            <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
-            <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#trouver_premiere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#trouver_derniere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#absentLigneCourante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#trouver_premiere_case_colonne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#trouver_derniere_case_colonne_courante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#absentColonneCourante#0;class#Tableau#0" expanded="false" />
-            <element signature="method#sauvegarderGrilleTexte#0;class#Tableau#0" expanded="false" />
-            <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
-            <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
-            <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
-            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
-            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42164782">
-          <caret line="572" column="78" selection-start-line="572" selection-start-column="78" selection-end-line="572" selection-end-column="78" />
+        <state vertical-scroll-proportion="-7.2352943">
+          <caret line="726" column="80" selection-start-line="726" selection-start-column="80" selection-end-line="726" selection-end-column="80" />
           <folding>
             <element signature="docComment;class#Jeu#0" expanded="false" />
             <element signature="method#Jeu#0;class#Jeu#0" expanded="false" />
@@ -1096,23 +848,19 @@
             <element signature="method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelCharger#0;class#Jeu#0" expanded="false" />
             <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
-            <element signature="class#13320:13840" expanded="false" />
-            <element signature="method#actionPerformed#0;class#13320:13840" expanded="false" />
-            <element signature="class#14050:17224" expanded="false" />
-            <element signature="method#actionPerformed#0;class#14050:17224" expanded="false" />
-            <element signature="class#17491:19358" expanded="false" />
-            <element signature="method#actionPerformed#0;class#17491:19358" expanded="false" />
-            <element signature="class#19490:20839" expanded="false" />
-            <element signature="method#actionPerformed#0;class#19490:20839" expanded="false" />
-            <element signature="class#21891:22996" expanded="false" />
-            <element signature="method#mouseClicked#0;class#21891:22996" expanded="false" />
-            <element signature="method#mousePressed#0;class#21891:22996" expanded="false" />
-            <element signature="method#mouseReleased#0;class#21891:22996" expanded="false" />
-            <element signature="method#mouseEntered#0;class#21891:22996" expanded="false" />
-            <element signature="method#mouseExited#0;class#21891:22996" expanded="false" />
-            <element signature="docComment;method#commencer#0;class#Jeu#0" expanded="false" />
-            <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
+            <element signature="class#13323:13843" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13323:13843" expanded="false" />
+            <element signature="class#14053:17227" expanded="false" />
+            <element signature="method#actionPerformed#0;class#14053:17227" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7253635">
+          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -334,7 +334,7 @@ public class Jeu extends JFrame {
         nom_modeles = new LinkedList<String>();
         File diSav = new File("Modeles/");
         nom_modeles.add("Selectionnez...");
-        String[] listeFichierModeles= di.list();
+        String[] listeFichierModeles= diSav.list();
         for (String s : listeFichierModeles){
             nom_modeles.add(s);
         }
@@ -724,7 +724,7 @@ public class Jeu extends JFrame {
                         }
                         else if (modes.getSelectedItem().equals("Jouer avec un Modele")) {
                             try {
-                                tableau = Tableau.restaurerGrilleSerial("Sauvegarde/"+(String) listeModele.getSelectedItem());
+                                tableau = Tableau.restaurerGrilleSerial("Modeles/"+(String) listeModele.getSelectedItem());
                             } catch (Exception e1) {
                                 e1.printStackTrace();
                             }
