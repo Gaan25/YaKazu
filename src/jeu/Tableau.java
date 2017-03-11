@@ -110,7 +110,7 @@ public class Tableau implements Serializable{
 	
 	////FIN OPTIMISATIONS////
 	
-	private Case tabCase[][];
+	private int tabCase[][];
 	int size;
 
 	public int getSize() {
@@ -129,11 +129,11 @@ public class Tableau implements Serializable{
 	}
 	
 	public int getCase(int i , int j){
-		return tabCase[i][j].getChiffre();
+		return tabCase[i][j];
 	}
 	
 	public void setCase(int i, int j, int value){
-		tabCase[i][j].setChiffre(value);
+		tabCase[i][j]=value;
 	}
 	
 	public int getCase(int position){
@@ -141,20 +141,20 @@ public class Tableau implements Serializable{
 
 		int i = position/(getSize());
 		int j = position%(getSize());
-		return tabCase[i][j].getChiffre();
+		return tabCase[i][j];
 	}
 
 	public void modifier_case (int i,int j, int chiffre){
 
 		if (getSize()<chiffre) System.out.println("Impossible la taille tu tableau est de"+ getSize()+"*" + getSize());
 		else
-			tabCase[i][j].setChiffre(chiffre);
+			tabCase[i][j]=chiffre;
 	}
 	
 	public void init_tableau(){
 		for (int i = 0; i < getSize(); i++) {
 			for (int j = 0; j < getSize(); j++) {
-				tabCase[i][j]= new Case(0);
+				tabCase[i][j]= 0;
 			}
 		}
 	}
@@ -162,7 +162,7 @@ public class Tableau implements Serializable{
 	public Tableau (int size){
 		setSize(size);
 		if (getSize()>=3 && getSize()<=9){
-			tabCase = new Case[size][size];
+			tabCase = new int[size][size];
 			init_tableau();
 		}
 		else System.out.println("Erreur : la grille a un format compris entre 3x3 et 9x9");
@@ -185,7 +185,12 @@ public class Tableau implements Serializable{
 		for (int i = 0; i < getSize(); i++) {
 
 			for (int j = 0; j < getSize(); j++) {
-				s1.append(tabCase[i][j].toString());
+				if(tabCase[i][j]<0) 
+					s1.append(" N");
+				else if(tabCase[i][j]==0) 
+					s1.append(" V");
+				else 
+					s1.append(" "+tabCase[i][j]);
 				if (j==getSize()-1){
 					s1.append("\n");
 				}
@@ -277,7 +282,7 @@ public class Tableau implements Serializable{
 
 
 		// Si la case n'est pas vide, on passe a la suivante (appel recursif)
-		if (tabCase[i][j].getChiffre() != 0)
+		if (tabCase[i][j] != 0)
 			return estValide(position+1,timeOut);
 
 		//PRINCIPE DU BACKTRACKING : TESTER UNE POSSIBILITEE VALIDE ET EFFECTUER UN PARCOURS RECURSIF AVEC CETTE POSSIBILITEE//
@@ -444,10 +449,10 @@ public class Tableau implements Serializable{
 		this.tabCase = null;
 		while((str = in.readLine()) != null){
 			if (this.tabCase == null){
-				this.tabCase = new Case[str.length()][str.length()];
+				this.tabCase = new int[str.length()][str.length()];
 			}
 			for(int i = 0;i<str.length();i++) {
-				this.tabCase[i][j].setChiffre(Integer.parseInt(Character.toString(str.charAt(i))));
+				this.tabCase[i][j]=Integer.parseInt(Character.toString(str.charAt(i)));
 			}
 			j++;
 		}
@@ -463,7 +468,7 @@ public class Tableau implements Serializable{
 		}
 		FileOutputStream fileOut = new FileOutputStream(path+"grille_"+numFichier+".ser");
 		ObjectOutputStream out = new ObjectOutputStream(fileOut);
-		out.writeObject(tableau);
+		out.writeObject(tableau); //NOT SERIALIZABLE EXCEPTION
 		fileOut.close();
 		out.close();
 	}
@@ -530,8 +535,8 @@ public class Tableau implements Serializable{
 				i = random.nextInt(taille);
 				j = random.nextInt(taille);
 				//CORRECTION
-				if (this.tabCase[i][j].getChiffre() != -1){
-					this.tabCase[i][j].setChiffre(-1);
+				if (this.tabCase[i][j]!= -1){
+					this.tabCase[i][j] = -1;
 					nbCaseNoire --;
 				}
 				//FIN CORRECTION
@@ -552,10 +557,10 @@ public class Tableau implements Serializable{
 		while (nbCaseVide!= 0){
 			i = random.nextInt(taille);
 			j = random.nextInt(taille);
-			if (tabCase[i][j].getChiffre() == -1){
+			if (tabCase[i][j] == -1){
 				continue;
 			}
-			this.tabCase[i][j].setChiffre(0);
+			this.tabCase[i][j] = 0;
 			nbCaseVide --;
 		}
 

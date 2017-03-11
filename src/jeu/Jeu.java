@@ -515,7 +515,6 @@ public class Jeu extends JFrame {
                         CardLayout cardLayout = (CardLayout)(panel.getLayout());
                         cardLayout.show(panel,"pageJeu");
                         panelJeu.updateUI();
-
                     }else {
                         new JOptionPane("Non valide");
                     }*/
