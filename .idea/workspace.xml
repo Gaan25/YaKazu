@@ -37,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tableau.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Tableau.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.517179">
-              <caret line="212" column="27" selection-start-line="212" selection-start-column="27" selection-end-line="212" selection-end-column="27" />
+            <state vertical-scroll-proportion="-6.7352943">
+              <caret line="270" column="54" selection-start-line="270" selection-start-column="54" selection-end-line="270" selection-end-column="54" />
               <folding>
                 <element signature="method#swap#0;class#Tableau#0" expanded="false" />
                 <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
@@ -75,30 +75,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Jeu.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Jeu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.1764708">
-              <caret line="466" column="0" selection-start-line="466" selection-start-column="0" selection-end-line="466" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.55250406">
+              <caret line="497" column="23" selection-start-line="497" selection-start-column="23" selection-end-line="497" selection-end-column="23" />
               <folding>
                 <element signature="docComment;class#Jeu#0" expanded="false" />
                 <element signature="method#Jeu#0;class#Jeu#0" expanded="false" />
-                <element signature="docComment;method#initialisation#0;class#Jeu#0" expanded="false" />
                 <element signature="method#initialisation#0;class#Jeu#0" expanded="false" />
                 <element signature="docComment;method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
                 <element signature="method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
                 <element signature="docComment;method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
                 <element signature="method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
-                <element signature="class#5562:6021" expanded="false" />
-                <element signature="method#keyTyped#0;class#5562:6021" expanded="false" />
+                <element signature="class#5409:5868" expanded="false" />
+                <element signature="method#keyTyped#0;class#5409:5868" expanded="false" />
                 <element signature="docComment;method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
                 <element signature="method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
                 <element signature="method#initialisationPanelCharger#0;class#Jeu#0" expanded="false" />
+                <element signature="method#initialisationPanelNouvellePartie#0;class#Jeu#0" expanded="false" />
                 <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
-                <element signature="class#13323:13843" expanded="false" />
-                <element signature="method#actionPerformed#0;class#13323:13843" expanded="false" />
-                <element signature="class#17577:19574" expanded="false" />
-                <element signature="class#19706:21055" expanded="false" />
+                <element signature="class#13170:13690" expanded="false" />
+                <element signature="method#actionPerformed#0;class#13170:13690" expanded="false" />
+                <element signature="class#13900:17157" expanded="false" />
+                <element signature="method#actionPerformed#0;class#13900:17157" expanded="false" />
+                <element signature="class#19558:20907" expanded="false" />
+                <element signature="method#actionPerformed#0;class#19558:20907" expanded="false" />
+                <element signature="class#21152:31988" expanded="false" />
+                <element signature="method#actionPerformed#0;class#21152:31988" expanded="false" />
+                <element signature="class#21959:23331" expanded="false" />
+                <element signature="method#mouseClicked#0;class#21959:23331" expanded="false" />
+                <element signature="method#mousePressed#0;class#21959:23331" expanded="false" />
+                <element signature="method#mouseReleased#0;class#21959:23331" expanded="false" />
+                <element signature="method#mouseEntered#0;class#21959:23331" expanded="false" />
+                <element signature="method#mouseExited#0;class#21959:23331" expanded="false" />
+                <element signature="docComment;method#commencer#0;class#Jeu#0" expanded="false" />
+                <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -133,8 +145,8 @@
         <option value="$PROJECT_DIR$/src/jeu/Modeles.java" />
         <option value="$PROJECT_DIR$/src/jeu/Possibilitee.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/jeu/Jeu.java" />
         <option value="$PROJECT_DIR$/src/jeu/Tableau.java" />
+        <option value="$PROJECT_DIR$/src/jeu/Jeu.java" />
       </list>
     </option>
   </component>
@@ -493,7 +505,6 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2936078" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12552084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -510,6 +521,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32769555" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -535,24 +547,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/jeu/Jeu.java</url>
-          <line>468</line>
-          <properties />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/jeu/Jeu.java</url>
-          <line>465</line>
+          <line>461</line>
           <properties />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/jeu/Jeu.java</url>
-          <line>466</line>
+          <line>498</line>
           <properties />
-          <option name="timeStamp" value="33" />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/jeu/Jeu.java</url>
+          <line>499</line>
+          <properties />
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="34" />
+      <option name="time" value="37" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -561,6 +573,81 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#swap#0;class#Tableau#0" expanded="false" />
+            <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
+            <element signature="method#trirap#0;class#Tableau#0" expanded="false" />
+            <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
+            <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
+            <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
+            <element signature="e#4220#4255#0" expanded="false" />
+            <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_verification#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonLigneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonColonneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="e#6892#7000#0" expanded="false" />
+            <element signature="e#7131#7172#0" expanded="false" />
+            <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#trouver_premiere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#trouver_derniere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#absentLigneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#trouver_premiere_case_colonne_courante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#trouver_derniere_case_colonne_courante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#absentColonneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#sauvegarderGrilleTexte#0;class#Tableau#0" expanded="false" />
+            <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
+            <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
+            <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="466" column="0" selection-start-line="466" selection-start-column="0" selection-end-line="466" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Jeu#0" expanded="false" />
+            <element signature="method#Jeu#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisation#0;class#Jeu#0" expanded="false" />
+            <element signature="docComment;method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
+            <element signature="docComment;method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
+            <element signature="class#5409:5868" expanded="false" />
+            <element signature="method#keyTyped#0;class#5409:5868" expanded="false" />
+            <element signature="docComment;method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelCharger#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelNouvellePartie#0;class#Jeu#0" expanded="false" />
+            <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
+            <element signature="class#13170:13690" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13170:13690" expanded="false" />
+            <element signature="class#13900:17157" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13900:17157" expanded="false" />
+            <element signature="class#19558:20907" expanded="false" />
+            <element signature="method#actionPerformed#0;class#19558:20907" expanded="false" />
+            <element signature="class#21152:31988" expanded="false" />
+            <element signature="method#actionPerformed#0;class#21152:31988" expanded="false" />
+            <element signature="class#21959:23331" expanded="false" />
+            <element signature="method#mouseClicked#0;class#21959:23331" expanded="false" />
+            <element signature="method#mousePressed#0;class#21959:23331" expanded="false" />
+            <element signature="method#mouseReleased#0;class#21959:23331" expanded="false" />
+            <element signature="method#mouseEntered#0;class#21959:23331" expanded="false" />
+            <element signature="method#mouseExited#0;class#21959:23331" expanded="false" />
+            <element signature="docComment;method#commencer#0;class#Jeu#0" expanded="false" />
+            <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -612,22 +699,34 @@
           <folding>
             <element signature="docComment;class#Jeu#0" expanded="false" />
             <element signature="method#Jeu#0;class#Jeu#0" expanded="false" />
-            <element signature="docComment;method#initialisation#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisation#0;class#Jeu#0" expanded="false" />
             <element signature="docComment;method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
             <element signature="docComment;method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
-            <element signature="class#5562:6021" expanded="false" />
-            <element signature="method#keyTyped#0;class#5562:6021" expanded="false" />
+            <element signature="class#5409:5868" expanded="false" />
+            <element signature="method#keyTyped#0;class#5409:5868" expanded="false" />
             <element signature="docComment;method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelCharger#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelNouvellePartie#0;class#Jeu#0" expanded="false" />
             <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
-            <element signature="class#13323:13843" expanded="false" />
-            <element signature="method#actionPerformed#0;class#13323:13843" expanded="false" />
-            <element signature="class#17577:19574" expanded="false" />
-            <element signature="class#19706:21055" expanded="false" />
+            <element signature="class#13170:13690" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13170:13690" expanded="false" />
+            <element signature="class#13900:17157" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13900:17157" expanded="false" />
+            <element signature="class#19558:20907" expanded="false" />
+            <element signature="method#actionPerformed#0;class#19558:20907" expanded="false" />
+            <element signature="class#21152:31988" expanded="false" />
+            <element signature="method#actionPerformed#0;class#21152:31988" expanded="false" />
+            <element signature="class#21959:23331" expanded="false" />
+            <element signature="method#mouseClicked#0;class#21959:23331" expanded="false" />
+            <element signature="method#mousePressed#0;class#21959:23331" expanded="false" />
+            <element signature="method#mouseReleased#0;class#21959:23331" expanded="false" />
+            <element signature="method#mouseEntered#0;class#21959:23331" expanded="false" />
+            <element signature="method#mouseExited#0;class#21959:23331" expanded="false" />
+            <element signature="docComment;method#commencer#0;class#Jeu#0" expanded="false" />
+            <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -683,22 +782,34 @@
           <folding>
             <element signature="docComment;class#Jeu#0" expanded="false" />
             <element signature="method#Jeu#0;class#Jeu#0" expanded="false" />
-            <element signature="docComment;method#initialisation#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisation#0;class#Jeu#0" expanded="false" />
             <element signature="docComment;method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
             <element signature="docComment;method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
-            <element signature="class#5562:6021" expanded="false" />
-            <element signature="method#keyTyped#0;class#5562:6021" expanded="false" />
+            <element signature="class#5409:5868" expanded="false" />
+            <element signature="method#keyTyped#0;class#5409:5868" expanded="false" />
             <element signature="docComment;method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelCharger#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelNouvellePartie#0;class#Jeu#0" expanded="false" />
             <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
-            <element signature="class#13323:13843" expanded="false" />
-            <element signature="method#actionPerformed#0;class#13323:13843" expanded="false" />
-            <element signature="class#17577:19574" expanded="false" />
-            <element signature="class#19706:21055" expanded="false" />
+            <element signature="class#13170:13690" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13170:13690" expanded="false" />
+            <element signature="class#13900:17157" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13900:17157" expanded="false" />
+            <element signature="class#19558:20907" expanded="false" />
+            <element signature="method#actionPerformed#0;class#19558:20907" expanded="false" />
+            <element signature="class#21152:31988" expanded="false" />
+            <element signature="method#actionPerformed#0;class#21152:31988" expanded="false" />
+            <element signature="class#21959:23331" expanded="false" />
+            <element signature="method#mouseClicked#0;class#21959:23331" expanded="false" />
+            <element signature="method#mousePressed#0;class#21959:23331" expanded="false" />
+            <element signature="method#mouseReleased#0;class#21959:23331" expanded="false" />
+            <element signature="method#mouseEntered#0;class#21959:23331" expanded="false" />
+            <element signature="method#mouseExited#0;class#21959:23331" expanded="false" />
+            <element signature="docComment;method#commencer#0;class#Jeu#0" expanded="false" />
+            <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1049,14 +1160,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/awt/EventDispatchThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1065,37 +1168,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.1764708">
-          <caret line="466" column="0" selection-start-line="466" selection-start-column="0" selection-end-line="466" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Jeu#0" expanded="false" />
-            <element signature="method#Jeu#0;class#Jeu#0" expanded="false" />
-            <element signature="docComment;method#initialisation#0;class#Jeu#0" expanded="false" />
-            <element signature="method#initialisation#0;class#Jeu#0" expanded="false" />
-            <element signature="docComment;method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
-            <element signature="method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
-            <element signature="docComment;method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
-            <element signature="method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
-            <element signature="class#5562:6021" expanded="false" />
-            <element signature="method#keyTyped#0;class#5562:6021" expanded="false" />
-            <element signature="docComment;method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
-            <element signature="method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
-            <element signature="method#initialisationPanelCharger#0;class#Jeu#0" expanded="false" />
-            <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
-            <element signature="class#13323:13843" expanded="false" />
-            <element signature="method#actionPerformed#0;class#13323:13843" expanded="false" />
-            <element signature="class#17577:19574" expanded="false" />
-            <element signature="class#19706:21055" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.517179">
-          <caret line="212" column="27" selection-start-line="212" selection-start-column="27" selection-end-line="212" selection-end-column="27" />
+        <state vertical-scroll-proportion="-6.7352943">
+          <caret line="270" column="54" selection-start-line="270" selection-start-column="54" selection-end-line="270" selection-end-column="54" />
           <folding>
             <element signature="method#swap#0;class#Tableau#0" expanded="false" />
             <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
@@ -1124,6 +1208,45 @@
             <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
             <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
             <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55250406">
+          <caret line="497" column="23" selection-start-line="497" selection-start-column="23" selection-end-line="497" selection-end-column="23" />
+          <folding>
+            <element signature="docComment;class#Jeu#0" expanded="false" />
+            <element signature="method#Jeu#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisation#0;class#Jeu#0" expanded="false" />
+            <element signature="docComment;method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
+            <element signature="docComment;method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
+            <element signature="class#5409:5868" expanded="false" />
+            <element signature="method#keyTyped#0;class#5409:5868" expanded="false" />
+            <element signature="docComment;method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelCharger#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelNouvellePartie#0;class#Jeu#0" expanded="false" />
+            <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
+            <element signature="class#13170:13690" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13170:13690" expanded="false" />
+            <element signature="class#13900:17157" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13900:17157" expanded="false" />
+            <element signature="class#19558:20907" expanded="false" />
+            <element signature="method#actionPerformed#0;class#19558:20907" expanded="false" />
+            <element signature="class#21152:31988" expanded="false" />
+            <element signature="method#actionPerformed#0;class#21152:31988" expanded="false" />
+            <element signature="class#21959:23331" expanded="false" />
+            <element signature="method#mouseClicked#0;class#21959:23331" expanded="false" />
+            <element signature="method#mousePressed#0;class#21959:23331" expanded="false" />
+            <element signature="method#mouseReleased#0;class#21959:23331" expanded="false" />
+            <element signature="method#mouseEntered#0;class#21959:23331" expanded="false" />
+            <element signature="method#mouseExited#0;class#21959:23331" expanded="false" />
+            <element signature="docComment;method#commencer#0;class#Jeu#0" expanded="false" />
+            <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
           </folding>
         </state>
       </provider>

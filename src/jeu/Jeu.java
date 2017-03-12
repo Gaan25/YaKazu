@@ -83,11 +83,7 @@ public class Jeu extends JFrame {
 
     }
 
-    /**
-     * Méthode qui permet de creer les panels de chaque fenêtre de l'utilisateur
-     * et d'ajouter tout les panels dans un panel principal
-     */
-    private void initialisation() {
+        private void initialisation() {
         //PANEL PRINCIPAL #LE BIG BOSS
         panel = new JPanel();
         panel.setLayout(new CardLayout(0, 0));
@@ -499,10 +495,10 @@ public class Jeu extends JFrame {
                                 tableau.setCase(i, j, Integer.parseInt(grille[i][j].getText()));
                             }
                         }
-                    }
-                    if (!tableau.estValide(0,System.currentTimeMillis())){
+                    }/*
+                    if (!tableau.estValide(0, System.currentTimeMillis())){
                         return;
-                    }
+                    }*/
                     //tableau.afficherGrille();
                     try {
                         Tableau.sauvegarderGrilleSerial(tableau,"Modeles/");
