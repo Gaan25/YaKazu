@@ -464,15 +464,16 @@ public class Jeu extends JFrame {
                             }
                         }
                         tabFinal = new Tableau(grilleFinale,TAILLE);
-                    if(flag ==0){
-                        if(tabFinal.grilleValide()){
-                            JOptionPane.showMessageDialog(null,"Félicitations, vous avez réussi !");
+                    tabFinal.afficherGrille();
+                        if(flag ==0){
+                            if(tabFinal.grilleValide()){
+                                JOptionPane.showMessageDialog(null,"Félicitations, vous avez réussi !");
+                            }else{
+                                JOptionPane.showMessageDialog(null,"Votre solution n'est pas valide. Il doit y avoir des doublons.");
+                            }
                         }else{
-                            JOptionPane.showMessageDialog(null,"Votre solution n'est pas valide. Il doit y avoir des doublons.");
+                            JOptionPane.showMessageDialog(null,"Vous n'avez pas fini de compléter la grille");
                         }
-                    }else{
-                        JOptionPane.showMessageDialog(null,"Vous n'avez pas fini de compléter la grille");
-                    }
                 }
             }
         };
@@ -499,7 +500,10 @@ public class Jeu extends JFrame {
                             }
                         }
                     }
-                    tableau.afficherGrille();
+                    if (!tableau.estValide(0,System.currentTimeMillis())){
+                        return;
+                    }
+                    //tableau.afficherGrille();
                     try {
                         Tableau.sauvegarderGrilleSerial(tableau,"Modeles/");
                     } catch (Exception ex) {
@@ -575,7 +579,11 @@ public class Jeu extends JFrame {
                                 public void mouseClicked(MouseEvent e) {
                                     if (SwingUtilities.isRightMouseButton(e)) {
                                         JFormattedTextField textField = (JFormattedTextField) e.getSource();
-                                        textField.setBackground(Color.BLACK);
+                                        if (textField.getBackground().equals(Color.BLACK)){
+                                            textField.setBackground(Color.WHITE);
+                                        }else{
+                                            textField.setBackground(Color.BLACK);
+                                        }
                                     }
                                 }
 
@@ -600,7 +608,6 @@ public class Jeu extends JFrame {
                                 }
                             };
                             String strTaille = (String) taille.getSelectedItem();
-                            System.out.println((String)taille.getSelectedItem());
                             GridBagConstraints c = new GridBagConstraints();
                             c.ipadx = 30;
                             c.ipady = 15;

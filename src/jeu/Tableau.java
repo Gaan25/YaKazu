@@ -209,6 +209,8 @@ public class Tableau implements Serializable{
 	}
 	
 	public boolean grilleValide(){
+		init_possibilitees();
+		init_tailles_max();
 		boolean tableau [] = new boolean[getSize()+1];
 		init_verification(tableau, getSize()+1);
 		for (int position = 0 ; position<getSize()*getSize(); position++){
