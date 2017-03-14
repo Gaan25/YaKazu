@@ -40,8 +40,8 @@
       <file leaf-file-name="Tableau.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.7352943">
-              <caret line="270" column="54" selection-start-line="270" selection-start-column="54" selection-end-line="270" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="552" column="120" selection-start-line="552" selection-start-column="120" selection-end-line="552" selection-end-column="120" />
               <folding>
                 <element signature="method#swap#0;class#Tableau#0" expanded="false" />
                 <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
@@ -78,8 +78,8 @@
       <file leaf-file-name="Jeu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55250406">
-              <caret line="497" column="23" selection-start-line="497" selection-start-column="23" selection-end-line="497" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.1008547">
+              <caret line="442" column="59" selection-start-line="442" selection-start-column="59" selection-end-line="442" selection-end-column="59" />
               <folding>
                 <element signature="docComment;class#Jeu#0" expanded="false" />
                 <element signature="method#Jeu#0;class#Jeu#0" expanded="false" />
@@ -97,18 +97,15 @@
                 <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
                 <element signature="class#13170:13690" expanded="false" />
                 <element signature="method#actionPerformed#0;class#13170:13690" expanded="false" />
-                <element signature="class#13900:17157" expanded="false" />
-                <element signature="method#actionPerformed#0;class#13900:17157" expanded="false" />
-                <element signature="class#19558:20907" expanded="false" />
-                <element signature="method#actionPerformed#0;class#19558:20907" expanded="false" />
-                <element signature="class#21152:31988" expanded="false" />
-                <element signature="method#actionPerformed#0;class#21152:31988" expanded="false" />
-                <element signature="class#21959:23331" expanded="false" />
-                <element signature="method#mouseClicked#0;class#21959:23331" expanded="false" />
-                <element signature="method#mousePressed#0;class#21959:23331" expanded="false" />
-                <element signature="method#mouseReleased#0;class#21959:23331" expanded="false" />
-                <element signature="method#mouseEntered#0;class#21959:23331" expanded="false" />
-                <element signature="method#mouseExited#0;class#21959:23331" expanded="false" />
+                <element signature="class#19614:20963" expanded="false" />
+                <element signature="method#actionPerformed#0;class#19614:20963" expanded="false" />
+                <element signature="class#21208:32044" expanded="false" />
+                <element signature="class#22015:23387" expanded="false" />
+                <element signature="method#mouseClicked#0;class#22015:23387" expanded="false" />
+                <element signature="method#mousePressed#0;class#22015:23387" expanded="false" />
+                <element signature="method#mouseReleased#0;class#22015:23387" expanded="false" />
+                <element signature="method#mouseEntered#0;class#22015:23387" expanded="false" />
+                <element signature="method#mouseExited#0;class#22015:23387" expanded="false" />
                 <element signature="docComment;method#commencer#0;class#Jeu#0" expanded="false" />
                 <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
               </folding>
@@ -188,9 +185,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -261,6 +255,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -494,7 +491,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -547,24 +544,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/jeu/Jeu.java</url>
-          <line>461</line>
+          <line>462</line>
           <properties />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/jeu/Jeu.java</url>
-          <line>498</line>
+          <line>499</line>
           <properties />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/jeu/Jeu.java</url>
-          <line>499</line>
+          <line>500</line>
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="37" />
+      <option name="time" value="38" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -630,18 +627,15 @@
             <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
             <element signature="class#13170:13690" expanded="false" />
             <element signature="method#actionPerformed#0;class#13170:13690" expanded="false" />
-            <element signature="class#13900:17157" expanded="false" />
-            <element signature="method#actionPerformed#0;class#13900:17157" expanded="false" />
-            <element signature="class#19558:20907" expanded="false" />
-            <element signature="method#actionPerformed#0;class#19558:20907" expanded="false" />
-            <element signature="class#21152:31988" expanded="false" />
-            <element signature="method#actionPerformed#0;class#21152:31988" expanded="false" />
-            <element signature="class#21959:23331" expanded="false" />
-            <element signature="method#mouseClicked#0;class#21959:23331" expanded="false" />
-            <element signature="method#mousePressed#0;class#21959:23331" expanded="false" />
-            <element signature="method#mouseReleased#0;class#21959:23331" expanded="false" />
-            <element signature="method#mouseEntered#0;class#21959:23331" expanded="false" />
-            <element signature="method#mouseExited#0;class#21959:23331" expanded="false" />
+            <element signature="class#19614:20963" expanded="false" />
+            <element signature="method#actionPerformed#0;class#19614:20963" expanded="false" />
+            <element signature="class#21208:32044" expanded="false" />
+            <element signature="class#22015:23387" expanded="false" />
+            <element signature="method#mouseClicked#0;class#22015:23387" expanded="false" />
+            <element signature="method#mousePressed#0;class#22015:23387" expanded="false" />
+            <element signature="method#mouseReleased#0;class#22015:23387" expanded="false" />
+            <element signature="method#mouseEntered#0;class#22015:23387" expanded="false" />
+            <element signature="method#mouseExited#0;class#22015:23387" expanded="false" />
             <element signature="docComment;method#commencer#0;class#Jeu#0" expanded="false" />
             <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
           </folding>
@@ -713,18 +707,15 @@
             <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
             <element signature="class#13170:13690" expanded="false" />
             <element signature="method#actionPerformed#0;class#13170:13690" expanded="false" />
-            <element signature="class#13900:17157" expanded="false" />
-            <element signature="method#actionPerformed#0;class#13900:17157" expanded="false" />
-            <element signature="class#19558:20907" expanded="false" />
-            <element signature="method#actionPerformed#0;class#19558:20907" expanded="false" />
-            <element signature="class#21152:31988" expanded="false" />
-            <element signature="method#actionPerformed#0;class#21152:31988" expanded="false" />
-            <element signature="class#21959:23331" expanded="false" />
-            <element signature="method#mouseClicked#0;class#21959:23331" expanded="false" />
-            <element signature="method#mousePressed#0;class#21959:23331" expanded="false" />
-            <element signature="method#mouseReleased#0;class#21959:23331" expanded="false" />
-            <element signature="method#mouseEntered#0;class#21959:23331" expanded="false" />
-            <element signature="method#mouseExited#0;class#21959:23331" expanded="false" />
+            <element signature="class#19614:20963" expanded="false" />
+            <element signature="method#actionPerformed#0;class#19614:20963" expanded="false" />
+            <element signature="class#21208:32044" expanded="false" />
+            <element signature="class#22015:23387" expanded="false" />
+            <element signature="method#mouseClicked#0;class#22015:23387" expanded="false" />
+            <element signature="method#mousePressed#0;class#22015:23387" expanded="false" />
+            <element signature="method#mouseReleased#0;class#22015:23387" expanded="false" />
+            <element signature="method#mouseEntered#0;class#22015:23387" expanded="false" />
+            <element signature="method#mouseExited#0;class#22015:23387" expanded="false" />
             <element signature="docComment;method#commencer#0;class#Jeu#0" expanded="false" />
             <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
           </folding>
@@ -796,18 +787,15 @@
             <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
             <element signature="class#13170:13690" expanded="false" />
             <element signature="method#actionPerformed#0;class#13170:13690" expanded="false" />
-            <element signature="class#13900:17157" expanded="false" />
-            <element signature="method#actionPerformed#0;class#13900:17157" expanded="false" />
-            <element signature="class#19558:20907" expanded="false" />
-            <element signature="method#actionPerformed#0;class#19558:20907" expanded="false" />
-            <element signature="class#21152:31988" expanded="false" />
-            <element signature="method#actionPerformed#0;class#21152:31988" expanded="false" />
-            <element signature="class#21959:23331" expanded="false" />
-            <element signature="method#mouseClicked#0;class#21959:23331" expanded="false" />
-            <element signature="method#mousePressed#0;class#21959:23331" expanded="false" />
-            <element signature="method#mouseReleased#0;class#21959:23331" expanded="false" />
-            <element signature="method#mouseEntered#0;class#21959:23331" expanded="false" />
-            <element signature="method#mouseExited#0;class#21959:23331" expanded="false" />
+            <element signature="class#19614:20963" expanded="false" />
+            <element signature="method#actionPerformed#0;class#19614:20963" expanded="false" />
+            <element signature="class#21208:32044" expanded="false" />
+            <element signature="class#22015:23387" expanded="false" />
+            <element signature="method#mouseClicked#0;class#22015:23387" expanded="false" />
+            <element signature="method#mousePressed#0;class#22015:23387" expanded="false" />
+            <element signature="method#mouseReleased#0;class#22015:23387" expanded="false" />
+            <element signature="method#mouseEntered#0;class#22015:23387" expanded="false" />
+            <element signature="method#mouseExited#0;class#22015:23387" expanded="false" />
             <element signature="docComment;method#commencer#0;class#Jeu#0" expanded="false" />
             <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
           </folding>
@@ -1164,7 +1152,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1178,8 +1165,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.7352943">
-          <caret line="270" column="54" selection-start-line="270" selection-start-column="54" selection-end-line="270" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="552" column="120" selection-start-line="552" selection-start-column="120" selection-end-line="552" selection-end-column="120" />
           <folding>
             <element signature="method#swap#0;class#Tableau#0" expanded="false" />
             <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
@@ -1214,8 +1201,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55250406">
-          <caret line="497" column="23" selection-start-line="497" selection-start-column="23" selection-end-line="497" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.1008547">
+          <caret line="442" column="59" selection-start-line="442" selection-start-column="59" selection-end-line="442" selection-end-column="59" />
           <folding>
             <element signature="docComment;class#Jeu#0" expanded="false" />
             <element signature="method#Jeu#0;class#Jeu#0" expanded="false" />
@@ -1233,18 +1220,15 @@
             <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
             <element signature="class#13170:13690" expanded="false" />
             <element signature="method#actionPerformed#0;class#13170:13690" expanded="false" />
-            <element signature="class#13900:17157" expanded="false" />
-            <element signature="method#actionPerformed#0;class#13900:17157" expanded="false" />
-            <element signature="class#19558:20907" expanded="false" />
-            <element signature="method#actionPerformed#0;class#19558:20907" expanded="false" />
-            <element signature="class#21152:31988" expanded="false" />
-            <element signature="method#actionPerformed#0;class#21152:31988" expanded="false" />
-            <element signature="class#21959:23331" expanded="false" />
-            <element signature="method#mouseClicked#0;class#21959:23331" expanded="false" />
-            <element signature="method#mousePressed#0;class#21959:23331" expanded="false" />
-            <element signature="method#mouseReleased#0;class#21959:23331" expanded="false" />
-            <element signature="method#mouseEntered#0;class#21959:23331" expanded="false" />
-            <element signature="method#mouseExited#0;class#21959:23331" expanded="false" />
+            <element signature="class#19614:20963" expanded="false" />
+            <element signature="method#actionPerformed#0;class#19614:20963" expanded="false" />
+            <element signature="class#21208:32044" expanded="false" />
+            <element signature="class#22015:23387" expanded="false" />
+            <element signature="method#mouseClicked#0;class#22015:23387" expanded="false" />
+            <element signature="method#mousePressed#0;class#22015:23387" expanded="false" />
+            <element signature="method#mouseReleased#0;class#22015:23387" expanded="false" />
+            <element signature="method#mouseEntered#0;class#22015:23387" expanded="false" />
+            <element signature="method#mouseExited#0;class#22015:23387" expanded="false" />
             <element signature="docComment;method#commencer#0;class#Jeu#0" expanded="false" />
             <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
           </folding>

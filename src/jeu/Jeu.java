@@ -440,6 +440,7 @@ public class Jeu extends JFrame {
 
 
                 if(command.equals("Valider")){
+                    grilleFinale = new int[TAILLE][TAILLE];
                         for (int i = 0; i < TAILLE; i++) {
                             for (int j = 0; j < TAILLE; j++) {
                                 if(grille[i][j].getBackground() == Color.BLACK){
@@ -495,10 +496,10 @@ public class Jeu extends JFrame {
                                 tableau.setCase(i, j, Integer.parseInt(grille[i][j].getText()));
                             }
                         }
-                    }/*
+                    }
                     if (!tableau.estValide(0, System.currentTimeMillis())){
                         return;
-                    }*/
+                    }
                     //tableau.afficherGrille();
                     try {
                         Tableau.sauvegarderGrilleSerial(tableau,"Modeles/");
