@@ -416,6 +416,7 @@ public class Jeu extends JFrame {
                 if(command.equals("Abandonner")){
                     JOptionPane.showMessageDialog(null,"Vous avez abandonné");
                     grille = new JTextField[TAILLE][TAILLE];
+                    grilleFinale = null;
                     cardLayout.show(panel, "pagePrincipale");
                 }
 
@@ -467,6 +468,7 @@ public class Jeu extends JFrame {
                         if(flag ==0){
                             if(tabFinal.grilleValide()){
                                 JOptionPane.showMessageDialog(null,"Félicitations, vous avez réussi !");
+
                             }else{
                                 JOptionPane.showMessageDialog(null,"Votre solution n'est pas valide. Il doit y avoir des doublons.");
                             }
