@@ -83,7 +83,7 @@ public class Jeu extends JFrame {
 
     }
 
-        private void initialisation() {
+    private void initialisation() {
         //PANEL PRINCIPAL #LE BIG BOSS
         panel = new JPanel();
         panel.setLayout(new CardLayout(0, 0));
@@ -164,6 +164,7 @@ public class Jeu extends JFrame {
      * Méthode qui gère la vue de la grille principale
      */
     private void initialisationPanelJeu() {
+        panelGrille.removeAll();
         GridBagConstraints c = new GridBagConstraints();
         for (int i = 0; i < TAILLE; i++) {
             for (int j = 0; j < TAILLE; j++) {
@@ -220,7 +221,10 @@ public class Jeu extends JFrame {
 
     private void initialisationPanelCharger() {
         //	 panelCharger.setLayout(new GridBagLayout());
-
+        panelCharger.removeAll();
+        initialiserSavModele();
+        listeModele = new JComboBox(nom_modeles.toArray());
+        liste_parties = new JComboBox(nom_parties.toArray());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
@@ -312,12 +316,7 @@ public class Jeu extends JFrame {
         panelNouvellePartie.add(listeModele);
     }
 
-    /**
-     * Méthode qui initialise les boutons du jeu
-     */
-    private void initialisationBouton() {
-        ActionListener actionListener;
-
+    private void initialiserSavModele(){
         //SAUVEGARDE
         nom_parties = new LinkedList<String>();
         File di = new File("Sauvegarde/");
@@ -334,18 +333,24 @@ public class Jeu extends JFrame {
         for (String s : listeFichierModeles){
             nom_modeles.add(s);
         }
-
+    }
+    /**
+     * Méthode qui initialise les boutons du jeu
+     */
+    private void initialisationBouton() {
+        ActionListener actionListener;
         texte = new JTextArea("Rien de selectionnez"); //charge partie
         texte2 = new JTextArea("Selectionnez un format ..."); // nouvelle partie
         taille_parties = new String[]{"3x3","4x4","5x5","6x6", "7x7", "8x8", "9x9"};
         difficultees = new String[]{"Facile", "Moyen", "Difficile"};
         mode = new String[]{"Generer grille", "Dessiner un Modele","Jouer avec un Modele"};
 
-        listeModele = new JComboBox(nom_modeles.toArray());
-        liste_parties = new JComboBox(nom_parties.toArray());
+        initialiserSavModele();
         taille = new JComboBox(taille_parties);
         difficulte = new JComboBox(difficultees);
         modes = new JComboBox(mode);
+        listeModele = new JComboBox(nom_modeles.toArray());
+        liste_parties = new JComboBox(nom_parties.toArray());
 
         boutonNouvellePartie = new JButton();
         boutonChargerPartie = new JButton();
@@ -415,8 +420,6 @@ public class Jeu extends JFrame {
 
                 if(command.equals("Abandonner")){
                     JOptionPane.showMessageDialog(null,"Vous avez abandonné");
-                    grille = new JTextField[TAILLE][TAILLE];
-                    grilleFinale = null;
                     cardLayout.show(panel, "pagePrincipale");
                 }
 
@@ -439,6 +442,8 @@ public class Jeu extends JFrame {
                     }catch(Exception exc){
                         JOptionPane.showMessageDialog(null,"Problème lors de la sauvegarde");
                     }
+                    initialiserSavModele();
+                    initialisationPanelCharger();
                 }
 
 
@@ -463,7 +468,7 @@ public class Jeu extends JFrame {
                                 }
                             }
                         }
-                        tabFinal = new Tableau(grilleFinale,TAILLE);
+                    tabFinal = new Tableau(grilleFinale,TAILLE);
                     tabFinal.afficherGrille();
                         if(flag ==0){
                             if(tabFinal.grilleValide()){
@@ -510,6 +515,7 @@ public class Jeu extends JFrame {
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
+                    initialiserSavModele();
                     initialisationPanelJeu();
                     CardLayout cardLayout = (CardLayout) (panel.getLayout());
                     cardLayout.show(panel, "pageJeu");
@@ -720,14 +726,14 @@ public class Jeu extends JFrame {
                                 initialisationPanelJeu();
                                 cardLayout.show(panel, "pageJeu");
                                 tableau.afficherGrille();
-                                /*tableau.init_tailles_max(); // OPTI 1
+                                tableau.init_tailles_max(); // OPTI 1
                                 tableau.init_possibilitees(); // OPTI 2
                                 tableau.estValide(0, System.currentTimeMillis());
                                 System.out.print("La grille est : ");
                                 if (tableau.grilleValide() == true)
                                     System.out.println("VALIDE");
                                 else
-                                    System.out.println("Non VALIDE");*/
+                                    System.out.println("Non VALIDE");
                             } catch (Exception e1) {
                                 e1.printStackTrace();
                             }
