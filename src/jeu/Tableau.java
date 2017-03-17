@@ -112,7 +112,9 @@ public class Tableau implements Serializable{
 	
 	private int tabCase[][];
 	int size;
-
+	public int[][] getTabCase(){
+		return tabCase;
+	}
 	public int getSize() {
 		return size;
 	}

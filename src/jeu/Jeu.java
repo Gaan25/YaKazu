@@ -56,9 +56,8 @@ public class Jeu extends JFrame {
     private int TAILLE;
     private NumberFormatter formatter;
     private JTextField[][] grille;
-    private Tableau tableau;
     private int grilleFinale [][];
-    private Tableau tabFinal;
+    private Tableau tableau;
 
     public Jeu() {
         if (! new File("Sauvegarde/").exists()){
@@ -424,6 +423,7 @@ public class Jeu extends JFrame {
                 }
 
                 if(command.equals("Sauvegarder")){
+                    grilleFinale = new int[TAILLE][TAILLE];
                     for (int i = 0; i < TAILLE; i++) {
                         for (int j = 0; j < TAILLE; j++) {
                             if(grille[i][j].getBackground() == Color.BLACK){
@@ -435,7 +435,9 @@ public class Jeu extends JFrame {
                             }
                         }
                     }
-                    tabFinal = new Tableau(grilleFinale,TAILLE);
+                    System.out.println("DEBUG : ");
+                    tableau = new Tableau(grilleFinale,TAILLE);
+                    tableau.afficherGrille();
                     try {
                         Tableau.sauvegarderGrilleSerial(tableau,"Sauvegarde/");
                         JOptionPane.showMessageDialog(null,"Grille sauvegardée !");
@@ -468,10 +470,10 @@ public class Jeu extends JFrame {
                                 }
                             }
                         }
-                    tabFinal = new Tableau(grilleFinale,TAILLE);
-                    tabFinal.afficherGrille();
+                    tableau = new Tableau(grilleFinale,TAILLE);
+                    tableau.afficherGrille();
                         if(flag ==0){
-                            if(tabFinal.grilleValide()){
+                            if(tableau.grilleValide()){
                                 JOptionPane.showMessageDialog(null,"Félicitations, vous avez réussi !");
 
                             }else{
@@ -577,10 +579,27 @@ public class Jeu extends JFrame {
                 panelGrille2.removeAll();
                 if (command.equals("Retour")) {
                     cardLayout.show(panel, "pagePrincipale");
-                } else if (command.equals("Jouer")) {
-                    if (texte2.getText().equals("Selectionnez un format ...") || texte2.getText().equals("Veuillez d'abord \nselectionner un format !")) {
+                }
+                if(modes.getSelectedItem().equals("Jouer avec un Modele")){
+                    texte2.setText("Vous allez jouer avec un modèle");
+                }
+                if (command.equals("Jouer")) {
+                    if (modes.getSelectedItem().equals("Jouer avec un Modele")){
+                        try {
+                            tableau = Tableau.restaurerGrilleSerial("Modeles/"+(String) listeModele.getSelectedItem());
+                        } catch (Exception e1) {
+                            e1.printStackTrace();
+                        }
+                        grille = new JTextField[tableau.getSize()][tableau.getSize()];
+                        TAILLE = tableau.getSize();
+                        panelJeu.removeAll();
+                        initialisationPanelJeu();
+                        cardLayout.show(panel, "pageJeu");
+                    }
+                    else if (texte2.getText().equals("Selectionnez un format ...") || texte2.getText().equals("Veuillez d'abord \nselectionner un format !")) {
                         texte2.setText("Veuillez d'abord \nselectionner un format !");
-                    } else {
+                    }
+                    else {
                         if (modes.getSelectedItem().equals("Dessiner un Modele")){
                             MouseListener mouseListener = new MouseListener() {
                                 @Override
@@ -723,14 +742,15 @@ public class Jeu extends JFrame {
                             grilleFinale = new int[TAILLE][TAILLE];
                             try {
                                 tableau.genererGrillee(d, TAILLE);
+                                Tableau tableauRemplie = new Tableau(tableau.getTabCase(),tableau.size); //On crée un tableau qui servira uniquement à afficher sur la solution sur la console
                                 initialisationPanelJeu();
                                 cardLayout.show(panel, "pageJeu");
-                                tableau.afficherGrille();
-                                tableau.init_tailles_max(); // OPTI 1
-                                tableau.init_possibilitees(); // OPTI 2
-                                tableau.estValide(0, System.currentTimeMillis());
+                                tableauRemplie.afficherGrille();
+                                tableauRemplie.init_tailles_max(); // OPTI 1
+                                tableauRemplie.init_possibilitees(); // OPTI 2
+                                tableauRemplie.estValide(0, System.currentTimeMillis());
                                 System.out.print("La grille est : ");
-                                if (tableau.grilleValide() == true)
+                                if (tableauRemplie.grilleValide() == true)
                                     System.out.println("VALIDE");
                                 else
                                     System.out.println("Non VALIDE");
@@ -740,25 +760,13 @@ public class Jeu extends JFrame {
                             tableau.afficherGrille();
 
                         }
-                        else if (modes.getSelectedItem().equals("Jouer avec un Modele")) {
-                            try {
-                                tableau = Tableau.restaurerGrilleSerial("Modeles/"+(String) listeModele.getSelectedItem());
-                            } catch (Exception e1) {
-                                e1.printStackTrace();
-                            }
-                            grille = new JTextField[tableau.getSize()][tableau.getSize()];
-                            TAILLE = tableau.getSize();
-                            panelJeu.removeAll();
-                            initialisationPanelJeu();
-                            cardLayout.show(panel, "pageJeu");
-                        }
                     }
                 } else if (command.equals("difficulte_selectionnee")) {
                     texte2.setText("" + difficulte.getSelectedItem() + " " + taille.getSelectedItem());
                 } else if (command.equals("taille_selectionnee")) {
                     texte2.setText("" + difficulte.getSelectedItem() + " " + taille.getSelectedItem());
                 } else if (command.equals("mode_selectionne")) {
-                    if (modes.getSelectedItem().equals("Dessiner grille"))
+                    if (modes.getSelectedItem().equals("Dessiner un Modele"))
                         texte2.setText("Vous allez dessiner \nvotre propre modele");
                     else if (modes.getSelectedItem().equals("Generer grille"))
                         texte2.setText("" + difficulte.getSelectedItem() + " " + taille.getSelectedItem());

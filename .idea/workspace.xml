@@ -40,31 +40,30 @@
       <file leaf-file-name="Tableau.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="182" column="29" selection-start-line="182" selection-start-column="29" selection-end-line="182" selection-end-column="29" />
+            <state vertical-scroll-proportion="-14.84375">
+              <caret line="115" column="23" selection-start-line="115" selection-start-column="23" selection-end-line="115" selection-end-column="23" />
               <folding>
                 <element signature="method#swap#0;class#Tableau#0" expanded="false" />
                 <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
                 <element signature="method#trirap#0;class#Tableau#0" expanded="false" />
-                <element signature="e#1809#1810#0" expanded="true" />
-                <element signature="e#1866#1867#0" expanded="true" />
-                <element signature="e#2848#2849#0" expanded="true" />
-                <element signature="e#2866#2867#0" expanded="true" />
-                <element signature="e#2899#2900#0" expanded="true" />
-                <element signature="e#2922#2923#0" expanded="true" />
-                <element signature="e#2960#2961#0" expanded="true" />
-                <element signature="e#2992#2993#0" expanded="true" />
-                <element signature="e#3032#3033#0" expanded="true" />
-                <element signature="e#3064#3065#0" expanded="true" />
-                <element signature="e#3102#3103#0" expanded="true" />
-                <element signature="e#3129#3130#0" expanded="true" />
-                <element signature="e#3178#3179#0" expanded="true" />
-                <element signature="e#3204#3205#0" expanded="true" />
+                <element signature="method#init_possibilitees#0;class#Tableau#0" expanded="false" />
+                <element signature="method#init_tailles_max#0;class#Tableau#0" expanded="false" />
+                <element signature="method#montrer_max_pos#0;class#Tableau#0" expanded="false" />
                 <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
                 <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
                 <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
+                <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
                 <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-                <element signature="e#4220#4255#0" expanded="false" />
+                <element signature="e#4270#4305#0" expanded="false" />
+                <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+                <element signature="method#init_verification#0;class#Tableau#0" expanded="false" />
+                <element signature="method#grilleValide#0;class#Tableau#0" expanded="false" />
+                <element signature="method#doublonLigneCourante#0;class#Tableau#0" expanded="false" />
+                <element signature="method#doublonColonneCourante#0;class#Tableau#0" expanded="false" />
+                <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
+                <element signature="e#6941#7049#0" expanded="false" />
+                <element signature="e#7180#7221#0" expanded="false" />
+                <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
                 <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
                 <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
                 <element signature="method#trouver_premiere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
@@ -77,6 +76,8 @@
                 <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
                 <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
                 <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+                <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+                <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -85,8 +86,8 @@
       <file leaf-file-name="Jeu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50956523">
-              <caret line="347" column="8" selection-start-line="347" selection-start-column="8" selection-end-line="347" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.27133107">
+              <caret line="585" column="16" selection-start-line="585" selection-start-column="16" selection-end-line="585" selection-end-column="16" />
               <folding>
                 <element signature="docComment;class#Jeu#0" expanded="false" />
                 <element signature="method#Jeu#0;class#Jeu#0" expanded="false" />
@@ -95,18 +96,26 @@
                 <element signature="method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
                 <element signature="docComment;method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
                 <element signature="method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
-                <element signature="class#5420:5879" expanded="false" />
-                <element signature="method#keyTyped#0;class#5420:5879" expanded="false" />
+                <element signature="class#5390:5849" expanded="false" />
+                <element signature="method#keyTyped#0;class#5390:5849" expanded="false" />
                 <element signature="docComment;method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
                 <element signature="method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
+                <element signature="method#initialisationPanelCharger#0;class#Jeu#0" expanded="false" />
                 <element signature="method#initialisationPanelNouvellePartie#0;class#Jeu#0" expanded="false" />
                 <element signature="method#initialiserSavModele#0;class#Jeu#0" expanded="false" />
-                <element signature="class#13445:13965" expanded="false" />
-                <element signature="class#22459:23813" expanded="false" />
-                <element signature="method#mouseClicked#0;class#22459:23813" expanded="false" />
-                <element signature="method#mousePressed#0;class#22459:23813" expanded="false" />
-                <element signature="method#mouseReleased#0;class#22459:23813" expanded="false" />
-                <element signature="method#mouseEntered#0;class#22459:23813" expanded="false" />
+                <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
+                <element signature="class#13415:13935" expanded="false" />
+                <element signature="method#actionPerformed#0;class#13415:13935" expanded="false" />
+                <element signature="class#17975:20017" expanded="false" />
+                <element signature="method#actionPerformed#0;class#17975:20017" expanded="false" />
+                <element signature="class#20149:21489" expanded="false" />
+                <element signature="method#actionPerformed#0;class#20149:21489" expanded="false" />
+                <element signature="class#23456:24810" expanded="false" />
+                <element signature="method#mouseClicked#0;class#23456:24810" expanded="false" />
+                <element signature="method#mousePressed#0;class#23456:24810" expanded="false" />
+                <element signature="method#mouseReleased#0;class#23456:24810" expanded="false" />
+                <element signature="method#mouseEntered#0;class#23456:24810" expanded="false" />
+                <element signature="method#mouseExited#0;class#23456:24810" expanded="false" />
                 <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
               </folding>
             </state>
@@ -185,7 +194,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,7 +280,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -520,7 +529,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29252437" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12552084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12552084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -554,12 +563,24 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/jeu/Tableau.java</url>
-          <line>302</line>
+          <line>304</line>
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/jeu/Jeu.java</url>
+          <line>587</line>
+          <properties />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/jeu/Jeu.java</url>
+          <line>586</line>
+          <properties />
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="40" />
+      <option name="time" value="44" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -576,25 +597,24 @@
             <element signature="method#swap#0;class#Tableau#0" expanded="false" />
             <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
             <element signature="method#trirap#0;class#Tableau#0" expanded="false" />
-            <element signature="e#1809#1810#0" expanded="true" />
-            <element signature="e#1866#1867#0" expanded="true" />
-            <element signature="e#2848#2849#0" expanded="true" />
-            <element signature="e#2866#2867#0" expanded="true" />
-            <element signature="e#2899#2900#0" expanded="true" />
-            <element signature="e#2922#2923#0" expanded="true" />
-            <element signature="e#2960#2961#0" expanded="true" />
-            <element signature="e#2992#2993#0" expanded="true" />
-            <element signature="e#3032#3033#0" expanded="true" />
-            <element signature="e#3064#3065#0" expanded="true" />
-            <element signature="e#3102#3103#0" expanded="true" />
-            <element signature="e#3129#3130#0" expanded="true" />
-            <element signature="e#3178#3179#0" expanded="true" />
-            <element signature="e#3204#3205#0" expanded="true" />
+            <element signature="method#init_possibilitees#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_tailles_max#0;class#Tableau#0" expanded="false" />
+            <element signature="method#montrer_max_pos#0;class#Tableau#0" expanded="false" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
+            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#4220#4255#0" expanded="false" />
+            <element signature="e#4270#4305#0" expanded="false" />
+            <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_verification#0;class#Tableau#0" expanded="false" />
+            <element signature="method#grilleValide#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonLigneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonColonneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
+            <element signature="e#6941#7049#0" expanded="false" />
+            <element signature="e#7180#7221#0" expanded="false" />
+            <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#trouver_premiere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
@@ -607,6 +627,8 @@
             <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
             <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
             <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -623,18 +645,26 @@
             <element signature="method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
             <element signature="docComment;method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
-            <element signature="class#5420:5879" expanded="false" />
-            <element signature="method#keyTyped#0;class#5420:5879" expanded="false" />
+            <element signature="class#5390:5849" expanded="false" />
+            <element signature="method#keyTyped#0;class#5390:5849" expanded="false" />
             <element signature="docComment;method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelCharger#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelNouvellePartie#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialiserSavModele#0;class#Jeu#0" expanded="false" />
-            <element signature="class#13445:13965" expanded="false" />
-            <element signature="class#22459:23813" expanded="false" />
-            <element signature="method#mouseClicked#0;class#22459:23813" expanded="false" />
-            <element signature="method#mousePressed#0;class#22459:23813" expanded="false" />
-            <element signature="method#mouseReleased#0;class#22459:23813" expanded="false" />
-            <element signature="method#mouseEntered#0;class#22459:23813" expanded="false" />
+            <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
+            <element signature="class#13415:13935" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13415:13935" expanded="false" />
+            <element signature="class#17975:20017" expanded="false" />
+            <element signature="method#actionPerformed#0;class#17975:20017" expanded="false" />
+            <element signature="class#20149:21489" expanded="false" />
+            <element signature="method#actionPerformed#0;class#20149:21489" expanded="false" />
+            <element signature="class#23456:24810" expanded="false" />
+            <element signature="method#mouseClicked#0;class#23456:24810" expanded="false" />
+            <element signature="method#mousePressed#0;class#23456:24810" expanded="false" />
+            <element signature="method#mouseReleased#0;class#23456:24810" expanded="false" />
+            <element signature="method#mouseEntered#0;class#23456:24810" expanded="false" />
+            <element signature="method#mouseExited#0;class#23456:24810" expanded="false" />
             <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
           </folding>
         </state>
@@ -656,25 +686,24 @@
             <element signature="method#swap#0;class#Tableau#0" expanded="false" />
             <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
             <element signature="method#trirap#0;class#Tableau#0" expanded="false" />
-            <element signature="e#1809#1810#0" expanded="true" />
-            <element signature="e#1866#1867#0" expanded="true" />
-            <element signature="e#2848#2849#0" expanded="true" />
-            <element signature="e#2866#2867#0" expanded="true" />
-            <element signature="e#2899#2900#0" expanded="true" />
-            <element signature="e#2922#2923#0" expanded="true" />
-            <element signature="e#2960#2961#0" expanded="true" />
-            <element signature="e#2992#2993#0" expanded="true" />
-            <element signature="e#3032#3033#0" expanded="true" />
-            <element signature="e#3064#3065#0" expanded="true" />
-            <element signature="e#3102#3103#0" expanded="true" />
-            <element signature="e#3129#3130#0" expanded="true" />
-            <element signature="e#3178#3179#0" expanded="true" />
-            <element signature="e#3204#3205#0" expanded="true" />
+            <element signature="method#init_possibilitees#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_tailles_max#0;class#Tableau#0" expanded="false" />
+            <element signature="method#montrer_max_pos#0;class#Tableau#0" expanded="false" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
+            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#4220#4255#0" expanded="false" />
+            <element signature="e#4270#4305#0" expanded="false" />
+            <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_verification#0;class#Tableau#0" expanded="false" />
+            <element signature="method#grilleValide#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonLigneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonColonneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
+            <element signature="e#6941#7049#0" expanded="false" />
+            <element signature="e#7180#7221#0" expanded="false" />
+            <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#trouver_premiere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
@@ -687,6 +716,8 @@
             <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
             <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
             <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -703,18 +734,26 @@
             <element signature="method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
             <element signature="docComment;method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
-            <element signature="class#5420:5879" expanded="false" />
-            <element signature="method#keyTyped#0;class#5420:5879" expanded="false" />
+            <element signature="class#5390:5849" expanded="false" />
+            <element signature="method#keyTyped#0;class#5390:5849" expanded="false" />
             <element signature="docComment;method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelCharger#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelNouvellePartie#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialiserSavModele#0;class#Jeu#0" expanded="false" />
-            <element signature="class#13445:13965" expanded="false" />
-            <element signature="class#22459:23813" expanded="false" />
-            <element signature="method#mouseClicked#0;class#22459:23813" expanded="false" />
-            <element signature="method#mousePressed#0;class#22459:23813" expanded="false" />
-            <element signature="method#mouseReleased#0;class#22459:23813" expanded="false" />
-            <element signature="method#mouseEntered#0;class#22459:23813" expanded="false" />
+            <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
+            <element signature="class#13415:13935" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13415:13935" expanded="false" />
+            <element signature="class#17975:20017" expanded="false" />
+            <element signature="method#actionPerformed#0;class#17975:20017" expanded="false" />
+            <element signature="class#20149:21489" expanded="false" />
+            <element signature="method#actionPerformed#0;class#20149:21489" expanded="false" />
+            <element signature="class#23456:24810" expanded="false" />
+            <element signature="method#mouseClicked#0;class#23456:24810" expanded="false" />
+            <element signature="method#mousePressed#0;class#23456:24810" expanded="false" />
+            <element signature="method#mouseReleased#0;class#23456:24810" expanded="false" />
+            <element signature="method#mouseEntered#0;class#23456:24810" expanded="false" />
+            <element signature="method#mouseExited#0;class#23456:24810" expanded="false" />
             <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
           </folding>
         </state>
@@ -736,25 +775,24 @@
             <element signature="method#swap#0;class#Tableau#0" expanded="false" />
             <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
             <element signature="method#trirap#0;class#Tableau#0" expanded="false" />
-            <element signature="e#1809#1810#0" expanded="true" />
-            <element signature="e#1866#1867#0" expanded="true" />
-            <element signature="e#2848#2849#0" expanded="true" />
-            <element signature="e#2866#2867#0" expanded="true" />
-            <element signature="e#2899#2900#0" expanded="true" />
-            <element signature="e#2922#2923#0" expanded="true" />
-            <element signature="e#2960#2961#0" expanded="true" />
-            <element signature="e#2992#2993#0" expanded="true" />
-            <element signature="e#3032#3033#0" expanded="true" />
-            <element signature="e#3064#3065#0" expanded="true" />
-            <element signature="e#3102#3103#0" expanded="true" />
-            <element signature="e#3129#3130#0" expanded="true" />
-            <element signature="e#3178#3179#0" expanded="true" />
-            <element signature="e#3204#3205#0" expanded="true" />
+            <element signature="method#init_possibilitees#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_tailles_max#0;class#Tableau#0" expanded="false" />
+            <element signature="method#montrer_max_pos#0;class#Tableau#0" expanded="false" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
+            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#4220#4255#0" expanded="false" />
+            <element signature="e#4270#4305#0" expanded="false" />
+            <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_verification#0;class#Tableau#0" expanded="false" />
+            <element signature="method#grilleValide#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonLigneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonColonneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
+            <element signature="e#6941#7049#0" expanded="false" />
+            <element signature="e#7180#7221#0" expanded="false" />
+            <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#trouver_premiere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
@@ -767,6 +805,8 @@
             <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
             <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
             <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -783,18 +823,26 @@
             <element signature="method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
             <element signature="docComment;method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
-            <element signature="class#5420:5879" expanded="false" />
-            <element signature="method#keyTyped#0;class#5420:5879" expanded="false" />
+            <element signature="class#5390:5849" expanded="false" />
+            <element signature="method#keyTyped#0;class#5390:5849" expanded="false" />
             <element signature="docComment;method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelCharger#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelNouvellePartie#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialiserSavModele#0;class#Jeu#0" expanded="false" />
-            <element signature="class#13445:13965" expanded="false" />
-            <element signature="class#22459:23813" expanded="false" />
-            <element signature="method#mouseClicked#0;class#22459:23813" expanded="false" />
-            <element signature="method#mousePressed#0;class#22459:23813" expanded="false" />
-            <element signature="method#mouseReleased#0;class#22459:23813" expanded="false" />
-            <element signature="method#mouseEntered#0;class#22459:23813" expanded="false" />
+            <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
+            <element signature="class#13415:13935" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13415:13935" expanded="false" />
+            <element signature="class#17975:20017" expanded="false" />
+            <element signature="method#actionPerformed#0;class#17975:20017" expanded="false" />
+            <element signature="class#20149:21489" expanded="false" />
+            <element signature="method#actionPerformed#0;class#20149:21489" expanded="false" />
+            <element signature="class#23456:24810" expanded="false" />
+            <element signature="method#mouseClicked#0;class#23456:24810" expanded="false" />
+            <element signature="method#mousePressed#0;class#23456:24810" expanded="false" />
+            <element signature="method#mouseReleased#0;class#23456:24810" expanded="false" />
+            <element signature="method#mouseEntered#0;class#23456:24810" expanded="false" />
+            <element signature="method#mouseExited#0;class#23456:24810" expanded="false" />
             <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
           </folding>
         </state>
@@ -824,25 +872,24 @@
             <element signature="method#swap#0;class#Tableau#0" expanded="false" />
             <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
             <element signature="method#trirap#0;class#Tableau#0" expanded="false" />
-            <element signature="e#1809#1810#0" expanded="true" />
-            <element signature="e#1866#1867#0" expanded="true" />
-            <element signature="e#2848#2849#0" expanded="true" />
-            <element signature="e#2866#2867#0" expanded="true" />
-            <element signature="e#2899#2900#0" expanded="true" />
-            <element signature="e#2922#2923#0" expanded="true" />
-            <element signature="e#2960#2961#0" expanded="true" />
-            <element signature="e#2992#2993#0" expanded="true" />
-            <element signature="e#3032#3033#0" expanded="true" />
-            <element signature="e#3064#3065#0" expanded="true" />
-            <element signature="e#3102#3103#0" expanded="true" />
-            <element signature="e#3129#3130#0" expanded="true" />
-            <element signature="e#3178#3179#0" expanded="true" />
-            <element signature="e#3204#3205#0" expanded="true" />
+            <element signature="method#init_possibilitees#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_tailles_max#0;class#Tableau#0" expanded="false" />
+            <element signature="method#montrer_max_pos#0;class#Tableau#0" expanded="false" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
+            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#4220#4255#0" expanded="false" />
+            <element signature="e#4270#4305#0" expanded="false" />
+            <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_verification#0;class#Tableau#0" expanded="false" />
+            <element signature="method#grilleValide#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonLigneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonColonneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
+            <element signature="e#6941#7049#0" expanded="false" />
+            <element signature="e#7180#7221#0" expanded="false" />
+            <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#trouver_premiere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
@@ -855,6 +902,8 @@
             <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
             <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
             <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -875,25 +924,24 @@
             <element signature="method#swap#0;class#Tableau#0" expanded="false" />
             <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
             <element signature="method#trirap#0;class#Tableau#0" expanded="false" />
-            <element signature="e#1809#1810#0" expanded="true" />
-            <element signature="e#1866#1867#0" expanded="true" />
-            <element signature="e#2848#2849#0" expanded="true" />
-            <element signature="e#2866#2867#0" expanded="true" />
-            <element signature="e#2899#2900#0" expanded="true" />
-            <element signature="e#2922#2923#0" expanded="true" />
-            <element signature="e#2960#2961#0" expanded="true" />
-            <element signature="e#2992#2993#0" expanded="true" />
-            <element signature="e#3032#3033#0" expanded="true" />
-            <element signature="e#3064#3065#0" expanded="true" />
-            <element signature="e#3102#3103#0" expanded="true" />
-            <element signature="e#3129#3130#0" expanded="true" />
-            <element signature="e#3178#3179#0" expanded="true" />
-            <element signature="e#3204#3205#0" expanded="true" />
+            <element signature="method#init_possibilitees#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_tailles_max#0;class#Tableau#0" expanded="false" />
+            <element signature="method#montrer_max_pos#0;class#Tableau#0" expanded="false" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
+            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#4220#4255#0" expanded="false" />
+            <element signature="e#4270#4305#0" expanded="false" />
+            <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_verification#0;class#Tableau#0" expanded="false" />
+            <element signature="method#grilleValide#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonLigneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonColonneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
+            <element signature="e#6941#7049#0" expanded="false" />
+            <element signature="e#7180#7221#0" expanded="false" />
+            <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#trouver_premiere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
@@ -906,6 +954,8 @@
             <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
             <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
             <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1125,13 +1175,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../Yakazu_local/yakazu_4/src/jeu/Jeu.java" />
-    <entry file="file://$PROJECT_DIR$/src/jeu/Modeles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="174" column="14" selection-start-line="174" selection-start-column="14" selection-end-line="174" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Yakazu_local/yakazu_4/src/jeu/Modeles.java" />
     <entry file="file://$PROJECT_DIR$/../Yakazu_local/yakazu_4/src/jeu/Tableau.java" />
     <entry file="file://$PROJECT_DIR$/src/jeu/Possibilitee.java">
@@ -1150,33 +1193,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/jeu/Modeles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7707865">
+          <caret line="174" column="14" selection-start-line="174" selection-start-column="14" selection-end-line="174" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Tableau.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="182" column="29" selection-start-line="182" selection-start-column="29" selection-end-line="182" selection-end-column="29" />
+        <state vertical-scroll-proportion="-14.84375">
+          <caret line="115" column="23" selection-start-line="115" selection-start-column="23" selection-end-line="115" selection-end-column="23" />
           <folding>
             <element signature="method#swap#0;class#Tableau#0" expanded="false" />
             <element signature="method#show_tab#0;class#Tableau#0" expanded="false" />
             <element signature="method#trirap#0;class#Tableau#0" expanded="false" />
-            <element signature="e#1809#1810#0" expanded="true" />
-            <element signature="e#1866#1867#0" expanded="true" />
-            <element signature="e#2848#2849#0" expanded="true" />
-            <element signature="e#2866#2867#0" expanded="true" />
-            <element signature="e#2899#2900#0" expanded="true" />
-            <element signature="e#2922#2923#0" expanded="true" />
-            <element signature="e#2960#2961#0" expanded="true" />
-            <element signature="e#2992#2993#0" expanded="true" />
-            <element signature="e#3032#3033#0" expanded="true" />
-            <element signature="e#3064#3065#0" expanded="true" />
-            <element signature="e#3102#3103#0" expanded="true" />
-            <element signature="e#3129#3130#0" expanded="true" />
-            <element signature="e#3178#3179#0" expanded="true" />
-            <element signature="e#3204#3205#0" expanded="true" />
+            <element signature="method#init_possibilitees#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_tailles_max#0;class#Tableau#0" expanded="false" />
+            <element signature="method#montrer_max_pos#0;class#Tableau#0" expanded="false" />
             <element signature="method#getCase#1;class#Tableau#0" expanded="false" />
             <element signature="method#modifier_case#0;class#Tableau#0" expanded="false" />
             <element signature="method#init_tableau#0;class#Tableau#0" expanded="false" />
+            <element signature="method#Tableau#0;class#Tableau#0" expanded="false" />
             <element signature="method#Tableau#1;class#Tableau#0" expanded="false" />
-            <element signature="e#4220#4255#0" expanded="false" />
+            <element signature="e#4270#4305#0" expanded="false" />
+            <element signature="method#toString#0;class#Tableau#0" expanded="false" />
+            <element signature="method#init_verification#0;class#Tableau#0" expanded="false" />
+            <element signature="method#grilleValide#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonLigneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#doublonColonneCourante#0;class#Tableau#0" expanded="false" />
+            <element signature="method#estValide#0;class#Tableau#0" expanded="false" />
+            <element signature="e#6941#7049#0" expanded="false" />
+            <element signature="e#7180#7221#0" expanded="false" />
+            <element signature="method#taille_valide#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_ligne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#taille_colonne_courante#0;class#Tableau#0" expanded="false" />
             <element signature="method#trouver_premiere_case_ligne_courante#0;class#Tableau#0" expanded="false" />
@@ -1189,14 +1239,16 @@
             <element signature="method#restaurerGrilleTexte#0;class#Tableau#0" expanded="false" />
             <element signature="method#sauvegarderGrilleSerial#0;class#Tableau#0" expanded="false" />
             <element signature="method#restaurerGrilleSerial#0;class#Tableau#0" expanded="false" />
+            <element signature="method#afficherGrille#0;class#Tableau#0" expanded="false" />
+            <element signature="method#genererGrillee#0;class#Tableau#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jeu/Jeu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50956523">
-          <caret line="347" column="8" selection-start-line="347" selection-start-column="8" selection-end-line="347" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.27133107">
+          <caret line="585" column="16" selection-start-line="585" selection-start-column="16" selection-end-line="585" selection-end-column="16" />
           <folding>
             <element signature="docComment;class#Jeu#0" expanded="false" />
             <element signature="method#Jeu#0;class#Jeu#0" expanded="false" />
@@ -1205,18 +1257,26 @@
             <element signature="method#initialisationPanelMenu#0;class#Jeu#0" expanded="false" />
             <element signature="docComment;method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelJeu#0;class#Jeu#0" expanded="false" />
-            <element signature="class#5420:5879" expanded="false" />
-            <element signature="method#keyTyped#0;class#5420:5879" expanded="false" />
+            <element signature="class#5390:5849" expanded="false" />
+            <element signature="method#keyTyped#0;class#5390:5849" expanded="false" />
             <element signature="docComment;method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelCreeModele#0;class#Jeu#0" expanded="false" />
+            <element signature="method#initialisationPanelCharger#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialisationPanelNouvellePartie#0;class#Jeu#0" expanded="false" />
             <element signature="method#initialiserSavModele#0;class#Jeu#0" expanded="false" />
-            <element signature="class#13445:13965" expanded="false" />
-            <element signature="class#22459:23813" expanded="false" />
-            <element signature="method#mouseClicked#0;class#22459:23813" expanded="false" />
-            <element signature="method#mousePressed#0;class#22459:23813" expanded="false" />
-            <element signature="method#mouseReleased#0;class#22459:23813" expanded="false" />
-            <element signature="method#mouseEntered#0;class#22459:23813" expanded="false" />
+            <element signature="docComment;method#initialisationBouton#0;class#Jeu#0" expanded="false" />
+            <element signature="class#13415:13935" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13415:13935" expanded="false" />
+            <element signature="class#17975:20017" expanded="false" />
+            <element signature="method#actionPerformed#0;class#17975:20017" expanded="false" />
+            <element signature="class#20149:21489" expanded="false" />
+            <element signature="method#actionPerformed#0;class#20149:21489" expanded="false" />
+            <element signature="class#23456:24810" expanded="false" />
+            <element signature="method#mouseClicked#0;class#23456:24810" expanded="false" />
+            <element signature="method#mousePressed#0;class#23456:24810" expanded="false" />
+            <element signature="method#mouseReleased#0;class#23456:24810" expanded="false" />
+            <element signature="method#mouseEntered#0;class#23456:24810" expanded="false" />
+            <element signature="method#mouseExited#0;class#23456:24810" expanded="false" />
             <element signature="method#commencer#0;class#Jeu#0" expanded="false" />
           </folding>
         </state>
