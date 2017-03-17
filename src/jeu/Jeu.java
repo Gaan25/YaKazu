@@ -55,7 +55,7 @@ public class Jeu extends JFrame {
     private JPanel panelBoutons;
     private int TAILLE;
     private NumberFormatter formatter;
-    private JFormattedTextField[][] grille;
+    private JTextField[][] grille;
     private Tableau tableau;
     private int grilleFinale [][];
     private Tableau tabFinal;
@@ -172,7 +172,7 @@ public class Jeu extends JFrame {
                 c.ipadx = 30;
                 c.ipady = 15;
 
-                grille[i][j] = new JFormattedTextField();
+                grille[i][j] = new JTextField();
                 grille[i][j].addKeyListener(new KeyAdapter() {
                     public void keyTyped(KeyEvent e) {
                         char c = e.getKeyChar();
@@ -412,8 +412,10 @@ public class Jeu extends JFrame {
                 int flag = 0;
                 CardLayout cardLayout = (CardLayout) (panel.getLayout());
                 String command = e.getActionCommand();
+
                 if(command.equals("Abandonner")){
                     JOptionPane.showMessageDialog(null,"Vous avez abandonné");
+                    grille = new JTextField[TAILLE][TAILLE];
                     cardLayout.show(panel, "pagePrincipale");
                 }
 
@@ -542,7 +544,7 @@ public class Jeu extends JFrame {
                     }
                     tableau.afficherGrille();
                     TAILLE = tableau.getSize();
-                    grille = new JFormattedTextField[tableau.getSize()][tableau.getSize()];
+                    grille = new JTextField[tableau.getSize()][tableau.getSize()];
                     initialisationPanelJeu();
 
                     cardLayout.show(panel, "pageJeu");
@@ -564,6 +566,7 @@ public class Jeu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 CardLayout cardLayout = (CardLayout) (panel.getLayout());
                 String command = e.getActionCommand();
+                panelGrille2.removeAll();
                 if (command.equals("Retour")) {
                     cardLayout.show(panel, "pagePrincipale");
                 } else if (command.equals("Jouer")) {
@@ -575,7 +578,7 @@ public class Jeu extends JFrame {
                                 @Override
                                 public void mouseClicked(MouseEvent e) {
                                     if (SwingUtilities.isRightMouseButton(e)) {
-                                        JFormattedTextField textField = (JFormattedTextField) e.getSource();
+                                        JTextField textField = (JTextField) e.getSource();
                                         if (textField.getBackground().equals(Color.BLACK)){
                                             textField.setBackground(Color.WHITE);
                                         }else{
@@ -608,16 +611,16 @@ public class Jeu extends JFrame {
                             GridBagConstraints c = new GridBagConstraints();
                             c.ipadx = 30;
                             c.ipady = 15;
-                            panelGrille2.removeAll();
+
                             switch (strTaille) {
                                 case "3x3":
-                                    grille = new JFormattedTextField[3][3];
+                                    grille = new JTextField[3][3];
                                     for (int i = 0; i < 3; i++) {
                                         for (int j = 0; j < 3; j++) {
                                             TAILLE = 3;
                                             c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
                                             c.gridy = i;
-                                            grille[i][j] = new JFormattedTextField();
+                                            grille[i][j] = new JTextField();
                                             grille[i][j].setPreferredSize(new Dimension(35, 35));
                                             grille[i][j].addMouseListener(mouseListener);
                                             panelGrille2.add(grille[i][j], c);
@@ -625,13 +628,13 @@ public class Jeu extends JFrame {
                                     }
                                     break;
                                 case "6x6":
-                                    grille = new JFormattedTextField[6][6];
+                                    grille = new JTextField[6][6];
                                     for (int i = 0; i < 6; i++) {
                                         for (int j = 0; j < 6; j++) {
                                             TAILLE = 6;
                                             c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
                                             c.gridy = i;
-                                            grille[i][j] = new JFormattedTextField();
+                                            grille[i][j] = new JTextField();
                                             grille[i][j].setPreferredSize(new Dimension(35, 35));
                                             grille[i][j].addMouseListener(mouseListener);
                                             panelGrille2.add(grille[i][j], c);
@@ -639,13 +642,13 @@ public class Jeu extends JFrame {
                                     }
                                     break;
                                 case "9x9":
-                                    grille = new JFormattedTextField[9][9];
+                                    grille = new JTextField[9][9];
                                     for (int i = 0; i < 9; i++) {
                                         for (int j = 0; j < 9; j++) {
                                             TAILLE = 9;
                                             c.gridx = j;// A cause du GridLayout nous sommes obligés d'inverser
                                             c.gridy = i;
-                                            grille[i][j] = new JFormattedTextField();
+                                            grille[i][j] = new JTextField();
                                             grille[i][j].setPreferredSize(new Dimension(35, 35));
                                             grille[i][j].addMouseListener(mouseListener);
                                             panelGrille2.add(grille[i][j], c);
@@ -654,37 +657,38 @@ public class Jeu extends JFrame {
                                     break;
                             }
                             cardLayout.show(panel, "pageCreeModele");
+                            System.gc();
                         }
                         else if (modes.getSelectedItem().equals("Generer grille")) {
                             String taille_tab = (String) taille.getSelectedItem();
                             switch (taille_tab) {
                                 case "3x3":
                                     TAILLE = 3;
-                                    grille = new JFormattedTextField[3][3];
+                                    grille = new JTextField[3][3];
                                     break;
                                 case "4x4":
                                     TAILLE = 4;
-                                    grille = new JFormattedTextField[4][4];
+                                    grille = new JTextField[4][4];
                                     break;
                                 case "5x5":
                                     TAILLE = 5;
-                                    grille = new JFormattedTextField[5][5];
+                                    grille = new JTextField[5][5];
                                     break;
                                 case "6x6":
                                     TAILLE = 6;
-                                    grille = new JFormattedTextField[6][6];
+                                    grille = new JTextField[6][6];
                                     break;
                                 case "7x7":
                                     TAILLE = 7;
-                                    grille = new JFormattedTextField[7][7];
+                                    grille = new JTextField[7][7];
                                     break;
                                 case "8x8":
                                     TAILLE = 8;
-                                    grille = new JFormattedTextField[8][8];
+                                    grille = new JTextField[8][8];
                                     break;
                                 case "9x9":
                                     TAILLE = 9;
-                                    grille = new JFormattedTextField[9][9];
+                                    grille = new JTextField[9][9];
                                     break;
                             }
                             String difficulte1 = (String) difficulte.getSelectedItem();
@@ -701,29 +705,31 @@ public class Jeu extends JFrame {
                                     break;
                             }
                             tableau = new Tableau(TAILLE);
+                            grille = new JTextField[TAILLE][TAILLE];
+                                for (int i = 0; i < TAILLE; i++) {
+                                    for (int j = 0; j < TAILLE; j++) {
+                                        grille[i][j] = new JTextField();
+                                    }
+                                }
+
                             grilleFinale = new int[TAILLE][TAILLE];
                             try {
                                 tableau.genererGrillee(d, TAILLE);
                                 initialisationPanelJeu();
                                 cardLayout.show(panel, "pageJeu");
                                 tableau.afficherGrille();
-                                tableau.init_tailles_max(); // OPTI 1
+                                /*tableau.init_tailles_max(); // OPTI 1
                                 tableau.init_possibilitees(); // OPTI 2
                                 tableau.estValide(0, System.currentTimeMillis());
                                 System.out.print("La grille est : ");
                                 if (tableau.grilleValide() == true)
                                     System.out.println("VALIDE");
                                 else
-                                    System.out.println("Non VALIDE");
+                                    System.out.println("Non VALIDE");*/
                             } catch (Exception e1) {
                                 e1.printStackTrace();
                             }
                             tableau.afficherGrille();
-                            try {
-                                Tableau.sauvegarderGrilleSerial(tableau,"Modeles/");
-                            } catch (Exception ex) {
-                                ex.printStackTrace();
-                            }
 
                         }
                         else if (modes.getSelectedItem().equals("Jouer avec un Modele")) {
@@ -732,7 +738,7 @@ public class Jeu extends JFrame {
                             } catch (Exception e1) {
                                 e1.printStackTrace();
                             }
-                            grille = new JFormattedTextField[tableau.getSize()][tableau.getSize()];
+                            grille = new JTextField[tableau.getSize()][tableau.getSize()];
                             TAILLE = tableau.getSize();
                             panelJeu.removeAll();
                             initialisationPanelJeu();

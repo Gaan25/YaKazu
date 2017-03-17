@@ -183,7 +183,6 @@ public class Tableau implements Serializable{
 	public String toString(){
 		StringBuffer s1 = new StringBuffer(255);
 		for (int i = 0; i < getSize(); i++) {
-
 			for (int j = 0; j < getSize(); j++) {
 				if(tabCase[i][j]<0) 
 					s1.append(" N");
