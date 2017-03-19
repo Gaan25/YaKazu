@@ -67,6 +67,7 @@ public class Jeu extends JFrame {
             new File("Modeles/").mkdir();
         }
 
+        this.setTitle("Ya'Kazu");
         initialisation();
         initialisationBouton();
         initialisationPanelMenu();
@@ -224,6 +225,8 @@ public class Jeu extends JFrame {
         initialiserSavModele();
         listeModele = new JComboBox(nom_modeles.toArray());
         liste_parties = new JComboBox(nom_parties.toArray());
+
+        //retour
         GridBagConstraints gbc = new GridBagConstraints();
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
@@ -232,13 +235,15 @@ public class Jeu extends JFrame {
         gbc.ipadx = 200;
         gbc.ipady = 20;
 
+        //jouer
         GridBagConstraints gbc2 = new GridBagConstraints();
-        gbc2.gridx = 3;
-        gbc2.gridy = 0;
+        gbc2.gridx = 2;
+        gbc2.gridy = 2;
         gbc2.fill = GridBagConstraints.HORIZONTAL;
         gbc2.ipadx = 200;
         gbc2.ipady = 20;
 
+        //liste_parties
         GridBagConstraints gbc3 = new GridBagConstraints();
         gbc3.gridx = 2;
         gbc3.gridy = 1;
@@ -247,6 +252,7 @@ public class Jeu extends JFrame {
         gbc3.ipady = 20;
         gbc3.insets.set(0, 20, 0, 20);
 
+        //texte
         GridBagConstraints gbc4 = new GridBagConstraints();
         gbc4.gridx = 3;
         gbc4.gridy = 1;
@@ -270,41 +276,48 @@ public class Jeu extends JFrame {
         gbc.ipady = 20;
 
         GridBagConstraints gbc2 = new GridBagConstraints();
-        gbc2.gridx = 2;
-        gbc2.gridy = 1;
+        gbc2.gridx = 1;
+        gbc2.gridy = 2;
         gbc2.fill = GridBagConstraints.HORIZONTAL;
         gbc2.ipadx = 50;
         gbc2.ipady = 20;
 
         GridBagConstraints gbc3 = new GridBagConstraints();
-        gbc3.gridx = 2;
-        gbc3.gridy = 0;
+        gbc3.gridx = 1;
+        gbc3.gridy = 1;
         gbc3.fill = GridBagConstraints.HORIZONTAL;
         gbc3.ipadx = 50;
         gbc3.ipady = 20;
         gbc3.insets.set(0, 10, 0, 10);
 
         GridBagConstraints gbc4 = new GridBagConstraints();
-        gbc4.gridx = 3;
-        gbc4.gridy = 0;
+        gbc4.gridx = 2;
+        gbc4.gridy = 1;
         gbc4.fill = GridBagConstraints.HORIZONTAL;
-        gbc4.ipadx = 50;
+        gbc4.ipadx = 20;
         gbc4.ipady = 20;
 
         GridBagConstraints gbc5 = new GridBagConstraints();
         gbc5.gridx = 3;
-        gbc5.gridy = 1;
+        gbc5.gridy = 2;
         gbc5.fill = GridBagConstraints.HORIZONTAL;
         gbc5.ipadx = 50;
         gbc5.ipady = 20;
 
         GridBagConstraints gbc6 = new GridBagConstraints();
-        gbc6.gridx = 5;
-        gbc6.gridy = 0;
+        gbc6.gridx = 3;
+        gbc6.gridy = 1;
         gbc6.fill = GridBagConstraints.HORIZONTAL;
         gbc6.ipadx = 50;
         gbc6.ipady = 20;
         gbc6.insets.set(0, 20, 0, 20);
+
+        GridBagConstraints gbc7 = new GridBagConstraints();
+        gbc7.gridx = 4;
+        gbc7.gridy = 1;
+        gbc7.fill = GridBagConstraints.HORIZONTAL;
+        gbc7.ipadx = 50;
+        gbc7.ipady = 20;
 
         panelNouvellePartie.add(boutonRetour, gbc);
         panelNouvellePartie.add(boutonJouer, gbc2);
@@ -312,7 +325,7 @@ public class Jeu extends JFrame {
         panelNouvellePartie.add(taille, gbc4);
         panelNouvellePartie.add(texte2, gbc5);
         panelNouvellePartie.add(modes, gbc6);
-        panelNouvellePartie.add(listeModele);
+        panelNouvellePartie.add(listeModele,gbc7);
     }
 
     private void initialiserSavModele(){
@@ -338,7 +351,7 @@ public class Jeu extends JFrame {
      */
     private void initialisationBouton() {
         ActionListener actionListener;
-        texte = new JTextArea("Rien de selectionnez"); //charge partie
+        texte = new JTextArea("Rien de selectionné"); //charge partie
         texte2 = new JTextArea("Selectionnez un format ..."); // nouvelle partie
         taille_parties = new String[]{"3x3","4x4","5x5","6x6", "7x7", "8x8", "9x9"};
         difficultees = new String[]{"Facile", "Moyen", "Difficile"};
@@ -475,6 +488,7 @@ public class Jeu extends JFrame {
                         if(flag ==0){
                             if(tableau.grilleValide()){
                                 JOptionPane.showMessageDialog(null,"Félicitations, vous avez réussi !");
+                                cardLayout.show(panel, "pagePrincipale");
 
                             }else{
                                 JOptionPane.showMessageDialog(null,"Votre solution n'est pas valide. Il doit y avoir des doublons.");
@@ -514,6 +528,7 @@ public class Jeu extends JFrame {
                     //tableau.afficherGrille();
                     try {
                         Tableau.sauvegarderGrilleSerial(tableau,"Modeles/");
+                        JOptionPane.showMessageDialog(null,"Création du modèle réussie !");
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
@@ -581,7 +596,7 @@ public class Jeu extends JFrame {
                     cardLayout.show(panel, "pagePrincipale");
                 }
                 if(modes.getSelectedItem().equals("Jouer avec un Modele")){
-                    texte2.setText("Vous allez jouer avec un modèle");
+                    texte2.setText("Vous allez jouer \n avec un modèle");
                 }
                 if (command.equals("Jouer")) {
                     if (modes.getSelectedItem().equals("Jouer avec un Modele")){
